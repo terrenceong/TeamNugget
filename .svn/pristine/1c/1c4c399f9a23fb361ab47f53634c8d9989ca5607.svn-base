@@ -1,0 +1,61 @@
+com/example/teamnugget/School.java
+ com.example.teamnugget.School
+com/example/teamnugget/Search.java
+ com.example.teamnugget.Search
+ com.example.teamnugget.Search$1
+com/example/teamnugget/UniversityCourse.java
+ com.example.teamnugget.UniversityCourse
+com/example/teamnugget/PostALevelDiplomaUI.java
+ com.example.teamnugget.PostALevelDiplomaUI
+ com.example.teamnugget.PostALevelDiplomaUI$1
+ com.example.teamnugget.PostALevelDiplomaUI$2
+com/example/teamnugget/Course.java
+ com.example.teamnugget.Course
+com/example/teamnugget/FilterSearch.java
+ com.example.teamnugget.FilterSearch
+ com.example.teamnugget.FilterSearch$1
+com/example/teamnugget/InstitutePage.java
+ com.example.teamnugget.InstitutePage
+ com.example.teamnugget.InstitutePage$1
+ com.example.teamnugget.InstitutePage$2
+com/example/teamnugget/CCA.java
+ com.example.teamnugget.CCA
+com/example/teamnugget/Main.java
+ com.example.teamnugget.Main
+com/example/teamnugget/BuildConfig.java
+ com.example.teamnugget.BuildConfig
+com/example/teamnugget/PolyCourses.java
+ com.example.teamnugget.PolyCourses
+ com.example.teamnugget.PolyCourses$1
+com/example/teamnugget/PolyITECourse.java
+ com.example.teamnugget.PolyITECourse
+com/example/teamnugget/PostSecondaryUI.java
+ com.example.teamnugget.PostSecondaryUI
+ com.example.teamnugget.PostSecondaryUI$1
+ com.example.teamnugget.PostSecondaryUI$2
+com/example/teamnugget/PolytechnicUI.java
+ com.example.teamnugget.PolytechnicUI
+ com.example.teamnugget.PolytechnicUI$1
+ com.example.teamnugget.PolytechnicUI$2
+ com.example.teamnugget.PolytechnicUI$3
+ com.example.teamnugget.PolytechnicUI$4
+ com.example.teamnugget.PolytechnicUI$5
+ com.example.teamnugget.PolytechnicUI$6
+com/example/teamnugget/Institute.java
+ com.example.teamnugget.Institute
+com/example/teamnugget/csvParse.java
+ com.example.teamnugget.csvParse
+ com.example.teamnugget.csvParse$DesiredAttributes
+com/example/teamnugget/JuniorCollege.java
+ com.example.teamnugget.JuniorCollege
+com/example/teamnugget/University.java
+ com.example.teamnugget.University
+com/example/teamnugget/MainActivity.java
+ com.example.teamnugget.MainActivity
+ com.example.teamnugget.MainActivity$1
+ com.example.teamnugget.MainActivity$2
+ com.example.teamnugget.MainActivity$3
+com/example/teamnugget/ITE.java
+ com.example.teamnugget.ITE
+com/example/teamnugget/Polytechnic.java
+ com.example.teamnugget.Polytechnic
