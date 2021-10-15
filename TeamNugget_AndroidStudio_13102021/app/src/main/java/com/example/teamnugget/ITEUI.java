@@ -52,6 +52,7 @@ public class ITEUI extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         b_iteeast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
