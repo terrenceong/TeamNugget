@@ -66,8 +66,8 @@ public class InstitutePage extends AppCompatActivity {
         b_FnS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(getApplicationContext(),PolyCourses.class);//can add if statement depending on institute type
-                //startActivity(i);
+                Intent i = new Intent(getApplicationContext(),SchoolUI.class);//can add if statement depending on institute type
+                startActivity(i);
                 switch(institute)
                 {
                     /*case "ITECC": ITE cc = new ITE("College Central","ITE College Central " +

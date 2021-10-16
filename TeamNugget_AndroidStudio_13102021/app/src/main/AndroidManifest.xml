@@ -16,6 +16,9 @@
             android:name=".InstitutePage"
             android:exported="true" />
         <activity
+            android:name=".SchoolUI"
+            android:exported="true" />
+        <activity
             android:name=".PostALevelDiplomaUI"
             android:exported="true" />
         <activity
