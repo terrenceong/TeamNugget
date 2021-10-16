@@ -23,7 +23,7 @@ public abstract class Institute {
 	//Name does not have to correspond to the file name exactly as it uses Contain instead of equals
 	static List<String> uniSpecificName = Arrays.asList("NUS", "NTU");
 	static List<String> polySpecificName = Arrays.asList("TP", "NP", "NYP", "RP", "SP");
-	static List<String> iteSpecificName = Arrays.asList("ITE");
+	static List<String> iteSpecificName = Arrays.asList("Chicken");
 	static List<String> jcSpecificName = Arrays.asList("CJC");
 	
 	//AFTER CHECKING FOR SPECIFIC FILE NAME, if is unable to find any specific Name, it will labeled the csv as a general file.
@@ -38,7 +38,7 @@ public abstract class Institute {
 	//Name does not have to correspond to the attribute name exactly as it uses Contain instead of equals
 	static List<String> uniSynonym = Arrays.asList("University");
 	static List<String> polySynonym = Arrays.asList("Poly");
-	static List<String> iteSynonym = Arrays.asList("ITE");
+	static List<String> iteSynonym = Arrays.asList("ITE", "College");
 	static List<String> jcSynonym = Arrays.asList("JC");
 	
 	//Constructor for Institute Object

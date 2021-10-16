@@ -27,7 +27,7 @@ public class ITE extends Institute {
 	//Considered changing to contain instead of matching exact name but problem might occur if more than one name appear.
 	//Example Poly_Name, Course_Name.
 
-	static List<String> i_Name = Arrays.asList("ITE");
+	static List<String> i_Name = Arrays.asList("ITE", "College");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> cca_Name = Arrays.asList("CCA");
