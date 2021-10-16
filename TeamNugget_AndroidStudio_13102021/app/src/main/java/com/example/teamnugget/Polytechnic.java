@@ -70,12 +70,16 @@ public class Polytechnic extends Institute{
 		{
 			schools.get(i).print("P");
 		}
-		Log.i("Poly","CCA");
-		Log.i("Poly","--------------------------------------------------------------------");
-		for (int i = 0; i < ccas.size(); i++)
+		if (ccas.size() != 0)
 		{
-			ccas.get(i).print("P");
+			Log.i("Poly","CCA");
+			Log.i("Poly","--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("P");
+			}
 		}
+
 	}
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()

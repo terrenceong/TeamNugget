@@ -75,12 +75,16 @@ public class ITE extends Institute {
 		{
 			schools.get(i).print("I");
 		}
-		Log.i("ITE", "CCA");
-		Log.i("ITE", "--------------------------------------------------------------------");
-		for (int i = 0; i < ccas.size(); i++)
+		if (ccas.size() != 0)
 		{
-			ccas.get(i).print("I");
+			Log.i("ITE", "CCA");
+			Log.i("ITE", "--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("I");
+			}
 		}
+
 	}
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()

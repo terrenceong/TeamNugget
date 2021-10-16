@@ -192,6 +192,10 @@ public class csvParse {
 						while ((line = reader.readLine()) != null)
 						{
 							String[] row = line.split(",");
+							/*for (int i = 0; i < row.length; i++)
+							{
+								System.out.println(row[i]);
+							}*/
 							row = fixRow(row);
 							
 							Institute currentI = null;
@@ -511,6 +515,7 @@ public class csvParse {
 	//Constructing a new CCA based on row values
 	public CCA InitialiseCCA(Hashtable<String, Integer> dict, String[] row, CCA cc)
 	{
+
 		String ccaName = ((dict.get(DesiredAttributes.CCANAME.getName()) == null) ? "" : row[dict.get(DesiredAttributes.CCANAME.getName())]);
 		String ccaDescription = ((dict.get(DesiredAttributes.CCADESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.CCADESCRIPTION.getName())]);
 		//Initialising CCA
@@ -689,18 +694,17 @@ public class csvParse {
 		
 		for(String s : stringArrToFix)
 		{
-			if (s.contains("\""))
+			if (s.contains("\"") || !fixing.equals(""))
 			{
 				if (fixing.equals(""))
-					fixing = s.replace("\"", "");
+					fixing = s;
 				else
 				{
-					fixing = fixing + ","+  s.replace("\"", "");
-					fixedString.add(fixing);
+					fixing = fixing + ","+  s;
+					fixedString.add(fixing.replace("\"", ""));
 					fixing = "";
 				}
-					
-					
+
 			}
 			else
 			{

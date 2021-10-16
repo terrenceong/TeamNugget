@@ -84,12 +84,16 @@ public class JuniorCollege extends Institute {
 		{
 			Log.i("JC","SUBJECT" + subjects.get(i));
 		}
-		Log.i("JC","CCA");
-		Log.i("JC","--------------------------------------------------------------------");
-		for (int i = 0; i < ccas.size(); i++)
+		if (ccas.size() != 0)
 		{
-			ccas.get(i).print("J");
+			Log.i("JC","CCA");
+			Log.i("JC","--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("J");
+			}
 		}
+
 	}
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()
