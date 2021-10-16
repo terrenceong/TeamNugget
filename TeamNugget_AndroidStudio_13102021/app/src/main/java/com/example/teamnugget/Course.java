@@ -1,6 +1,8 @@
 package com.example.teamnugget;
 //import java.util.*;
 
+import android.util.Log;
+
 public class Course {
 	
 	//Storing name of Course
@@ -72,12 +74,27 @@ public class Course {
 		return false;
 	}
 	//Printing the variables of Course
-	public void print()
-	{		
-		System.out.println("COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
-		if (this.description != "")
-			System.out.println("COURSE DESCRIPTION : " + this.description);
-		System.out.println();
+	public void print(String type)
+	{
+		switch (type)
+		{
+			case "U":
+				Log.i("Uni","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				if (this.description != "")
+					Log.i("Uni","COURSE DESCRIPTION : " + this.description + "\n");
+				break;
+			case "P":
+				Log.i("Poly","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				if (this.description != "")
+					Log.i("Poly","COURSE DESCRIPTION : " + this.description + "\n");
+				break;
+			case "I":
+				Log.i("ITE","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				if (this.description != "")
+					Log.i("ITE","COURSE DESCRIPTION : " + this.description + "\n");
+				break;
+
+		}
 
 	}
 }

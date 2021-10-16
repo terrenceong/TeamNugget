@@ -87,6 +87,10 @@ public class csvParse {
 					//If institute type is determined here, the csv is in-general instead of specific to a certain Institute
 					general = true;
 				}
+				else
+				{
+					general = false;
+				}
 					
 				//Debugging Purposes
 				System.out.println("Institute Type: " + instituteType);
@@ -842,7 +846,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					universities.get(i).print();
-					Log.d("MyActivity", "==============================================");
+					Log.i("Uni", "==============================================");
 				}
 				break;
 			case "P":
@@ -853,7 +857,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					polytechnics.get(i).print();
-					Log.d("MyActivity", "==============================================");
+					Log.i("Poly", "==============================================");
 				}
 				break;
 				
@@ -864,7 +868,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					ites.get(i).print();
-					Log.d("MyActivity", "==============================================");
+					Log.i("ITE", "==============================================");
 				}
 				break;
 			case "J":
@@ -875,7 +879,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					juniorcolleges.get(i).print();
-					Log.d("MyActivity", "==============================================");
+					Log.i("JC", "==============================================");
 				}
 				break;
 		
@@ -884,8 +888,8 @@ public class csvParse {
 	//Print all the institutes collected from the csv(s)
 	public static void printInstitutes()
 	{
-		System.out.println("LISTING OF ALL INSTITUTES BY TYPE:");
-		System.out.println("\n\n\n=========================================================================");
+		Log.i("UniPolyITEJC","LISTING OF ALL INSTITUTES BY TYPE:");
+		Log.i("UniPolyITEJC","\n\n\n=========================================================================");
 		//Print University
 		printInstitute("U");
 		//Print Polytechnic

@@ -64,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         parseCSV();
-        //csvParse.printInstitutes();
-        csvParse.printInstitute("I");
+        csvParse.printInstitutes();
     }
     public void parseCSV()
     {
