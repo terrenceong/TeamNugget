@@ -5,33 +5,29 @@ import java.util.*;
 public class UniversityCourse extends Course {
 	
 	//Storing the cut-off points for A'Level
-	List<Character> cutOffPointsAL = new ArrayList<Character>();
+	String cutOffPointsAL;
 	//Storing the cut-off points for GPA
-	float cutOffPointsGPA = 0.0f;
+	double cutOffPointsGPA = 0.0f;
 	//Storing the type?
 	String type = "";
 		
 	//Constuctor for the UniversityCourse
-	public UniversityCourse(String name, String fullTime, String description, String cutOffPointsAL, float cutOffPointsGPA, String type) {
+	public UniversityCourse(String name, String fullTime, String description, String cutOffPointsAL, double cutOffPointsGPA, String type) {
 		super(name, fullTime, description);
 		
-		for (int i = 0; i < cutOffPointsAL.length(); i++ )
-		{
-			this.cutOffPointsAL.add(cutOffPointsAL.charAt(i));
-		}
-		
+		this.cutOffPointsAL = cutOffPointsAL;
 		this.cutOffPointsGPA = cutOffPointsGPA;
 		this.type = type;
 		// TODO Auto-generated constructor stub
 	}
 	
 	//Obtain the cut-off points for A'Level
-	public List<Character> getCutOffPointsAL()
+	public String getCutOffPointsAL()
 	{
 		return cutOffPointsAL;
 	}
 	//Obtain the cut-off points for GPA
-	public float getCutOffPointsGPA ()
+	public double getCutOffPointsGPA ()
 	{
 		return cutOffPointsGPA;
 	}
@@ -42,12 +38,9 @@ public class UniversityCourse extends Course {
 	}
 	public void setCutOffPointsAL(String cutOffPointsAL)
 	{
-		for (int i = 0; i < cutOffPointsAL.length(); i++ )
-		{
-			this.cutOffPointsAL.add(cutOffPointsAL.charAt(i));
-		}
+		this.cutOffPointsAL = cutOffPointsAL;
 	}
-	public void setCutOffPointsGPA(float cutOffPointsGPA)
+	public void setCutOffPointsGPA(double cutOffPointsGPA)
 	{
 		this.cutOffPointsGPA = cutOffPointsGPA;
 	}
@@ -55,7 +48,7 @@ public class UniversityCourse extends Course {
 	{
 		this.type = type;
 	}
-	public void setAttributes(String name, String description, String fullTime, String cutOffPointsAL, float cutOffPointsGPA, String type )
+	public void setAttributes(String name, String description, String fullTime, String cutOffPointsAL, double cutOffPointsGPA, String type )
 	{
 		if (!name.equals("") && this.name.equals(""))
 			this.setName(name);

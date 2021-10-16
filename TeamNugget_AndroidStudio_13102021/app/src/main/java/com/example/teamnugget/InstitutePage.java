@@ -92,6 +92,14 @@ public class InstitutePage extends AppCompatActivity {
                 }
             }
         });
+        Button b_intake = findViewById(R.id.intakerequirement);
+        b_intake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(InstitutePage.this,IntakeReqUI.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamNugget">
         <activity
+            android:name=".IntakeReqUI"
+            android:exported="true" />
+        <activity
             android:name=".CCADescriptionUI"
             android:exported="true" />
         <activity
