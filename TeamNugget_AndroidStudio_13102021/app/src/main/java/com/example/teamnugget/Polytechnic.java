@@ -30,8 +30,8 @@ public class Polytechnic extends Institute{
 	static List<String> i_Name = Arrays.asList("Poly");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
-	static List<String> cca_Name = Arrays.asList("CCA");
-	static List<String> cca_Description = Arrays.asList("CCA_Description");
+	static List<String> cca_Name = Arrays.asList("CCA","cca_name");
+	static List<String> cca_Description = Arrays.asList("CCA_Description","cca_description");
 	static List<String> s_Name = Arrays.asList("School");
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Course_Name");

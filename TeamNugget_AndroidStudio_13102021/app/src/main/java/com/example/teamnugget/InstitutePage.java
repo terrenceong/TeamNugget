@@ -38,6 +38,7 @@ public class InstitutePage extends AppCompatActivity {
                     R.drawable.sg_itee, 0, 0, 0);break;
             case "ITEWEST":header.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.sg_itew, 0, 0, 0);break;
+            case "NP":break;
         }
         //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -75,6 +76,19 @@ public class InstitutePage extends AppCompatActivity {
                             "The College houses four Schools – School of Business Services, School of Electronics & Info-Comm Technology, " +
                             "School of Engineering and our niche School of Design & Media –" +
                             " offering a broad range of courses to meet diverse needs and interests",200,)*/
+                }
+            }
+        });
+        Button b_cca = findViewById(R.id.cca);
+        b_cca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch(institute)
+                {
+                    case "NP":
+                        Intent i = new Intent(InstitutePage.this,CCAUI.class);
+                        i.putExtra("institute", "NP");
+                        startActivity(i);break;
                 }
             }
         });
