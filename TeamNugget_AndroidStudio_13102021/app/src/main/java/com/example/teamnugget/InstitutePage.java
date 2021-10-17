@@ -67,6 +67,7 @@ public class InstitutePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),SchoolUI.class);//can add if statement depending on institute type
+                i.putExtra("institute", institute);
                 startActivity(i);
                 switch(institute)
                 {
