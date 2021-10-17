@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 import java.util.*;
 
 public class School {
@@ -58,15 +60,44 @@ public class School {
 		return false;
 	}
 	//Printing the variables of School
-	public void print()
+	public void print(String type)
 	{
-		System.out.println("SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
-		System.out.println("_________________________________________________________________________");
-		for (int i = 0; i < courses.size(); i++)
+		switch (type)
 		{
-			courses.get(i).print();
+			case "U":
+				Log.i("Uni","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
+				Log.i("Uni","_________________________________________________________________________");
+				for (int i = 0; i < courses.size(); i++)
+				{
+					courses.get(i).print("U");
+				}
+				Log.i("Uni","\n");
+				Log.i("Uni","_________________________________________________________________________");
+				break;
+			case "P":
+				Log.i("Poly","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
+				Log.i("Poly","_________________________________________________________________________");
+				for (int i = 0; i < courses.size(); i++)
+				{
+					courses.get(i).print("P");
+				}
+				Log.i("Poly","\n");
+				Log.i("Poly","_________________________________________________________________________");
+				break;
+			case "I":
+				Log.i("ITE","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
+				Log.i("ITE","_________________________________________________________________________");
+				for (int i = 0; i < courses.size(); i++)
+				{
+					courses.get(i).print("I");
+				}
+				Log.i("ITE","\n");
+				Log.i("ITE","_________________________________________________________________________");
+				break;
+
 		}
-		System.out.println("\n");
-		System.out.println("_________________________________________________________________________");
+
+
+
 	}
 }

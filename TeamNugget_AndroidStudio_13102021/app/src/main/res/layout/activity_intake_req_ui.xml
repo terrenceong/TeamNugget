@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntakeReqUI">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_navigation"
+        tools:layout_editor_absoluteX="0dp" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1,2,3"
+        android:shrinkColumns="0"
+        android:layout_margin="10dp">
+        <TableRow>
+            <TextView
+                android:text="inputyourtext"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:id="@+id/title1"
+                android:background="#D5FFAB"
+                android:padding="10dp"
+                android:layout_column="1"
+                android:layout_gravity="left" />
+            <TextView
+                android:text="inputyourtext"
+                android:textSize="16sp"
+                android:id="@+id/title2"
+                android:textStyle="bold"
+                android:background="#D5FFAB"
+                android:padding="10dp"
+                android:layout_column="2"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_column="3"
+                android:layout_gravity="right"
+                android:background="#D5FFAB"
+                android:padding="10dp"
+                android:text="inputyourtext"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_viewIntake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

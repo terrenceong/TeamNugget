@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,8 +30,8 @@ public class Polytechnic extends Institute{
 	static List<String> i_Name = Arrays.asList("Poly");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
-	static List<String> cca_Name = Arrays.asList("CCA");
-	static List<String> cca_Description = Arrays.asList("CCA_Description");
+	static List<String> cca_Name = Arrays.asList("CCA","cca_name");
+	static List<String> cca_Description = Arrays.asList("CCA_Description","cca_description");
 	static List<String> s_Name = Arrays.asList("School");
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Course_Name");
@@ -62,12 +64,22 @@ public class Polytechnic extends Institute{
 	//Override Parent Print method
 	public void print()
 	{
-		System.out.println("INSTITUTE NAME : " + this.name);
-		System.out.println("--------------------------------------------------------------------");
+		Log.i("Poly", "INSTITUTE NAME : " + this.name );
+		Log.i("Poly", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
-			schools.get(i).print();
+			schools.get(i).print("P");
 		}
+		if (ccas.size() != 0)
+		{
+			Log.i("Poly","CCA");
+			Log.i("Poly","--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("P");
+			}
+		}
+
 	}
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()

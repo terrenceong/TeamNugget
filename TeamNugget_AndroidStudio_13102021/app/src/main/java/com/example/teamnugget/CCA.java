@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 public class CCA {
 	
 	//Storing name of CCA
@@ -49,9 +51,24 @@ public class CCA {
 			this.setDescription(description);
 	}
 	//Printing the variables of CCA
-	public void print()
+	public void print(String type)
 	{
-		System.out.println("CCA NAME : " + this.name + "\tCCA DSCRIPTION: " + this.description);
+		switch (type)
+		{
+			case "J":
+				Log.i("JC","CCA NAME : " + this.name + "\nCCA DSCRIPTION: " + this.description);
+				Log.i("JC","CCA DSCRIPTION: " + this.description);
+				break;
+			case "P":
+				Log.i("Poly","CCA NAME : " + this.name);
+				Log.i("Poly","CCA DSCRIPTION: " + this.description);
+				break;
+			case "I":
+				Log.i("ITE","CCA NAME : " + this.name);
+				Log.i("ITE","CCA DSCRIPTION: " + this.description);
+				break;
+
+		}
 
 	}
 }

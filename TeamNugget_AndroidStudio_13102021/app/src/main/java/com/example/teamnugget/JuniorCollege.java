@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -76,12 +78,22 @@ public class JuniorCollege extends Institute {
 	//Override Parent Print method
 	public void print()
 	{
-		System.out.println("INSTITUTE NAME : " + this.name);
-		System.out.println("--------------------------------------------------------------------");
+		Log.i("JC","INSTITUTE NAME : " + this.name);
+		Log.i("JC","--------------------------------------------------------------------");
 		for (int i = 0; i < subjects.size(); i++)
 		{
-			System.out.println("SUBJECT" + subjects.get(i));
+			Log.i("JC","SUBJECT" + subjects.get(i));
 		}
+		if (ccas.size() != 0)
+		{
+			Log.i("JC","CCA");
+			Log.i("JC","--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("J");
+			}
+		}
+
 	}
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()

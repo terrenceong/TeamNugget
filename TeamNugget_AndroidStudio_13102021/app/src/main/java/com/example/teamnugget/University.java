@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 import java.lang.reflect.Field;
 import java.util.*;
 
@@ -77,11 +79,11 @@ public class University extends Institute  {
 	//Override Parent Print method
 	public void print()
 	{
-		System.out.println("INSTITUTE NAME : " + this.name + "\tINSTITUTE RANK: " + this.ranking);
-		System.out.println("--------------------------------------------------------------------");
+		Log.i("Uni", "INSTITUTE NAME : " + this.name + "\tINSTITUTE RANK: " + this.ranking);
+		Log.i("Uni", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
-			schools.get(i).print();
+			schools.get(i).print("U");
 		}
 	}
 	//Obtain all the attributes variation to check if they exist in csv
