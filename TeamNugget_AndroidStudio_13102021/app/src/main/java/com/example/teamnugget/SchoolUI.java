@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,7 +23,7 @@ public class SchoolUI extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         String institute = getIntent().getStringExtra("institute");
-        csvParse.ites.get(0).print();
+        Log.d("listSize" ,Integer.toString(csvParse.polytechnics.size()));
         /*
         switch(institute)
         {
