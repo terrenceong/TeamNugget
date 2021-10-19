@@ -45,6 +45,9 @@
             android:name=".PolytechnicUI"
             android:exported="true" />
         <activity
+            android:name=".UniversityUI"
+            android:exported="true" />
+        <activity
             android:name=".PolyCourses"
             android:exported="true" />
         <activity

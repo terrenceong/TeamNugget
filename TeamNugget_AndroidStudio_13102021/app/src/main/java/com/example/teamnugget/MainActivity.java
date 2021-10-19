@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         diploma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,PostALevelDiplomaUI.class);
+                Intent i = new Intent(MainActivity.this,UniversityUI.class);
                 startActivity(i);
             }
         });

@@ -28,14 +28,16 @@ public class CourseUI extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         char instituteType = getIntent().getCharExtra("instituteType", 'P');
-        int instituteIndex = getIntent().getIntExtra("instituteIndex",0);
-        int schoolIndex = getIntent().getIntExtra("schoolIndex",0);
+        int instituteID = getIntent().getIntExtra("instituteID",0);
+        int schoolID= getIntent().getIntExtra("schoolID",0);
         switch(instituteType) {
             case 'P':
-                Log.d("info", csvParse.polytechnics.get(instituteIndex).getName());
-                Log.d("info", csvParse.polytechnics.get(instituteIndex).getSchools().get(schoolIndex).getName());
-                addCourseButtons(csvParse.polytechnics.get(instituteIndex).getSchools().get(schoolIndex).getCourses());
-            default:
+                Log.d("info", csvParse.polytechnics.get(instituteID).getName());
+                Log.d("info", csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getName());
+                addCourseButtons(csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getCourses());
+            case 'U':
+                addCourseButtons(csvParse.universities.get(instituteID).getSchools().get(schoolID).getCourses());
+                default:
                 break;
         }
         /*

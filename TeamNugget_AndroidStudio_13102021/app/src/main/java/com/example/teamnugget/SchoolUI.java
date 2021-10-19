@@ -20,7 +20,7 @@ public class SchoolUI extends AppCompatActivity {
     Button b_school;
     String institute;
     char instituteType;
-    int instituteIndex;  //Index for a particular institute within the institute's list
+    int instituteID;  //Index for a particular institute within the institute's list
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public class SchoolUI extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         institute = getIntent().getStringExtra("institute");
+        instituteID = getIntent().getIntExtra("instituteID", 0);
         /*
         ITE List Index:
 
@@ -40,6 +41,12 @@ public class SchoolUI extends AppCompatActivity {
         4 = TP
 
         Uni List Index:
+        0 = NTU
+        1 = NUS
+        2 = SMU
+        3 = SIT
+        4 = SUTD
+        5 = SUSS
         */
         switch(institute)
         {
@@ -52,31 +59,14 @@ public class SchoolUI extends AppCompatActivity {
             case "ITEWEST":
                 instituteType = 'I';
                 break;
-            case "NP":
+            case "P":
                 instituteType = 'P';
-                instituteIndex = 0;
-                addSchoolButtons(csvParse.polytechnics.get(0).getSchools());
+                addSchoolButtons(csvParse.polytechnics.get(instituteID).getSchools());
                 break;
-            case "NYP":
-                instituteType = 'P';
-                instituteIndex = 1;
-                addSchoolButtons(csvParse.polytechnics.get(1).getSchools());
-                break;
-            case "RP":
-                instituteType = 'P';
-                instituteIndex = 2;
-                addSchoolButtons(csvParse.polytechnics.get(2).getSchools());
-                break;
-            case "SP":
-                instituteType = 'P';
-                instituteIndex = 3;
-                addSchoolButtons(csvParse.polytechnics.get(3).getSchools());
-                break;
-            case "TP":
-                instituteType = 'P';
-                instituteIndex = 4;
-                addSchoolButtons(csvParse.polytechnics.get(4).getSchools());
-                break;
+            case "U":
+                instituteType = 'U';
+                addSchoolButtons(csvParse.universities.get(instituteID).getSchools());
+
             default:
                 break;
 
@@ -113,14 +103,14 @@ public class SchoolUI extends AppCompatActivity {
         LinearLayout layout = (LinearLayout)findViewById(R.id.schoolLayout) ;
         for(int i = 0 ; i < school.size(); i++) {
             b_school = new Button(this);
-            final int schoolIndex = i; //schoolIndex is the index of a school within getSchools()
+            final int schoolID = i; //schoolIndex is the index of a school within getSchools()
             b_school.setText(school.get(i).getName());
             b_school.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(),CourseUI.class);
                     intent.putExtra("instituteType", instituteType);
-                    intent.putExtra("instituteIndex", instituteIndex);
-                    intent.putExtra("schoolIndex", schoolIndex);
+                    intent.putExtra("instituteID", instituteID);
+                    intent.putExtra("schoolID", schoolID);
                     startActivity(intent);
                 }
             });

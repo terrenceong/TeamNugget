@@ -27,6 +27,9 @@ public class InstitutePage extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
         //institute is the parameter to determine what information to display here
         String institute = getIntent().getStringExtra("institute");
+        //char instituteType = getIntent().getCharExtra("institiuteType", 'P');
+        int instituteID = getIntent().getIntExtra("instituteID", 0);
+
         TextView header = (TextView) findViewById(R.id.textView);
         //header.setText(institute); // set text.
         // alternatively if u have image do this
@@ -38,7 +41,9 @@ public class InstitutePage extends AppCompatActivity {
                     R.drawable.sg_itee, 0, 0, 0);break;
             case "ITEWEST":header.setCompoundDrawablesWithIntrinsicBounds(
                     R.drawable.sg_itew, 0, 0, 0);break;
-            case "NP":break;
+            case "U":
+
+            break;
         }
         //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,6 +74,7 @@ public class InstitutePage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),SchoolUI.class);//can add if statement depending on institute type
                 i.putExtra("institute", institute);
+                i.putExtra("instituteID", instituteID);
                 startActivity(i);
                 switch(institute)
                 {
@@ -89,6 +95,8 @@ public class InstitutePage extends AppCompatActivity {
                     case "NP":
                         Intent i = new Intent(InstitutePage.this,CCAUI.class);
                         i.putExtra("institute", "NP");
+                        i.putExtra("instituteType", institute);
+                        i.putExtra("instituteID", instituteID);
                         startActivity(i);break;
                 }
             }

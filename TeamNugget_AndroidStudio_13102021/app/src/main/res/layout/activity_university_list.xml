@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/polyTitle"
+        android:id="@+id/uniTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -42,7 +42,7 @@
         android:layout_marginBottom="32dp"
         android:scaleX="3"
         android:scaleY="3"
-        android:text="Polytechnics"
+        android:text="Universities"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
