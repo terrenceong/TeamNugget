@@ -30,6 +30,9 @@
             android:name=".SchoolUI"
             android:exported="true" />
         <activity
+            android:name=".CourseUI"
+            android:exported="true" />
+        <activity
             android:name=".PostALevelDiplomaUI"
             android:exported="true" />
         <activity
