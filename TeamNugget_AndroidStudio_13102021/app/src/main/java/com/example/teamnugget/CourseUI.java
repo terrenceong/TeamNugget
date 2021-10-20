@@ -20,6 +20,7 @@ import java.util.List;
 
 public class CourseUI extends AppCompatActivity {
     Button b_course;
+    char instituteType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class CourseUI extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
-        char instituteType = getIntent().getCharExtra("instituteType", 'P');
+        instituteType = getIntent().getCharExtra("instituteType", 'P');
         int instituteID = getIntent().getIntExtra("instituteID",0);
         int schoolID= getIntent().getIntExtra("schoolID",0);
         switch(instituteType) {
@@ -115,6 +116,14 @@ public class CourseUI extends AppCompatActivity {
         for(int i = 0 ; i < courses.size(); i++) {
             b_course = new Button(this);
             b_course.setText(courses.get(i).getName());
+            final int index = i;
+            b_course.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //Intent intent = new Intent(getApplicationContext(),CourseUI.class);
+                    courses.get(index).print(Character.toString(instituteType));
+                    //startActivity(intent);
+                }
+            });
             layout.addView(b_course);
         }
     }
