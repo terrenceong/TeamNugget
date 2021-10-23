@@ -89,6 +89,7 @@ public class csvParse {
 				{
 					instituteType = Institute.getInstituteType(csvAttributes);
 					//If institute type is determined here, the csv is in-general instead of specific to a certain Institute
+					System.out.println(Arrays.asList(csvAttributes));
 					general = true;
 				}
 				else
@@ -299,11 +300,15 @@ public class csvParse {
 						{
 							String[] row = line.split(",");
 							row = fixRow(row, attributeDict.size());
-							
+
 							Institute currentI = null;
-																				
-							if (general)
+							System.out.println(Arrays.asList(row));
+							//System.out.println(row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())] + "I");
+							if (general && !row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())].equals(""))
+							{
+								System.out.println(row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())] + "I");
 								currentI = (Institute)Contains(ites, row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())]);
+							}
 							else
 								currentI = (Institute)Contains(ites, obtainInstituteName(file));
 							
@@ -738,8 +743,10 @@ public class csvParse {
 		{
 			//System.out.println("StringTC: " + strToCheck + " ListTC: " + listToCheck.get(i));
 			//System.out.println("STRSize: " + strToCheck.toCharArray().length +" LISTTSize: " + strToCheck.toCharArray().length);
-			if (strToCheck.contains(listToCheck.get(i)))
+			if (strToCheck.replace(Character.toString((char)65279), "").equals(listToCheck.get(i)) /*listToCheck.get(i).equals("jc")*/)
+			{
 				return true;
+			}
 		}
 		return false;
 	}
@@ -750,18 +757,28 @@ public class csvParse {
 		List<String> fixedString = new ArrayList<String>();
 		
 		String fixing = "";
+		boolean isFixing = false;
 		
 		for(String s : stringArrToFix)
 		{
-			if (s.contains("\"") || !fixing.equals(""))
+			if (s.contains("\"") || isFixing)
 			{
-				if (fixing.equals(""))
-					fixing = s;
+				int numOfApros = s.length() - s.replace("\"", "").length();
+				if (!isFixing)
+				{
+					fixing = s.replace("\"", "");
+					isFixing = true;
+				}
+				else if (s.contains("\"") && numOfApros % 2 == 1 && isFixing)
+				{
+					fixing = fixing + "," +  s.replace("\"", "");
+					fixedString.add(fixing);
+					fixing = "";
+					isFixing = false;
+				}
 				else
 				{
-					fixing = fixing + ","+  s;
-					fixedString.add(fixing.replace("\"", ""));
-					fixing = "";
+					fixing = fixing + "," +  s.replace("\"\"", "\"");
 				}
 
 			}
@@ -859,6 +876,7 @@ public class csvParse {
 	//Obtain the institute name from the csv file name
 	public String obtainInstituteName (String s)
 	{
+		//System.out.println(s);
 		String name = s.replace("D:\\EclipseWorkshop\\SchoolApp\\src\\", "").replace(".csv", "");
 		int iend = name.length();
 		if (name.contains("_"))
@@ -914,7 +932,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					universities.get(i).print();
-					Log.i("Uni", "==============================================");
+					Log.i("UniDebug", "==============================================");
 				}
 				break;
 			case "P":
@@ -925,7 +943,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					polytechnics.get(i).print();
-					Log.i("Poly", "==============================================");
+					Log.i("PolyDebug", "==============================================");
 				}
 				break;
 				
@@ -936,7 +954,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					ites.get(i).print();
-					Log.i("ITE", "==============================================");
+					Log.i("ITEDebug", "==============================================");
 				}
 				break;
 			case "J":
@@ -946,7 +964,7 @@ public class csvParse {
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					juniorcolleges.get(i).print();
-					Log.i("JC", "==============================================");
+					Log.i("JCDebug", "==============================================");
 				}
 				break;
 		
@@ -955,8 +973,8 @@ public class csvParse {
 	//Print all the institutes collected from the csv(s)
 	public static void printInstitutes()
 	{
-		Log.i("UniPolyITEJC","LISTING OF ALL INSTITUTES BY TYPE:");
-		Log.i("UniPolyITEJC","\n\n\n=========================================================================");
+		Log.i("UniDebugPolyDebugITEDebugJCDebug","LISTING OF ALL INSTITUTES BY TYPE:");
+		Log.i("UniDebugPolyDebugITEDebugJCDebug","\n\n\n=========================================================================");
 		//Print University
 		printInstitute("U");
 		//Print Polytechnic

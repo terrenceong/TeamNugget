@@ -27,7 +27,7 @@ public class Polytechnic extends Institute{
 	//Thoughts:
 	//Considered changing to contain instead of matching exact name but problem might occur if more than one name appear.
 	//Example Poly_Name, Course_Name.
-	static List<String> i_Name = Arrays.asList("Poly");
+	static List<String> i_Name = Arrays.asList("Polytechnic");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> cca_Name = Arrays.asList("CCA","cca_name");
@@ -64,16 +64,16 @@ public class Polytechnic extends Institute{
 	//Override Parent Print method
 	public void print()
 	{
-		Log.i("Poly", "INSTITUTE NAME : " + this.name );
-		Log.i("Poly", "--------------------------------------------------------------------");
+		Log.i("PolyDebug", "INSTITUTE NAME : " + this.name );
+		Log.i("PolyDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
 			schools.get(i).print("P");
 		}
 		if (ccas.size() != 0)
 		{
-			Log.i("Poly","CCA");
-			Log.i("Poly","--------------------------------------------------------------------");
+			Log.i("PolyDebug","CCA");
+			Log.i("PolyDebug","--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{
 				ccas.get(i).print("P");

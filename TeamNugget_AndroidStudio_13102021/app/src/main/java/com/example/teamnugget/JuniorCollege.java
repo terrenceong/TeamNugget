@@ -103,34 +103,34 @@ public class JuniorCollege extends Institute {
 	//Override Parent Print method
 	public void print()
 	{
-		Log.i("JC","INSTITUTE NAME : " + this.name);
-		Log.i("JC","--------------------------------------------------------------------");
-		Log.i("JC", "POINTS ART: " + this.pointsArts + " POINTS SCIENCE/IB: " + this.pointsScience);
-		Log.i("JC","Subjects");
-		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JCDebug","INSTITUTE NAME : " + this.name);
+		Log.i("JCDebug","--------------------------------------------------------------------");
+		Log.i("JCDebug", "POINTS ART: " + this.pointsArts + " POINTS SCIENCE/IB: " + this.pointsScience);
+		Log.i("JCDebug","Subjects");
+		Log.i("JCDebug","--------------------------------------------------------------------");
 		for (int i = 0; i < subjects.size(); i++)
 		{
-			Log.i("JC", subjects.get(i));
+			Log.i("JCDebug", subjects.get(i));
 		}
-		Log.i("JC","--------------------------------------------------------------------");
-		Log.i("JC","\nDSA");
-		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JCDebug","--------------------------------------------------------------------");
+		Log.i("JCDebug","\nDSA");
+		Log.i("JCDebug","--------------------------------------------------------------------");
 		for (int i = 0; i < dsa.size(); i++)
 		{
-			Log.i("JC", dsa.get(i));
+			Log.i("JCDebug", dsa.get(i));
 		}
-		Log.i("JC","--------------------------------------------------------------------");
-		Log.i("JC","\nElectives");
-		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JCDebug","--------------------------------------------------------------------");
+		Log.i("JCDebug","\nElectives");
+		Log.i("JCDebug","--------------------------------------------------------------------");
 		for (int i = 0; i < electives.size(); i++)
 		{
-			Log.i("JC", electives.get(i));
+			Log.i("JCDebug", electives.get(i));
 		}
-		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JCDebug","--------------------------------------------------------------------");
 		if (ccas.size() != 0)
 		{
-			Log.i("JC","CCA");
-			Log.i("JC","--------------------------------------------------------------------");
+			Log.i("JCDebug","CCA");
+			Log.i("JCDebug","--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{
 				ccas.get(i).print("J");

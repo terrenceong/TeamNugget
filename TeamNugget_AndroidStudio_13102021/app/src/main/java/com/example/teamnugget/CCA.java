@@ -56,16 +56,19 @@ public class CCA {
 		switch (type)
 		{
 			case "J":
-				Log.i("JC","CCA NAME : " + this.name);
-				Log.i("JC","CCA DSCRIPTION: " + this.description);
+				Log.i("JCDebug","CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("JCDebug","CCA DSCRIPTION: " + this.description);
 				break;
 			case "P":
-				Log.i("Poly","CCA NAME : " + this.name);
-				Log.i("Poly","CCA DSCRIPTION: " + this.description);
+				Log.i("PolyDebug","CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("PolyDebug","CCA DSCRIPTION: " + this.description);
 				break;
 			case "I":
-				Log.i("ITE","CCA NAME : " + this.name);
-				Log.i("ITE","CCA DSCRIPTION: " + this.description);
+				Log.i("ITEDebug","CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("ITEDebug","CCA DSCRIPTION: " + this.description);
 				break;
 
 		}
