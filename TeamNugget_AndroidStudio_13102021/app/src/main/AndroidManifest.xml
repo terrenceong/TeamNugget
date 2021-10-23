@@ -54,6 +54,15 @@
             android:name=".FilterSearch"
             android:exported="true" />
         <activity
+            android:name=".JCHome"
+            android:exported="true" />
+        <activity
+            android:name=".JCDirectAdmission"
+            android:exported="true" />
+        <activity
+            android:name=".JCJointAdmission"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

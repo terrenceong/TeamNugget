@@ -11,15 +11,49 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class PostSecondaryUI extends AppCompatActivity {
+public class JCHome extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_secondary_ui);
-
+        setContentView(R.layout.activity_jc_home);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        Button btn_JAE = findViewById(R.id.btnJAE);
+        Button btn_DSA = findViewById(R.id.btnDSA);
+        Button btn_SL = findViewById(R.id.btnStudentLife);
+        Button btn_S = findViewById(R.id.btnScholarships);
+        btn_JAE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(JCHome.this,JCJointAdmission.class);
+                startActivity(i);
+            }
+        });
+        btn_DSA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(JCHome.this,JCDirectAdmission.class);
+                startActivity(i);
+            }
+        });
+        btn_SL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(JCHome.this,PostSecondaryUI.class);
+                startActivity(i);
+            }
+        });
+        btn_S.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(JCHome.this,PostSecondaryUI.class);
+                startActivity(i);
+            }
+        });
+        //set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
+
+        //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -42,29 +76,6 @@ public class PostSecondaryUI extends AppCompatActivity {
                 return false;
             }
         });
-        Button b_juniorcollege = findViewById(R.id.juniorCollege);
-        b_juniorcollege.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),JCHome.class);
-                startActivity(i);
-            }
-        });
-        Button b_polytechnic = findViewById(R.id.polytechnic);
-        b_polytechnic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),PolytechnicUI.class);
-                startActivity(i);
-            }
-        });
-        Button b_ite = findViewById(R.id.ite);
-        b_ite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),ITEUI.class);
-                startActivity(i);
-            }
-        });
+        csvParse.printInstitutes();
     }
 }

@@ -31,6 +31,10 @@ public class csvParse {
 		INSTITUTEFEES ("i_Fees"),
 		UNIVERSITYRANK ("u_Rank"),
 		JCSUBJECTS ("j_Subject"),
+		JCPOINTARTS ("j_PointArts"),
+		JCPOINTSCIENCE ("j_PointScience"),
+		JCDSA("j_DSA"),
+		JCELECTIVES("j_Electives"),
 		SCHOOLNAME ("s_Name"),
 		SCHOOLDESCRIPTION ("s_Description"),
 		COURSENAME ("c_Name"),
@@ -614,19 +618,21 @@ public class csvParse {
 		String iName = ((dict.get(DesiredAttributes.INSTITUTENAME.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 		String iDescription = ((dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName())]);
 		String iFees = ((dict.get(DesiredAttributes.INSTITUTEFEES.getName()) == null) ? "-1.0" : row[dict.get(DesiredAttributes.INSTITUTEFEES.getName())]);
-		String cCOPOL = ((dict.get(DesiredAttributes.COURSEOL.getName()) == null) ? "-1" : row[dict.get(DesiredAttributes.COURSEOL.getName())]);
-		
+		String cPOINTART = ((dict.get(DesiredAttributes.JCPOINTARTS.getName()) == null) ? "-1" : row[dict.get(DesiredAttributes.JCPOINTARTS.getName())]);
+		String cPOINTSCIENCE = ((dict.get(DesiredAttributes.JCPOINTSCIENCE.getName()) == null) ? "-1" : row[dict.get(DesiredAttributes.JCPOINTSCIENCE.getName())]);
+
 		if (jc == null)
 		{
 			//Inititalising JC			
 			if (iName.equals(""))
 				iName = convert;
-			JuniorCollege j = new JuniorCollege(iName, iDescription, Float.parseFloat(iFees) , subjects, ccas, Integer.parseInt(cCOPOL) );
+			JuniorCollege j = new JuniorCollege(iName, iDescription, Float.parseFloat(iFees) , subjects, ccas,
+					Integer.parseInt(cPOINTART), Integer.parseInt(cPOINTSCIENCE));
 			
 			return j;
 		}
 		//Update JC
-		jc.setAttributes(iName, iDescription, Float.parseFloat(iFees), Integer.parseInt(cCOPOL));
+		jc.setAttributes(iName, iDescription, Float.parseFloat(iFees), Integer.parseInt(cPOINTART), Integer.parseInt(cPOINTSCIENCE));
 		return jc;
 		
 	}

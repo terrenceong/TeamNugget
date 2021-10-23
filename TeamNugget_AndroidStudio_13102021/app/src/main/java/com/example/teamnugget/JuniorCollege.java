@@ -10,7 +10,8 @@ import java.util.List;
 public class JuniorCollege extends Institute {
 	
 	//Storing the cutOffPoint of the JC in L1R5
-	int cutOffPoints = 0;
+	int pointsArts = 0;
+	int pointsScience = 0;
 	//Storing the subjects in the JC
 	List<String> subjects = new ArrayList<String>();
 	//Storing all ccas in JC
@@ -29,13 +30,16 @@ public class JuniorCollege extends Institute {
 	//Thoughts:
 	//Considered changing to contain instead of matching exact name but problem might occur if more than one name appear.
 	//Example Poly_Name, Course_Name.
-	static List<String> i_Name = Arrays.asList("JC");
+	static List<String> i_Name = Arrays.asList("JC","Name");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> cca_Name = Arrays.asList("CCA");
 	static List<String> cca_Description = Arrays.asList("CCA_Description");
-	static List<String> c_COPOL = Arrays.asList("OLevel");
-	static List<String> j_Subject = Arrays.asList("subject");
+	static List<String> j_PointArts = Arrays.asList("Arts");
+	static List<String> j_PointScience = Arrays.asList("Science / IB");
+	static List<String> j_Subjects = Arrays.asList("Subjects");
+	static List<String> j_DSA = Arrays.asList("DSA talent areas");
+	static List<String> j_Electives = Arrays.asList("Electives and programmes");
 	
 	//IMPORTANT WHEN ADDING NEW ATTRIBUTE WITH VARIATION:
 	//New Attributes added for variation must contain an underscore _
@@ -43,12 +47,14 @@ public class JuniorCollege extends Institute {
 	//Remember to add it to the enum in csvParse for easy access
 	
 	//Constructor for JuniorCollege Object
-	public JuniorCollege(String name, String description, float fees, List<String> subjects,  List<CCA> ccas, int cutOffPoints)
+	public JuniorCollege(String name, String description, float fees, List<String> subjects,  List<CCA> ccas,
+						 int pointsArts, int pointsScience)
 	{
 		super(name, description, fees);
 		this.subjects = subjects;
 		this.ccas = ccas;
-		this.cutOffPoints = cutOffPoints;
+		this.pointsArts = pointsArts;
+		this.pointsScience = pointsScience;
 	}
 	//Obtain Subjects in JC
 	public List<String> getSubjects()
@@ -60,11 +66,15 @@ public class JuniorCollege extends Institute {
 	{
 		return ccas;
 	}
-	public void setCutOffPoint(int cutOffPoints)
+	public void setPointsArts(int pointsArts)
 	{
-		this.cutOffPoints = cutOffPoints;
+		this.pointsArts = pointsArts;
 	}
-	public void setAttributes(String name, String description, float fees, int cutOffPoints)
+	public void setPointsScience(int pointsScience)
+	{
+		this.pointsScience = pointsScience;
+	}
+	public void setAttributes(String name, String description, float fees, int pointsArts, int pointsScience)
 	{
 		if (!name.equals("") && this.name.equals(""))
 			this.setName(name);
@@ -72,8 +82,10 @@ public class JuniorCollege extends Institute {
 			this.setDescription(description);
 		if (this.fees <= 0.0f)
 			this.setFees(fees);
-		if (this.cutOffPoints <= 0)
-			this.setCutOffPoint(cutOffPoints);
+		if (this.pointsArts <= 0)
+			this.setPointsArts(pointsArts);
+		if (this.pointsScience <= 0)
+			this.setPointsScience(pointsScience);
 	}
 	//Override Parent Print method
 	public void print()
