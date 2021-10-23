@@ -14,6 +14,10 @@ public class JuniorCollege extends Institute {
 	int pointsScience = 0;
 	//Storing the subjects in the JC
 	List<String> subjects = new ArrayList<String>();
+	//Storing the DSA in the JC
+	List<String> dsa = new ArrayList<String>();
+	//Storing the Electives in the JC
+	List<String> electives = new ArrayList<String>();
 	//Storing all ccas in JC
 	List<CCA> ccas = new ArrayList<CCA>();
 	
@@ -30,14 +34,14 @@ public class JuniorCollege extends Institute {
 	//Thoughts:
 	//Considered changing to contain instead of matching exact name but problem might occur if more than one name appear.
 	//Example Poly_Name, Course_Name.
-	static List<String> i_Name = Arrays.asList("JC","Name");
+	static List<String> i_Name = Arrays.asList("JC");
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> cca_Name = Arrays.asList("CCA");
 	static List<String> cca_Description = Arrays.asList("CCA_Description");
 	static List<String> j_PointArts = Arrays.asList("Arts");
 	static List<String> j_PointScience = Arrays.asList("Science / IB");
-	static List<String> j_Subjects = Arrays.asList("Subjects");
+	static List<String> j_Subject = Arrays.asList("Subjects");
 	static List<String> j_DSA = Arrays.asList("DSA talent areas");
 	static List<String> j_Electives = Arrays.asList("Electives and programmes");
 	
@@ -47,12 +51,14 @@ public class JuniorCollege extends Institute {
 	//Remember to add it to the enum in csvParse for easy access
 	
 	//Constructor for JuniorCollege Object
-	public JuniorCollege(String name, String description, float fees, List<String> subjects,  List<CCA> ccas,
+	public JuniorCollege(String name, String description, float fees, List<String> subjects,  List<String> dsa, List<String> electives, List<CCA> ccas,
 						 int pointsArts, int pointsScience)
 	{
 		super(name, description, fees);
 		this.subjects = subjects;
 		this.ccas = ccas;
+		this.dsa = dsa;
+		this.electives = electives;
 		this.pointsArts = pointsArts;
 		this.pointsScience = pointsScience;
 	}
@@ -60,6 +66,13 @@ public class JuniorCollege extends Institute {
 	public List<String> getSubjects()
 	{
 		return subjects;
+	}
+	//Obtain DSAs in JC
+	public List<String> getDSA() { return dsa; }
+	//Obtain Electives in JC
+	public List<String> getElectives()
+	{
+		return electives;
 	}
 	//Obtain CCAs in JC
 	public List<CCA> getCCAs()
@@ -92,10 +105,28 @@ public class JuniorCollege extends Institute {
 	{
 		Log.i("JC","INSTITUTE NAME : " + this.name);
 		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JC", "POINTS ART: " + this.pointsArts + " POINTS SCIENCE/IB: " + this.pointsScience);
+		Log.i("JC","Subjects");
+		Log.i("JC","--------------------------------------------------------------------");
 		for (int i = 0; i < subjects.size(); i++)
 		{
-			Log.i("JC","SUBJECT" + subjects.get(i));
+			Log.i("JC", subjects.get(i));
 		}
+		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JC","\nDSA");
+		Log.i("JC","--------------------------------------------------------------------");
+		for (int i = 0; i < dsa.size(); i++)
+		{
+			Log.i("JC", dsa.get(i));
+		}
+		Log.i("JC","--------------------------------------------------------------------");
+		Log.i("JC","\nElectives");
+		Log.i("JC","--------------------------------------------------------------------");
+		for (int i = 0; i < electives.size(); i++)
+		{
+			Log.i("JC", electives.get(i));
+		}
+		Log.i("JC","--------------------------------------------------------------------");
 		if (ccas.size() != 0)
 		{
 			Log.i("JC","CCA");

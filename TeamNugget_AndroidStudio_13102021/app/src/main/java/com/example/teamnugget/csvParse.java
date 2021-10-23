@@ -115,7 +115,7 @@ public class csvParse {
 						{
 
 							String[] row = line.split(",");
-							row = fixRow(row);
+							row = fixRow(row, attributeDict.size());
 
 							Institute currentI = null;
 
@@ -200,7 +200,7 @@ public class csvParse {
 							{
 								System.out.println(row[i]);
 							}*/
-							row = fixRow(row);
+							row = fixRow(row, attributeDict.size());
 							
 							Institute currentI = null;
 																						
@@ -298,7 +298,7 @@ public class csvParse {
 						while ((line = reader.readLine()) != null)
 						{
 							String[] row = line.split(",");
-							row = fixRow(row);
+							row = fixRow(row, attributeDict.size());
 							
 							Institute currentI = null;
 																				
@@ -396,8 +396,7 @@ public class csvParse {
 						while ((line = reader.readLine()) != null)
 						{
 							String[] row = line.split(",");
-							row = fixRow(row);
-							
+							row = fixRow(row, attributeDict.size());
 							Institute currentI = null;
 																						
 							if (general)
@@ -411,16 +410,21 @@ public class csvParse {
 								
 								List<CCA> ccaToAdd = new ArrayList<CCA>();
 								List<String> subjects = new ArrayList<String>();
+								List<String> dsas = new ArrayList<String>();
+								List<String> electives = new ArrayList<String>();
+
 														
 								ccaToAdd.add(InitialiseCCA(attributeDict, row, null));
 								subjects.add(InitialiseSubject(attributeDict,row));
-								juniorcolleges.add(InitialiseJC(attributeDict, row, subjects, ccaToAdd, obtainInstituteName(file), null));
+								dsas.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCDSA));
+								electives.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCELECTIVES));
+								juniorcolleges.add(InitialiseJC(attributeDict, row, subjects, dsas, electives, ccaToAdd, obtainInstituteName(file), null));
 							}
 							//Exist Junior College
 							else
 							{
 								//Update JC Attributes if needed
-								InitialiseJC(attributeDict, row, null, null, obtainInstituteName(file), (JuniorCollege) currentI);
+								InitialiseJC(attributeDict, row, null, null, null, null, obtainInstituteName(file), (JuniorCollege) currentI);
 
 								if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
 								{
@@ -437,7 +441,37 @@ public class csvParse {
 										//Update CCA Attributes if needed
 										InitialiseCCA(attributeDict, row, currentCCA);
 									}
-								}						
+								}
+								//Add Subjects
+								if (attributeDict.get(DesiredAttributes.JCSUBJECTS.getName()) != null)
+								{
+									List<String> subjects = ((JuniorCollege) currentI).getSubjects();
+
+									if (!subjects.contains(row[attributeDict.get(DesiredAttributes.JCSUBJECTS.getName())]))
+									{
+										subjects.add(InitialiseSubject(attributeDict,row));
+									}
+								}
+								//Add DSAs
+								if (attributeDict.get(DesiredAttributes.JCDSA.getName()) != null)
+								{
+									List<String> dsas = ((JuniorCollege) currentI).getDSA();
+
+									if (!dsas.contains(row[attributeDict.get(DesiredAttributes.JCDSA.getName())]))
+									{
+										dsas.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCDSA));
+									}
+								}
+								//Add Electives
+								if (attributeDict.get(DesiredAttributes.JCELECTIVES.getName()) != null)
+								{
+									List<String> electives = ((JuniorCollege) currentI).getElectives();
+
+									if (!electives.contains(row[attributeDict.get(DesiredAttributes.JCELECTIVES.getName())]))
+									{
+										electives.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCELECTIVES));
+									}
+								}
 								
 							}							
 						}
@@ -509,12 +543,19 @@ public class csvParse {
 	//Constructing a new subject based on row values
 	public String InitialiseSubject(Hashtable<String, Integer> dict, String[] row)
 	{
+		//Log.i("DebugJC", "ROW" + Arrays.asList(row));
 		//Initialising subject
 		String jSubject = ((dict.get(DesiredAttributes.JCSUBJECTS.getName()) == null) ? "" : row[dict.get(DesiredAttributes.JCSUBJECTS.getName())]);
 		//String subDescription = ((dict.get("ccaDescription") == null) ? "" : row[dict.get("ccaDescription")]);
 		//CCA cca = new CCA(ccaName, ccaDescription);
 		
 		return jSubject;
+	}
+	public String InitialiseGeneral(Hashtable<String, Integer> dict, String[] row, DesiredAttributes attributesToFind )
+	{
+		String generalObject = ((dict.get(attributesToFind.getName()) == null) ? "" : row[dict.get(attributesToFind.getName())]);
+
+		return generalObject;
 	}
 	//Constructing a new CCA based on row values
 	public CCA InitialiseCCA(Hashtable<String, Integer> dict, String[] row, CCA cc)
@@ -613,7 +654,7 @@ public class csvParse {
 		return ite;
 	}
 	//Constructing a new JuniorCollege based on row values
-	public JuniorCollege InitialiseJC(Hashtable<String, Integer> dict, String[] row, List<String> subjects, List<CCA> ccas, String convert, JuniorCollege jc)
+	public JuniorCollege InitialiseJC(Hashtable<String, Integer> dict, String[] row, List<String> subjects, List<String> dsas, List<String> electives, List<CCA> ccas, String convert, JuniorCollege jc)
 	{
 		String iName = ((dict.get(DesiredAttributes.INSTITUTENAME.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 		String iDescription = ((dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName())]);
@@ -626,7 +667,7 @@ public class csvParse {
 			//Inititalising JC			
 			if (iName.equals(""))
 				iName = convert;
-			JuniorCollege j = new JuniorCollege(iName, iDescription, Float.parseFloat(iFees) , subjects, ccas,
+			JuniorCollege j = new JuniorCollege(iName, iDescription, Float.parseFloat(iFees) , subjects, dsas, electives, ccas,
 					Integer.parseInt(cPOINTART), Integer.parseInt(cPOINTSCIENCE));
 			
 			return j;
@@ -691,8 +732,20 @@ public class csvParse {
 		}
 		return null;
 	}
+	public boolean Exist(List<String> listToCheck, String strToCheck)
+	{
+		for (int i = 0; i < listToCheck.size(); i++)
+		{
+			//System.out.println("StringTC: " + strToCheck + " ListTC: " + listToCheck.get(i));
+			//System.out.println("STRSize: " + strToCheck.toCharArray().length +" LISTTSize: " + strToCheck.toCharArray().length);
+			if (strToCheck.contains(listToCheck.get(i)))
+				return true;
+		}
+		return false;
+	}
+
 	//Fixes the problem where there are comma in the Row Value from the splitting
-	public String[] fixRow(String[] stringArrToFix)
+	public String[] fixRow(String[] stringArrToFix, int dictSize)
 	{
 		List<String> fixedString = new ArrayList<String>();
 		
@@ -717,7 +770,13 @@ public class csvParse {
 				fixedString.add(s);
 			}
 		}		
-		
+		if (fixedString.size() < dictSize)
+		{
+			while (fixedString.size() < dictSize)
+			{
+				fixedString.add("");
+			}
+		}
 		String[] fixed = new String[fixedString.size()];
 		fixedString.toArray(fixed);				
 				
@@ -736,7 +795,7 @@ public class csvParse {
 			{
 				for (int j = 0; j < classAttributes.size(); j++)
 				{
-					if (classAttributes.get(j).contains(row[i].toLowerCase()))
+					if (Exist(classAttributes.get(j), row[i].toLowerCase()))
 					{
 						attributeDict.put(variables.get(j), i);
 					}
@@ -753,7 +812,7 @@ public class csvParse {
 				for (int j = 0; j < classAttributes.size(); j++)
 				{
 					//System.out.println(variables.get(j) + " " + classAttributes.get(j));
-					if (classAttributes.get(j).contains(row[i].toLowerCase()))
+					if (Exist(classAttributes.get(j), row[i].toLowerCase()))
 					{						
 						attributeDict.put(variables.get(j), i);
 						break;
@@ -771,7 +830,7 @@ public class csvParse {
 				for (int j = 0; j < classAttributes.size(); j++)
 				{
 					//System.out.println(variables.get(j) + " " + classAttributes.get(j));
-					if (classAttributes.get(j).contains(row[i].toLowerCase()))
+					if (Exist(classAttributes.get(j), row[i].toLowerCase()))
 					{						
 						attributeDict.put(variables.get(j), i);
 						break;
@@ -788,9 +847,8 @@ public class csvParse {
 			{
 				for (int j = 0; j < classAttributes.size(); j++)
 				{
-					//System.out.println(variables.get(j) + " " + classAttributes.get(j));
-					if (classAttributes.get(j).contains(row[i].toLowerCase()))
-					{						
+					if (Exist(classAttributes.get(j), row[i].toLowerCase()))
+					{
 						attributeDict.put(variables.get(j), i);
 						break;
 					}
@@ -885,7 +943,6 @@ public class csvParse {
 				
 				for (int i = 0; i < juniorcolleges.size(); i++)
 				{
-					System.out.println("YOES");
 					//System.out.println(universities.isEmpty());
 					//System.out.println(universities.get(i).getName());						
 					juniorcolleges.get(i).print();
