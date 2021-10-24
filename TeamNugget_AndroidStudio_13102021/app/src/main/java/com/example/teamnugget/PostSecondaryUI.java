@@ -46,7 +46,7 @@ public class PostSecondaryUI extends AppCompatActivity {
         b_juniorcollege.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),JCHome.class);
+                Intent i = new Intent(getApplicationContext(),JCSelectorUI.class);
                 startActivity(i);
             }
         });

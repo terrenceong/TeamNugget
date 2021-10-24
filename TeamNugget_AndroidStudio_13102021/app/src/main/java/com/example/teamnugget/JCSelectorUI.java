@@ -14,10 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JCJointAdmission extends AppCompatActivity {
+public class JCSelectorUI extends AppCompatActivity {
     RecyclerView recyclerView;
     JCAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,18 +30,19 @@ public class JCJointAdmission extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
+                switch(item.getItemId())
+                {
                     case R.id.filterSearch:
-                        startActivity(new Intent(getApplicationContext(), FilterSearch.class));
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(getApplicationContext(),FilterSearch.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(), Search.class));
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(getApplicationContext(),Search.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                 }
@@ -50,12 +50,12 @@ public class JCJointAdmission extends AppCompatActivity {
             }
         });
     }
-
-    private void setRecyclerView() {
+    private void setRecyclerView()
+    {
         List<Institute> jcList = csvParse.juniorcolleges;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new JCAdapter(this, jcList);
+        adapter = new JCAdapter(this,jcList);
         recyclerView.setAdapter(adapter);
     }
 }

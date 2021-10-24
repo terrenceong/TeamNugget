@@ -66,6 +66,11 @@
             android:name=".JCJointAdmission"
             android:exported="true" />
         <activity
+            android:name=".JCSelectorUI"
+            android:exported="true"
+            android:label="@string/title_activity_entry_requirement_ui"
+            android:theme="@style/Theme.TeamNugget.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
