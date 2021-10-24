@@ -21,6 +21,8 @@ import java.util.List;
 public class CourseUI extends AppCompatActivity {
     Button b_course;
     char instituteType;
+    int instituteID;
+    int schoolID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +31,17 @@ public class CourseUI extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         instituteType = getIntent().getCharExtra("instituteType", 'P');
-        int instituteID = getIntent().getIntExtra("instituteID",0);
-        int schoolID= getIntent().getIntExtra("schoolID",0);
+        instituteID = getIntent().getIntExtra("instituteID",0);
+        schoolID= getIntent().getIntExtra("schoolID",0);
         switch(instituteType) {
             case 'P':
                 Log.d("info", csvParse.polytechnics.get(instituteID).getName());
                 Log.d("info", csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getName());
                 addCourseButtons(csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getCourses());
+                break;
             case 'U':
                 addCourseButtons(csvParse.universities.get(instituteID).getSchools().get(schoolID).getCourses());
+                break;
                 default:
                 break;
         }
@@ -119,9 +123,13 @@ public class CourseUI extends AppCompatActivity {
             final int index = i;
             b_course.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //Intent intent = new Intent(getApplicationContext(),CourseUI.class);
-                    courses.get(index).print(Character.toString(instituteType));
-                    //startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(),CourseInfo.class);
+                    //courses.get(index).print(Character.toString(instituteType));
+                    intent.putExtra("instituteType", instituteType);
+                    intent.putExtra("instituteID", instituteID);
+                    intent.putExtra("schoolID", schoolID);
+                    intent.putExtra("courseID", index);
+                    startActivity(intent);
                 }
             });
             layout.addView(b_course);

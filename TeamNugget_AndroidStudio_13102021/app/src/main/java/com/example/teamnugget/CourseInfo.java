@@ -15,6 +15,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CourseInfo extends AppCompatActivity {
     int instituteType;
+    TextView courseTitle;
+    TextView desc;
+    TextView fullTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +33,20 @@ public class CourseInfo extends AppCompatActivity {
         int instituteID = getIntent().getIntExtra("instituteID",0);
         int schoolID= getIntent().getIntExtra("schoolID",0);
         int courseID = getIntent().getIntExtra("courseID", 0);
-        TextView header = (TextView) findViewById(R.id.textView);
+        courseTitle = (TextView) findViewById(R.id.courseTitle);
+        desc = (TextView) findViewById(R.id.description);
+        fullTime = (TextView) findViewById(R.id.fullTime);
+        switch(instituteType){
+            case 'P':
+                setText(csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
+                break;
+            case 'U':
+                setText(csvParse.universities.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
+                break;
+            case 'I':
+                setText(csvParse.ites.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
+                break;
+        }
         //header.setText(institute); // set text.
         // alternatively if u have image do this
         //perform item selectedListener
@@ -57,5 +74,11 @@ public class CourseInfo extends AppCompatActivity {
         });
 
 
+    }
+
+    public void setText(Course course){
+        courseTitle.setText(course.getName());
+        desc.setText(course.getDescription());
+        fullTime.setText(course.isFullTime());
     }
 }

@@ -33,6 +33,9 @@
             android:name=".CourseUI"
             android:exported="true" />
         <activity
+            android:name=".CourseInfo"
+            android:exported="true" />
+        <activity
             android:name=".PostALevelDiplomaUI"
             android:exported="true" />
         <activity
