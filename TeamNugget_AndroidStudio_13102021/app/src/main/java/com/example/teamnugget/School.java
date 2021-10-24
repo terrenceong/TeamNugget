@@ -65,34 +65,37 @@ public class School {
 		switch (type)
 		{
 			case "U":
-				Log.i("Uni","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
-				Log.i("Uni","_________________________________________________________________________");
+				Log.i("UniDebug","SCHOOL NAME : " + this.name);
+				Log.i("UniDebug","SCHOOL DESCRIPTION: " + this.description);
+				Log.i("UniDebug","_________________________________________________________________________");
 				for (int i = 0; i < courses.size(); i++)
 				{
 					courses.get(i).print("U");
 				}
-				Log.i("Uni","\n");
-				Log.i("Uni","_________________________________________________________________________");
+				Log.i("UniDebug","\n");
+				Log.i("UniDebug","_________________________________________________________________________");
 				break;
 			case "P":
-				Log.i("Poly","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
-				Log.i("Poly","_________________________________________________________________________");
+				Log.i("PolyDebug","SCHOOL NAME : " + this.name);
+				Log.i("PolyDebug","SCHOOL DESCRIPTION: " + this.description);
+				Log.i("PolyDebug","_________________________________________________________________________");
 				for (int i = 0; i < courses.size(); i++)
 				{
 					courses.get(i).print("P");
 				}
-				Log.i("Poly","\n");
-				Log.i("Poly","_________________________________________________________________________");
+				Log.i("PolyDebug","\n");
+				Log.i("PolyDebug","_________________________________________________________________________");
 				break;
 			case "I":
-				Log.i("ITE","SCHOOL NAME : " + this.name + "\nSCHOOL DESCRIPTION: " + this.description);
-				Log.i("ITE","_________________________________________________________________________");
+				Log.i("ITEDebug","SCHOOL NAME : " + this.name);
+				Log.i("ITEDebug","SCHOOL DESCRIPTION: " + this.description);
+				Log.i("ITEDebug","_________________________________________________________________________");
 				for (int i = 0; i < courses.size(); i++)
 				{
 					courses.get(i).print("I");
 				}
-				Log.i("ITE","\n");
-				Log.i("ITE","_________________________________________________________________________");
+				Log.i("ITEDebug","\n");
+				Log.i("ITEDebug","_________________________________________________________________________");
 				break;
 
 		}

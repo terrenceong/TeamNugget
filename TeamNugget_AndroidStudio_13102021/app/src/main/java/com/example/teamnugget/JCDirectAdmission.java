@@ -6,20 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class PostSecondaryUI extends AppCompatActivity {
 
+public class JCDirectAdmission extends AppCompatActivity {
+    Button courseButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_secondary_ui);
-
+        setContentView(R.layout.activity_jc_direct);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -37,33 +36,8 @@ public class PostSecondaryUI extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
-            }
-        });
-        Button b_juniorcollege = findViewById(R.id.juniorCollege);
-        b_juniorcollege.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),JCHome.class);
-                startActivity(i);
-            }
-        });
-        Button b_polytechnic = findViewById(R.id.polytechnic);
-        b_polytechnic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),PolytechnicUI.class);
-                startActivity(i);
-            }
-        });
-        Button b_ite = findViewById(R.id.ite);
-        b_ite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),ITEUI.class);
-                startActivity(i);
             }
         });
     }

@@ -90,13 +90,13 @@ public class InstitutePage extends AppCompatActivity {
         b_cca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch(institute)
+                switch(instituteID)
                 {
-                    case "NP":
+                    case 0:
                         Intent i = new Intent(InstitutePage.this,CCAUI.class);
                         i.putExtra("institute", "NP");
-                        i.putExtra("instituteType", institute);
-                        i.putExtra("instituteID", instituteID);
+                       // i.putExtra("instituteType", institute);
+                        //i.putExtra("instituteID", instituteID);
                         startActivity(i);break;
                 }
             }

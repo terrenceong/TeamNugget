@@ -69,16 +69,16 @@ public class ITE extends Institute {
 	//Override Parent Print method
 	public void print()
 	{
-		Log.i("ITE", "INSTITUTE NAME : " + this.name);
-		Log.i("ITE", "--------------------------------------------------------------------");
+		Log.i("ITEDebug", "INSTITUTE NAME : " + this.name);
+		Log.i("ITEDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
 			schools.get(i).print("I");
 		}
 		if (ccas.size() != 0)
 		{
-			Log.i("ITE", "CCA");
-			Log.i("ITE", "--------------------------------------------------------------------");
+			Log.i("ITEDebug", "CCA");
+			Log.i("ITEDebug", "--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{
 				ccas.get(i).print("I");

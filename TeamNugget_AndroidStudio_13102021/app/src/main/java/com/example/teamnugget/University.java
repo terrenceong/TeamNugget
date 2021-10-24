@@ -79,8 +79,8 @@ public class University extends Institute  {
 	//Override Parent Print method
 	public void print()
 	{
-		Log.i("Uni", "INSTITUTE NAME : " + this.name + "\tINSTITUTE RANK: " + this.ranking);
-		Log.i("Uni", "--------------------------------------------------------------------");
+		Log.i("UniDebug", "INSTITUTE NAME : " + this.name + "\tINSTITUTE RANK: " + this.ranking);
+		Log.i("UniDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
 			schools.get(i).print("U");

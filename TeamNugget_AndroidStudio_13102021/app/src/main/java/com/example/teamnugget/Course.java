@@ -79,19 +79,19 @@ public class Course {
 		switch (type)
 		{
 			case "U":
-				Log.i("Uni","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				Log.i("UniDebug","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
 				if (this.description != "")
-					Log.i("Uni","COURSE DESCRIPTION : " + this.description + "\n");
+					Log.i("UniDebug","COURSE DESCRIPTION : " + this.description + "\n");
 				break;
 			case "P":
-				Log.i("Poly","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				Log.i("PolyDebug","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
 				if (this.description != "")
-					Log.i("Poly","COURSE DESCRIPTION : " + this.description + "\n");
+					Log.i("PolyDebug","COURSE DESCRIPTION : " + this.description + "\n");
 				break;
 			case "I":
-				Log.i("ITE","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
+				Log.i("ITEDebug","COURSE NAME : " + this.name + "\tFULL-TIME: " + isFullTimeB());
 				if (this.description != "")
-					Log.i("ITE","COURSE DESCRIPTION : " + this.description + "\n");
+					Log.i("ITEDebug","COURSE DESCRIPTION : " + this.description + "\n");
 				break;
 
 		}
