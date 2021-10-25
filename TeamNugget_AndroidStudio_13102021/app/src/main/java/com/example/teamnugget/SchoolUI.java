@@ -18,7 +18,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SchoolUI extends AppCompatActivity {
     Button b_school;
-    String institute;
     char instituteType;
     int instituteID;  //Index for a particular institute within the institute's list
     @Override
@@ -28,7 +27,7 @@ public class SchoolUI extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
-        institute = getIntent().getStringExtra("institute");
+        instituteType = getIntent().getCharExtra("institute", 'P');
         instituteID = getIntent().getIntExtra("instituteID", 0);
         /*
         ITE List Index:
@@ -51,23 +50,15 @@ public class SchoolUI extends AppCompatActivity {
         4 = SUTD
         5 = SUSS
         */
-        switch(institute)
+        switch(instituteType)
         {
-            case "ITECC":
-                instituteType = 'I';
+            case 'I':
+                addSchoolButtons(csvParse.ites.get(instituteID).getSchools());
                 break;
-            case "ITEEAST":
-                instituteType = 'I';
-                break;
-            case "ITEWEST":
-                instituteType = 'I';
-                break;
-            case "P":
-                instituteType = 'P';
+            case 'P':
                 addSchoolButtons(csvParse.polytechnics.get(instituteID).getSchools());
                 break;
-            case "U":
-                instituteType = 'U';
+            case 'U':
                 addSchoolButtons(csvParse.universities.get(instituteID).getSchools());
 
             default:

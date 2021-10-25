@@ -42,7 +42,10 @@ public class CourseUI extends AppCompatActivity {
             case 'U':
                 addCourseButtons(csvParse.universities.get(instituteID).getSchools().get(schoolID).getCourses());
                 break;
-                default:
+            case 'I':
+                addCourseButtons(csvParse.ites.get(instituteID).getSchools().get(schoolID).getCourses());
+                break;
+            default:
                 break;
         }
         /*

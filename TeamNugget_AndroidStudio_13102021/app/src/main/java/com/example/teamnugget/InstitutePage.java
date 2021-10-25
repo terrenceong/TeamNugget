@@ -26,24 +26,23 @@ public class InstitutePage extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         //institute is the parameter to determine what information to display here
-        String institute = getIntent().getStringExtra("institute");
+        char institute = getIntent().getCharExtra("institute", 'P');
         //char instituteType = getIntent().getCharExtra("institiuteType", 'P');
         int instituteID = getIntent().getIntExtra("instituteID", 0);
 
         TextView header = (TextView) findViewById(R.id.textView);
         //header.setText(institute); // set text.
         // alternatively if u have image do this
-        switch(institute)
-        {
-            case "ITECC":header.setCompoundDrawablesWithIntrinsicBounds(
-                    R.drawable.sg_itec, 0, 0, 0);break;
-            case "ITEEAST":header.setCompoundDrawablesWithIntrinsicBounds(
-                    R.drawable.sg_itee, 0, 0, 0);break;
-            case "ITEWEST":header.setCompoundDrawablesWithIntrinsicBounds(
-                    R.drawable.sg_itew, 0, 0, 0);break;
-            case "U":
-
-            break;
+        switch(institute){
+            case 'I':
+                switch(instituteID){
+                    case 1:header.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.sg_itec, 0, 0, 0);break;
+                    case 0:header.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.sg_itee, 0, 0, 0);break;
+                    case 2:header.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.sg_itew, 0, 0, 0);break;
+                }
         }
         //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

@@ -55,7 +55,8 @@ public class ITEUI extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),InstitutePage.class);
-                i.putExtra("institute", "ITECC");
+                i.putExtra("institute", 'I');
+                i.putExtra("instituteID", 1);
                 startActivity(i);
             }
         });
@@ -64,7 +65,8 @@ public class ITEUI extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),InstitutePage.class);
-                i.putExtra("institute", "ITEEAST");
+                i.putExtra("institute", 'I');
+                i.putExtra("instituteID", 0);
                 startActivity(i);
             }
         });
@@ -72,7 +74,8 @@ public class ITEUI extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),InstitutePage.class);
-                i.putExtra("institute", "ITEWEST");
+                i.putExtra("institute", 'I');
+                i.putExtra("instituteID", 2);
                 startActivity(i);
             }
         });

@@ -59,7 +59,7 @@ public class UniversityUI extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(getApplicationContext(),InstitutePage.class);
-                    i.putExtra("institute", "U");
+                    i.putExtra("institute", 'U');
                     i.putExtra("instituteID", id );
                     startActivity(i);
                 }

@@ -56,7 +56,7 @@ public class PolytechnicUI extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(getApplicationContext(),InstitutePage.class);
-                    i.putExtra("institute", "P");
+                    i.putExtra("institute", 'P');
                     i.putExtra("instituteID", id);
                     startActivity(i);
                 }
