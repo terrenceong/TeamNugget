@@ -32,6 +32,9 @@ public class SchoolUI extends AppCompatActivity {
         instituteID = getIntent().getIntExtra("instituteID", 0);
         /*
         ITE List Index:
+        0 = East
+        1 = Central
+        2 = West
 
         Polytechnic List Index:
         0 = NP
