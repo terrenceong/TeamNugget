@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.*;
 
-public class School {
+public class School implements Comparable<Object> {
 	
 	//Storing name of School
 	String name = "";
@@ -19,6 +19,12 @@ public class School {
 		this.name = name;
 		this.courses = courses;
 		this.description = description;
+	}
+	public School schoolCopy(List<Course> courses)
+	{
+		School s = new School(this.name, courses, this.description);
+
+		return s;
 	}
 	//Obtain Name of School
 	public String getName()
@@ -59,48 +65,101 @@ public class School {
 		}
 		return false;
 	}
+	public void sortCourses()
+	{
+		courses = (List<Course>) SearchSortAlgorithm.sortList(courses, false);
+	}
 	//Printing the variables of School
-	public void print(String type)
+	public void print(String type, boolean course)
 	{
 		switch (type)
 		{
 			case "U":
 				Log.i("UniDebug","SCHOOL NAME : " + this.name);
-				Log.i("UniDebug","SCHOOL DESCRIPTION: " + this.description);
+				if (!this.description.equals(""))
+					Log.i("UniDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("UniDebug","_________________________________________________________________________");
-				for (int i = 0; i < courses.size(); i++)
+				if (course)
 				{
-					courses.get(i).print("U");
+					for (int i = 0; i < courses.size(); i++)
+					{
+						courses.get(i).print("U");
+					}
+					Log.i("UniDebug","\n");
+					Log.i("UniDebug","_________________________________________________________________________");
 				}
-				Log.i("UniDebug","\n");
-				Log.i("UniDebug","_________________________________________________________________________");
 				break;
 			case "P":
 				Log.i("PolyDebug","SCHOOL NAME : " + this.name);
-				Log.i("PolyDebug","SCHOOL DESCRIPTION: " + this.description);
+				if (!this.description.equals(""))
+					Log.i("PolyDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("PolyDebug","_________________________________________________________________________");
-				for (int i = 0; i < courses.size(); i++)
+				if (course)
 				{
-					courses.get(i).print("P");
+					for (int i = 0; i < courses.size(); i++)
+					{
+						courses.get(i).print("P");
+					}
+					Log.i("PolyDebug","\n");
+					Log.i("PolyDebug","_________________________________________________________________________");
 				}
-				Log.i("PolyDebug","\n");
-				Log.i("PolyDebug","_________________________________________________________________________");
+
 				break;
 			case "I":
 				Log.i("ITEDebug","SCHOOL NAME : " + this.name);
-				Log.i("ITEDebug","SCHOOL DESCRIPTION: " + this.description);
+				if (!this.description.equals(""))
+					Log.i("ITEDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("ITEDebug","_________________________________________________________________________");
-				for (int i = 0; i < courses.size(); i++)
+				if (course)
 				{
-					courses.get(i).print("I");
+					for (int i = 0; i < courses.size(); i++)
+					{
+						courses.get(i).print("I");
+					}
+					Log.i("ITEDebug","\n");
+					Log.i("ITEDebug","_________________________________________________________________________");
 				}
-				Log.i("ITEDebug","\n");
-				Log.i("ITEDebug","_________________________________________________________________________");
+
 				break;
 
 		}
 
 
 
+	}
+	public int compareTo(Object o) {
+		if (o instanceof School)
+		{
+			if (((School)o).getName().compareTo(this.getName()) > 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	public School similarName(String nameToCheck)
+	{
+		if (this.getName().contains(nameToCheck))
+		{
+			return this;
+		}
+		return null;
+	}
+	public List<Course> similarCourses(String nameToCheck) {
+
+		List<Course> similarCourses = new ArrayList<Course>();
+
+		for (Course c : courses)
+		{
+			if (c.similarName(nameToCheck) != null)
+			{
+				similarCourses.add(c);
+			}
+		}
+		return similarCourses;
 	}
 }

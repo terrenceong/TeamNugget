@@ -3,7 +3,7 @@ package com.example.teamnugget;
 
 import android.util.Log;
 
-public class Course {
+public class Course implements Comparable<Object>{
 	
 	//Storing name of Course
 	String name = "";
@@ -97,4 +97,29 @@ public class Course {
 		}
 
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Course)
+		{
+			if (((Course)o).getName().compareTo(this.getName()) > 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	public Course similarName(String nameToCheck)
+	{
+		if (this.getName().contains(nameToCheck))
+		{
+			return this;
+		}
+		return null;
+	}
+
 }

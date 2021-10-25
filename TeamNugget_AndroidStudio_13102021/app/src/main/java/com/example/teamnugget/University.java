@@ -51,6 +51,13 @@ public class University extends Institute  {
 		this.schools = schools;
 		this.ranking = ranking;
 	}
+
+	@Override
+	public Institute instituteCopy(List<School> schools) {
+		University u = new University(this.name, this.description, this.fees, schools, this.ranking);
+		return u;
+	}
+
 	//Obtain Schools in University
 	public List<School> getSchools()
 	{
@@ -76,6 +83,15 @@ public class University extends Institute  {
 		if (this.ranking <= 0)
 			this.setRanking(ranking);
 	}
+	public void sortSchool()
+	{
+		schools = (List<School>) SearchSortAlgorithm.sortList(schools, false);
+
+		for(School s : schools)
+		{
+			s.sortCourses();
+		}
+	}
 	//Override Parent Print method
 	public void print()
 	{
@@ -83,9 +99,28 @@ public class University extends Institute  {
 		Log.i("UniDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
-			schools.get(i).print("U");
+			schools.get(i).print("U", true);
 		}
+		Log.i("UniDebug", "==============================================");
 	}
+
+	@Override
+	public void printSpecific(boolean school, boolean course, boolean cca) {
+
+		Log.i("UniDebug", "INSTITUTE NAME : " + this.name + "\tINSTITUTE RANK: " + this.ranking);
+		Log.i("UniDebug", "--------------------------------------------------------------------");
+		if (school)
+		{
+			for (int i = 0; i < schools.size(); i++)
+			{
+				schools.get(i).print("U", course);
+			}
+		}
+
+		Log.i("UniDebug", "==============================================");
+
+	}
+
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()
 	{
@@ -125,6 +160,48 @@ public class University extends Institute  {
 		return attributesRequired;
 	}
 
-	
 
+	@Override
+	public int compareTo(Object o) {
+
+		if (o instanceof University)
+		{
+			if (((University)o).getName().compareTo(this.getName()) > 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	public int compareTo(University o) {
+
+		if (o.getRanking() > this.getRanking())
+		{
+			return -1;
+		}
+		else
+		{
+			return 1;
+		}
+
+	}
+
+	@Override
+	public List<School> similarSchools(String nameToCheck) {
+
+		List<School> similarSchool = new ArrayList<School>();
+
+		for (School s : schools)
+		{
+			if (s.similarName(nameToCheck) != null)
+			{
+				similarSchool.add(s);
+			}
+		}
+		return similarSchool;
+	}
 }

@@ -51,6 +51,11 @@ public class Polytechnic extends Institute{
 		this.schools = schools;
 		this.ccas = ccas;
 	}
+	@Override
+	public Institute instituteCopy(List<School> schools) {
+		Polytechnic p = new Polytechnic(this.name, this.description, this.fees, schools, null);
+		return p;
+	}
 	//Obtain Schools in Polytechnic
 	public List<School> getSchools()
 	{
@@ -61,6 +66,15 @@ public class Polytechnic extends Institute{
 	{
 		return ccas;
 	}
+	public void sortSchool()
+	{
+		schools = (List<School>) SearchSortAlgorithm.sortList(schools, false);
+
+		for(School s : schools)
+		{
+			s.sortCourses();
+		}
+	}
 	//Override Parent Print method
 	public void print()
 	{
@@ -68,9 +82,9 @@ public class Polytechnic extends Institute{
 		Log.i("PolyDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
-			schools.get(i).print("P");
+			schools.get(i).print("P", true);
 		}
-		if (ccas.size() != 0)
+		if (ccas != null && ccas.size() != 0)
 		{
 			Log.i("PolyDebug","CCA");
 			Log.i("PolyDebug","--------------------------------------------------------------------");
@@ -79,6 +93,32 @@ public class Polytechnic extends Institute{
 				ccas.get(i).print("P");
 			}
 		}
+		Log.i("PolyDebug", "==============================================");
+
+	}
+	@Override
+	public void printSpecific(boolean school, boolean course, boolean cca) {
+
+		Log.i("PolyDebug", "INSTITUTE NAME : " + this.name );
+		Log.i("PolyDebug", "--------------------------------------------------------------------");
+		if (school)
+		{
+			for (int i = 0; i < schools.size(); i++)
+			{
+				schools.get(i).print("P", course);
+			}
+		}
+		if (cca)
+		{
+			Log.i("PolyDebug","CCA");
+			Log.i("PolyDebug","--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("P");
+			}
+		}
+
+		Log.i("PolyDebug", "==============================================");
 
 	}
 	//Obtain all the attributes variation to check if they exist in csv
@@ -118,5 +158,35 @@ public class Polytechnic extends Institute{
 		}
 
 		return attributeRequired;
+	}
+	@Override
+	public int compareTo(Object o) {
+
+		if (o instanceof Polytechnic)
+		{
+			if (((Polytechnic)o).getName().compareTo(this.getName()) > 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	@Override
+	public List<School> similarSchools(String nameToCheck) {
+
+		List<School> similarSchool = new ArrayList<School>();
+
+		for (School s : schools)
+		{
+			if (s.similarName(nameToCheck) != null)
+			{
+				similarSchool.add(s);
+			}
+		}
+		return similarSchool;
 	}
 }

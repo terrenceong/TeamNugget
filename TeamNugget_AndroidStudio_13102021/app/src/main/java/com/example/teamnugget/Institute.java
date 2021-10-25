@@ -1,7 +1,7 @@
 package com.example.teamnugget;
 import java.util.*;
 
-public abstract class Institute {
+public abstract class Institute implements Comparable<Object> {
 	
 	//Storing the description of the Institute
 	String description = "";
@@ -48,6 +48,7 @@ public abstract class Institute {
 		this.description = description;
 		this.fees = fees;
 	}
+	public Institute instituteCopy(List<School> schools) {return null;}
 	//Obtain name of Institute
 	public String getName()
 	{
@@ -99,6 +100,7 @@ public abstract class Institute {
 	{
 		System.out.println("NAME : " + name + " DESCRIPTION: " + description);
 	}
+	public void printSpecific(boolean school, boolean course, boolean cca) { };
 	//Obtain school that can be overwritten by child objects
 	public List<School> getSchools()
 	{
@@ -109,6 +111,10 @@ public abstract class Institute {
 	{
 		return null;
 	}
+	//Obtain subset of school that can be overwritten by child objects
+	public List<School> similarSchools(String nameToCheck) { return null; }
+	//Obtain CCA that can be overwritten by child objects
+	public List<CCA> similarCCAs(String nameToCheck) { return null; }
 	//A static function used for converting String in a List to lower case
 	public static List<String> listToLowerCase(List<String> listToConvert)
 	{
@@ -189,6 +195,14 @@ public abstract class Institute {
 			}
 		}
 		return false;
+	}
+	public Institute similarName(String nameToCheck)
+	{
+		if (this.getName().contains(nameToCheck))
+		{
+			return this;
+		}
+		return null;
 	}
 
 }

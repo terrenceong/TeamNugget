@@ -1,6 +1,7 @@
 package com.example.teamnugget;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -302,11 +303,9 @@ public class csvParse {
 							row = fixRow(row, attributeDict.size());
 
 							Institute currentI = null;
-							System.out.println(Arrays.asList(row));
-							//System.out.println(row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())] + "I");
+
 							if (general && !row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())].equals(""))
 							{
-								System.out.println(row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())] + "I");
 								currentI = (Institute)Contains(ites, row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 							}
 							else
@@ -918,56 +917,18 @@ public class csvParse {
 		}
 		return s;
 	}
-	//Printing the institute by their type
-	public static void printInstitute(String type)
+	public static void printSelectedInstitute(List<Institute> institutes)
 	{
-
-		switch (type)
+		for (Institute i : institutes)
 		{
-			case "U":
-
-				Log.d("MyActivity", Integer.toString(universities.size()));
-				for (int i = 0; i < universities.size(); i++)
-				{
-					//System.out.println(universities.isEmpty());
-					//System.out.println(universities.get(i).getName());						
-					universities.get(i).print();
-					Log.i("UniDebug", "==============================================");
-				}
-				break;
-			case "P":
-
-				for (int i = 0; i < polytechnics.size(); i++)
-				{
-
-					//System.out.println(universities.isEmpty());
-					//System.out.println(universities.get(i).getName());						
-					polytechnics.get(i).print();
-					Log.i("PolyDebug", "==============================================");
-				}
-				break;
-				
-			case "I":
-
-				for (int i = 0; i < ites.size(); i++)
-				{
-					//System.out.println(universities.isEmpty());
-					//System.out.println(universities.get(i).getName());						
-					ites.get(i).print();
-					Log.i("ITEDebug", "==============================================");
-				}
-				break;
-			case "J":
-				
-				for (int i = 0; i < juniorcolleges.size(); i++)
-				{
-					//System.out.println(universities.isEmpty());
-					//System.out.println(universities.get(i).getName());						
-					juniorcolleges.get(i).print();
-					Log.i("JCDebug", "==============================================");
-				}
-				break;
-		
+			i.print();
+		}
+	}
+	public static void printSelectedInstitute(List<Institute> institutes, boolean school, boolean course, boolean cca)
+	{
+		for (Institute i : institutes)
+		{
+			i.printSpecific(school, course, cca);
 		}
 	}
 	//Print all the institutes collected from the csv(s)
@@ -976,14 +937,35 @@ public class csvParse {
 		Log.i("UniDebugPolyDebugITEDebugJCDebug","LISTING OF ALL INSTITUTES BY TYPE:");
 		Log.i("UniDebugPolyDebugITEDebugJCDebug","\n\n\n=========================================================================");
 		//Print University
-		printInstitute("U");
+		printSelectedInstitute(universities);
 		//Print Polytechnic
-		printInstitute("P");
+		printSelectedInstitute(polytechnics);
 		//Print ITE
-		printInstitute("I");
+		printSelectedInstitute(ites);
 		//Print JC
-		printInstitute("J");
-		
+		printSelectedInstitute(juniorcolleges);
 	}
+	public static void SortAllInstitutes()
+    {
+        universities = (List<Institute>)SearchSortAlgorithm.sortList(universities, false);
+        polytechnics = (List<Institute>)SearchSortAlgorithm.sortList(polytechnics, false);
+        ites = (List<Institute>)SearchSortAlgorithm.sortList(ites, false);
+        juniorcolleges = (List<Institute>)SearchSortAlgorithm.sortList(juniorcolleges, false);
+
+        for (Institute i : universities)
+        {
+			((University)i).sortSchool();
+        }
+		for (Institute i : polytechnics)
+		{
+			((Polytechnic)i).sortSchool();
+		}
+		for (Institute i : ites)
+		{
+			((ITE)i).sortSchool();
+		}
+
+    }
+
 }
 

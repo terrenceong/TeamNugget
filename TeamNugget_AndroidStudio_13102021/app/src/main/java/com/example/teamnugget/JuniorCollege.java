@@ -127,7 +127,7 @@ public class JuniorCollege extends Institute {
 			Log.i("JCDebug", electives.get(i));
 		}
 		Log.i("JCDebug","--------------------------------------------------------------------");
-		if (ccas.size() != 0)
+		if (ccas != null && ccas.size() != 0)
 		{
 			Log.i("JCDebug","CCA");
 			Log.i("JCDebug","--------------------------------------------------------------------");
@@ -136,6 +136,7 @@ public class JuniorCollege extends Institute {
 				ccas.get(i).print("J");
 			}
 		}
+		Log.i("JCDebug", "==============================================");
 
 	}
 	//Obtain all the attributes variation to check if they exist in csv
@@ -174,5 +175,22 @@ public class JuniorCollege extends Institute {
 		}
 
 		return attributeRequired;
+	}
+	@Override
+	public int compareTo(Object o)
+	{
+
+		if (o instanceof JuniorCollege)
+		{
+			if (this.getName().compareTo(((JuniorCollege)o).getName()) < 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
 	}
 }

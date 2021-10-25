@@ -1,5 +1,7 @@
 package com.example.teamnugget;
 
+import android.util.Log;
+
 import java.util.*;
 
 public class UniversityCourse extends Course {
@@ -64,4 +66,9 @@ public class UniversityCourse extends Course {
 			this.setType(type);
 	}
 
+	@Override
+	public void print(String type) {
+		super.print(type);
+		Log.i("UniDebug","COURSE CUT-OFF-POINTS (ALEVEL): " + this.cutOffPointsAL + " COURSE CUT-OFF-POINTS(GPA): " + this.cutOffPointsGPA);
+	}
 }

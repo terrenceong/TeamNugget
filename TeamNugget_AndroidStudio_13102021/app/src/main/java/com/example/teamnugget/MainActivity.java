@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         parseCSV();
-        csvParse.printInstitutes();
+
     }
     public void parseCSV()
     {
@@ -85,5 +85,9 @@ public class MainActivity extends AppCompatActivity {
             InputStream is = getResources().openRawResource(resourceID);
             cp.parseData(is, fields[count].getName() );
         }
+        csvParse.SortAllInstitutes();
+        csvParse.printInstitutes();
+        SearchSortAlgorithm.searchTest();
+
     }
 }

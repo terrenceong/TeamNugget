@@ -56,6 +56,10 @@ public class ITE extends Institute {
 		this.schools = schools;
 		this.ccas = ccas;
 	}
+	public Institute instituteCopy(List<School> schools) {
+		ITE i = new ITE(this.name, this.description, this.fees, schools, this.ccas);
+		return i;
+	}
 	//Obtain Schools in ITE
 	public List<School> getSchools()
 	{
@@ -66,6 +70,15 @@ public class ITE extends Institute {
 	{
 		return ccas;
 	}
+	public void sortSchool()
+	{
+		schools = (List<School>) SearchSortAlgorithm.sortList(schools, false);
+
+		for(School s : schools)
+		{
+			s.sortCourses();
+		}
+	}
 	//Override Parent Print method
 	public void print()
 	{
@@ -73,9 +86,9 @@ public class ITE extends Institute {
 		Log.i("ITEDebug", "--------------------------------------------------------------------");
 		for (int i = 0; i < schools.size(); i++)
 		{
-			schools.get(i).print("I");
+			schools.get(i).print("I", true);
 		}
-		if (ccas.size() != 0)
+		if (ccas != null && ccas.size() != 0)
 		{
 			Log.i("ITEDebug", "CCA");
 			Log.i("ITEDebug", "--------------------------------------------------------------------");
@@ -84,6 +97,32 @@ public class ITE extends Institute {
 				ccas.get(i).print("I");
 			}
 		}
+		Log.i("ITEDebug", "==============================================");
+
+	}
+	@Override
+	public void printSpecific(boolean school, boolean course, boolean cca) {
+
+		Log.i("ITEDebug", "INSTITUTE NAME : " + this.name);
+		Log.i("ITEDebug", "--------------------------------------------------------------------");
+		if (school)
+		{
+			for (int i = 0; i < schools.size(); i++)
+			{
+				schools.get(i).print("I", course);
+			}
+		}
+		if (cca)
+		{
+			Log.i("ITEDebug", "CCA");
+			Log.i("ITEDebug", "--------------------------------------------------------------------");
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("I");
+			}
+		}
+
+		Log.i("ITEDebug", "==============================================");
 
 	}
 	//Obtain all the attributes variation to check if they exist in csv
@@ -123,6 +162,35 @@ public class ITE extends Institute {
 		}
 		return attributeRequired;
 	}
-	
+	@Override
+	public int compareTo(Object o) {
+
+		if (o instanceof ITE)
+		{
+			if (((ITE)o).getName().compareTo(this.getName()) > 0)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	@Override
+	public List<School> similarSchools(String nameToCheck) {
+
+		List<School> similarSchool = new ArrayList<School>();
+
+		for (School s : schools)
+		{
+			if (s.similarName(nameToCheck) != null)
+			{
+				similarSchool.add(s);
+			}
+		}
+		return similarSchool;
+	}
 
 }
