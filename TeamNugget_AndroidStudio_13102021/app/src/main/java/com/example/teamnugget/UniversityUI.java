@@ -64,6 +64,7 @@ public class UniversityUI extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            b_uni.setBackgroundResource(R.drawable.button);
             layout.addView(b_uni);
         }
     }

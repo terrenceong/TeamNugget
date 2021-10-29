@@ -135,6 +135,7 @@ public class CourseUI extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            b_course.setBackgroundResource(R.drawable.button);
             layout.addView(b_course);
         }
     }

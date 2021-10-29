@@ -61,6 +61,7 @@ public class PolytechnicUI extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+            b_poly.setBackgroundResource(R.drawable.button);
             layout.addView(b_poly);
         }
     }

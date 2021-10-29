@@ -23,11 +23,11 @@ public class ITEUI extends AppCompatActivity {
         Button b_itecc = findViewById(R.id.itecc);
         Button b_iteeast = findViewById(R.id.iteeast);
         Button b_itewest = findViewById(R.id.itewest);
-        Log.d("iteInfo", Integer.toString(csvParse.ites.size()));
+        /*Log.d("iteInfo", Integer.toString(csvParse.ites.size()));
         Log.d("iteInfo", csvParse.ites.get(0).getName());
         Log.d("iteInfo", csvParse.ites.get(1).getName());
         Log.d("iteInfo", csvParse.ites.get(2).getName());
-        Log.d("iteInfo", csvParse.ites.get(3).getName());
+        Log.d("iteInfo", csvParse.ites.get(3).getName());*/
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
