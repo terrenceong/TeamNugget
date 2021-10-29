@@ -29,6 +29,7 @@ public class SchoolUI extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home);
         instituteType = getIntent().getCharExtra("institute", 'P');
         instituteID = getIntent().getIntExtra("instituteID", 0);
+        Log.d("schoolInfo", Integer.toString(csvParse.universities.get(instituteID).getSchools().size()));
         /*
         ITE List Index:
         0 = East
@@ -109,7 +110,8 @@ public class SchoolUI extends AppCompatActivity {
                 }
             });
             //b_school.setBackground(R.id.draw);
-        }
             layout.addView(b_school);
+        }
+
     }
 }
