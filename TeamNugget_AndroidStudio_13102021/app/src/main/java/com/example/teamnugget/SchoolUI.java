@@ -111,9 +111,6 @@ public class SchoolUI extends AppCompatActivity {
                 }
             });
             b_school.setBackgroundResource(R.drawable.button);
-            /*LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            params.setMargins(10, 0, 0, 0);
-            params.setLayoutParams(b_school);*/
             layout.addView(b_school);
         }
 
