@@ -52,7 +52,7 @@ public class CCAUI extends AppCompatActivity {
     }
     private void setRecyclerView()
     {
-        List<CCA> ccaList = csvParse.polytechnics.get(0).getCCAs();
+        List<CCA> ccaList = csvParse.polytechnics.get(1).getCCAs();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new CCAAdapter(this,ccaList);

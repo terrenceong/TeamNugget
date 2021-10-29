@@ -108,7 +108,8 @@ public class SchoolUI extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            layout.addView(b_school);
+            //b_school.setBackground(R.id.draw);
         }
+            layout.addView(b_school);
     }
 }

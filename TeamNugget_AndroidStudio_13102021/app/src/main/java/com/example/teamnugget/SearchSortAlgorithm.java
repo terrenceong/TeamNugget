@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SearchSortAlgorithm {
 
-	public static void quickSort( List<Comparable> listToSort, int n, int m, boolean ranking)
+	public static void quickSort(List<Comparable> listToSort, int n, int m, boolean ranking)
 	{
 		int pivotPos = 0;
 		

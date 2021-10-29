@@ -75,28 +75,22 @@ public class InstitutePage extends AppCompatActivity {
                 i.putExtra("institute", institute);
                 i.putExtra("instituteID", instituteID);
                 startActivity(i);
-                switch(institute)
-                {
-                    /*case "ITECC": ITE cc = new ITE("College Central","ITE College Central " +
-                            "embodies creativity and innovation as part of ITE’s unique brand of College Education. " +
-                            "The College houses four Schools – School of Business Services, School of Electronics & Info-Comm Technology, " +
-                            "School of Engineering and our niche School of Design & Media –" +
-                            " offering a broad range of courses to meet diverse needs and interests",200,)*/
-                }
             }
         });
         Button b_cca = findViewById(R.id.cca);
         b_cca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch(instituteID)
+                switch(institute)
                 {
-                    case 0:
-                        Intent i = new Intent(InstitutePage.this,CCAUI.class);
-                        i.putExtra("institute", "NP");
-                       // i.putExtra("instituteType", institute);
-                        //i.putExtra("instituteID", instituteID);
-                        startActivity(i);break;
+                    case 'P':
+                        switch(instituteID)
+                        {
+                            case 1:
+                                Intent i = new Intent(InstitutePage.this,CCAUI.class);
+                                i.putExtra("institute", "NP");
+                                startActivity(i);break;
+                        }
                 }
             }
         });
