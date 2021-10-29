@@ -180,17 +180,59 @@ public class SearchSortAlgorithm {
 			}
 			if (similarSchool != null && !similarSchool.isEmpty())
 			{
-				instituteWithCourse.add(i.instituteCopy(similarSchool));
+				instituteWithCourse.add(i.instituteCopy(similarSchool, null));
 			}
 		}
 		return instituteWithCourse;
 	}
+	public static List<Institute> searchByGPA(List<Institute> institutes, float gpa, boolean equal)
+	{
+		List<Institute> instituteWithCourse = new ArrayList<Institute>();
+		for (Institute i : institutes)
+		{
+			List<School> similarSchool = new ArrayList<School>();
+			for (School s : i.getSchools())
+			{
+				List<Course> similarCourses = s.similarCourses(gpa,equal);
+				if ( similarCourses != null && !similarCourses.isEmpty())
+				{
+					similarSchool.add(s.schoolCopy(similarCourses));
+				}
+			}
+			if (similarSchool != null && !similarSchool.isEmpty())
+			{
+				instituteWithCourse.add(i.instituteCopy(similarSchool, null));
+			}
+		}
+		return instituteWithCourse;
+	}
+	public static List<Institute> searchByCCAs(List<Institute> institutes, String nameOfCCA)
+	{
+		List<Institute> instituteWithCCA = new ArrayList<Institute>();
+		for (Institute i : institutes)
+		{
+			List<CCA> listOfCCA = i.similarCCAs(nameOfCCA);
+
+			if(listOfCCA != null && !listOfCCA.isEmpty())
+			{
+				instituteWithCCA.add(i.instituteCopy(null, listOfCCA));
+			}
+		}
+		return instituteWithCCA;
+	}
+
 	public static void searchTest()
 	{
 		Log.i("SearchingTest","======================SEARCHING TEST===================================================================================================================");
 		csvParse.printSelectedInstitute(SearchSortAlgorithm.searchByCourses(csvParse.polytechnics, "Science"));
 		Log.i("SearchingTest","======================SEARCHING TEST=================================================================================================================");
 		csvParse.printSelectedInstitute((List<Institute>) searchList(csvParse.universities, "University"), false, false, false);
+		Log.i("SearchingTest","======================SEARCHING TEST=================================================================================================================");
+		//NEED TO TEST
+		csvParse.printSelectedInstitute((List<Institute>) searchByGPA(csvParse.universities, 3.6f, true));
+		Log.i("SearchingTest","======================SEARCHING TEST=================================================================================================================");
+		//NEED TO TEST
+		csvParse.printSelectedInstitute((List<Institute>) searchByCCAs(csvParse.juniorcolleges, "Chinese"), false, false, true);
 	}
 
 

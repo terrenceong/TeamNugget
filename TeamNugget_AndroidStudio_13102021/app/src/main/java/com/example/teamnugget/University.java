@@ -9,6 +9,8 @@ public class University extends Institute  {
 	
 	//Storing all school in University
 	List<School> schools = new ArrayList<School>();
+	//Storing all ccas in University
+	List<CCA> ccas = new ArrayList<CCA>();
 	//Store the ranking of the University
 	int ranking = 0; 
 	
@@ -45,7 +47,7 @@ public class University extends Institute  {
 	static List<String> c_Type = Arrays.asList("Type");
 	
 	//Constructor for University Object
-	public University(String name, String description, float fees, List<School> schools, int ranking)
+	public University(String name, String description, float fees, List<School> schools, List<CCA> ccas, int ranking)
 	{
 		super(name, description, fees);
 		this.schools = schools;
@@ -53,8 +55,8 @@ public class University extends Institute  {
 	}
 
 	@Override
-	public Institute instituteCopy(List<School> schools) {
-		University u = new University(this.name, this.description, this.fees, schools, this.ranking);
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {
+		University u = new University(this.name, this.description, this.fees, schools, ccas, this.ranking);
 		return u;
 	}
 
@@ -63,10 +65,15 @@ public class University extends Institute  {
 	{
 		return schools;
 	}
+
 	//Obtain Ranking of the University
 	public int getRanking()
 	{
 		return ranking;
+	}
+	public List<CCA> getCCAs()
+	{
+		return ccas;
 	}
 	public void setRanking(int ranking)
 	{

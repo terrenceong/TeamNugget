@@ -52,8 +52,8 @@ public class Polytechnic extends Institute{
 		this.ccas = ccas;
 	}
 	@Override
-	public Institute instituteCopy(List<School> schools) {
-		Polytechnic p = new Polytechnic(this.name, this.description, this.fees, schools, null);
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {
+		Polytechnic p = new Polytechnic(this.name, this.description, this.fees, schools, ccas);
 		return p;
 	}
 	//Obtain Schools in Polytechnic

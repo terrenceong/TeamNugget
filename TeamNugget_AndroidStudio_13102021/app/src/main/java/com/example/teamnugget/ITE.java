@@ -56,8 +56,8 @@ public class ITE extends Institute {
 		this.schools = schools;
 		this.ccas = ccas;
 	}
-	public Institute instituteCopy(List<School> schools) {
-		ITE i = new ITE(this.name, this.description, this.fees, schools, this.ccas);
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {
+		ITE i = new ITE(this.name, this.description, this.fees, schools, ccas);
 		return i;
 	}
 	//Obtain Schools in ITE

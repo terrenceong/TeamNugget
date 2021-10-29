@@ -74,4 +74,12 @@ public class CCA {
 		}
 
 	}
+	public CCA similarCCA(String nameToCheck)
+	{
+		if (this.getName().contains(nameToCheck))
+		{
+			return this;
+		}
+		return null;
+	}
 }

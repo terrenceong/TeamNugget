@@ -48,7 +48,8 @@ public abstract class Institute implements Comparable<Object> {
 		this.description = description;
 		this.fees = fees;
 	}
-	public Institute instituteCopy(List<School> schools) {return null;}
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {return null;}
+
 	//Obtain name of Institute
 	public String getName()
 	{
@@ -106,6 +107,16 @@ public abstract class Institute implements Comparable<Object> {
 	{
 		return null;
 	}
+	//Obtain school name that can be overwritten by child objects
+	public List<String> getSchoolName()
+	{
+		List<String> names = new ArrayList<String>();
+		for (School s : this.getSchools())
+		{
+			names.add(s.getName());
+		}
+		return names;
+	}
 	//Obtain CCA that can be overwritten by child objects
 	public List<CCA> getCCAs()
 	{
@@ -113,8 +124,6 @@ public abstract class Institute implements Comparable<Object> {
 	}
 	//Obtain subset of school that can be overwritten by child objects
 	public List<School> similarSchools(String nameToCheck) { return null; }
-	//Obtain CCA that can be overwritten by child objects
-	public List<CCA> similarCCAs(String nameToCheck) { return null; }
 	//A static function used for converting String in a List to lower case
 	public static List<String> listToLowerCase(List<String> listToConvert)
 	{
@@ -198,11 +207,27 @@ public abstract class Institute implements Comparable<Object> {
 	}
 	public Institute similarName(String nameToCheck)
 	{
-		if (this.getName().contains(nameToCheck))
+		if (this.getName().toLowerCase().contains(nameToCheck.toLowerCase()))
 		{
 			return this;
 		}
 		return null;
 	}
+	public List<CCA> similarCCAs(String nameToCheck)
+	{
+		List<CCA> ccaFound = new ArrayList<CCA>();
+		for (CCA cca : this.getCCAs())
+		{
+
+			if (cca.getName().contains(nameToCheck))
+			{
+				//System.out.println(cca.getName());
+				ccaFound.add(cca);
+			}
+		}
+
+		return ccaFound;
+	}
+
 
 }
