@@ -13,6 +13,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import android.widget.LinearLayout.LayoutParams;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -110,6 +111,9 @@ public class SchoolUI extends AppCompatActivity {
                 }
             });
             b_school.setBackgroundResource(R.drawable.button);
+            /*LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            params.setMargins(10, 0, 0, 0);
+            params.setLayoutParams(b_school);*/
             layout.addView(b_school);
         }
 

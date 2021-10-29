@@ -36,7 +36,7 @@ public class Polytechnic extends Institute{
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Course_Name");
 	static List<String> c_Description = Arrays.asList("Course_Description");
-	static List<String> c_fullTime = Arrays.asList("Full-Time");
+	static List<String> c_fullTime = Arrays.asList("course_type");
 	static List<String> c_COPOL = Arrays.asList("OLevel");
 	
 	//IMPORTANT WHEN ADDING NEW ATTRIBUTE WITH VARIATION:

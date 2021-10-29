@@ -79,6 +79,6 @@ public class CourseInfo extends AppCompatActivity {
     public void setText(Course course){
         courseTitle.setText(course.getName());
         desc.setText(course.getDescription());
-        fullTime.setText(course.isFullTime());
+        fullTime.setText("Type: "+course.isFullTime());
     }
 }

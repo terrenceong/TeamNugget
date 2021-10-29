@@ -34,6 +34,8 @@
 
         <LinearLayout
             android:id="@+id/schoolLayout"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_divider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>

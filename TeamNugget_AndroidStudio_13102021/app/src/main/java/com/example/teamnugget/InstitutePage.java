@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -35,14 +34,70 @@ public class InstitutePage extends AppCompatActivity {
         // alternatively if u have image do this
         switch(institute){
             case 'I':
-                switch(instituteID){
-                    case 1:header.setCompoundDrawablesWithIntrinsicBounds(
-                            R.drawable.sg_itec, 0, 0, 0);break;
-                    case 0:header.setCompoundDrawablesWithIntrinsicBounds(
-                            R.drawable.sg_itee, 0, 0, 0);break;
-                    case 2:header.setCompoundDrawablesWithIntrinsicBounds(
-                            R.drawable.sg_itew, 0, 0, 0);break;
-                }
+                switch(instituteID) {
+                    case 1:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sg_itec, 0, 0, 0);
+                        break;
+                    case 0:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sg_itee, 0, 0, 0);
+                        break;
+                    case 2:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sg_itew, 0, 0, 0);
+                        break;
+                }break;
+            case 'P':
+                switch(instituteID) {
+                    case 0:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.np, 0, 0, 0);
+                        break;
+                    case 1:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.nyp, 0, 0, 0);
+                        break;
+                    case 2:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.rp, 0, 0, 0);
+                        break;
+                    case 3:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sp, 0, 0, 0);
+                        break;
+                    case 4:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.tp, 0, 0, 0);
+                        break;
+                }break;
+            case 'U':
+                switch(instituteID) {
+                    case 0:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.ntu, 0, 0, 0);
+                        break;
+                    case 1:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.nus, 0, 0, 0);
+                        break;
+                    case 2:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.smu, 0, 0, 0);
+                        break;
+                    case 3:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sit, 0, 0, 0);
+                        break;
+                    case 4:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.sutd, 0, 0, 0);
+                        break;
+                    case 5:
+                        header.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.suss, 0, 0, 0);
+                        break;
+                }break;
         }
         //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -104,4 +159,5 @@ public class InstitutePage extends AppCompatActivity {
         });
 
     }
+
 }

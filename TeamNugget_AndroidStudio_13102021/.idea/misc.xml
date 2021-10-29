@@ -14,7 +14,10 @@
         <entry key="..\:/NTU/Y2S1/CZ2006/Project/TeamNugget/app/src/main/res/layout/activity_search.xml" value="0.1925925925925926" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project/TeamNugget/app/src/main/res/menu/menu_navigation.xml" value="0.22" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable-v24/button.xml" value="0.2635416666666667" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_info.xml" value="0.25" />
+        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable/empty_divider.xml" value="0.2635416666666667" />
+        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_cca_ui.xml" value="0.1" />
+        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_ccadescription_ui.xml" value="0.15" />
+        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_info.xml" value="0.33" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_list.xml" value="0.18" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_filter_search.xml" value="0.29030797101449274" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_institute_page.xml" value="0.20871327254305977" />
@@ -67,5 +70,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
