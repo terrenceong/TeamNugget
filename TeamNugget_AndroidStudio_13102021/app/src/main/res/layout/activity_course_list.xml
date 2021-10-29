@@ -35,6 +35,8 @@
         <LinearLayout
             android:id="@+id/courseLayout"
             android:layout_width="match_parent"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_divider"
             android:layout_height="wrap_content"
             android:orientation="vertical"></LinearLayout>
     </ScrollView>

@@ -26,6 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="103dp"
         android:layout_marginBottom="22dp"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_divider"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"

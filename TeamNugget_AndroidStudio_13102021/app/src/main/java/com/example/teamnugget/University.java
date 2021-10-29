@@ -34,7 +34,7 @@ public class University extends Institute  {
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Degree");
 	static List<String> c_Description = Arrays.asList("Course_Description");
-	static List<String> c_fullTime = Arrays.asList("Full-Time");
+	static List<String> c_fullTime = Arrays.asList("course_type");
 	static List<String> c_COPAL = Arrays.asList("ALevel");
 	static List<String> c_COPGPA = Arrays.asList("GPA");
 	

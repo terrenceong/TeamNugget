@@ -43,7 +43,8 @@
             android:exported="true" />
         <activity
             android:name=".Search"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".PolytechnicUI"
             android:exported="true" />
@@ -70,6 +71,7 @@
             android:exported="true"
             android:label="@string/title_activity_entry_requirement_ui"
             android:theme="@style/Theme.TeamNugget.NoActionBar" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
