@@ -32,6 +32,8 @@ public class University extends Institute  {
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> u_Rank = Arrays.asList("Ranking");
+	static List<String> cca_Name = Arrays.asList("CCA","cca_name");
+	static List<String> cca_Description = Arrays.asList("CCA_Description","cca_description");
 	static List<String> s_Name = Arrays.asList("School");
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Degree");
@@ -51,6 +53,7 @@ public class University extends Institute  {
 	{
 		super(name, description, fees);
 		this.schools = schools;
+		this.ccas = ccas;
 		this.ranking = ranking;
 	}
 
@@ -121,6 +124,13 @@ public class University extends Institute  {
 			for (int i = 0; i < schools.size(); i++)
 			{
 				schools.get(i).print("U", course);
+			}
+		}
+		if (cca)
+		{
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("U");
 			}
 		}
 

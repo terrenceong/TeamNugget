@@ -69,6 +69,11 @@ public class CCA {
 				Log.i("ITEDebug","CCA NAME : " + this.name);
 				if (this.description != "")
 					Log.i("ITEDebug","CCA DSCRIPTION: " + this.description);
+			case "U":
+				Log.i("UniDebug", "CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("UniDebug","CCA DSCRIPTION: " + this.description);
+
 				break;
 
 		}
