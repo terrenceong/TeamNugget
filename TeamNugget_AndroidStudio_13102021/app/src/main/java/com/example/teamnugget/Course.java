@@ -66,7 +66,6 @@ public class Course implements Comparable<Object>{
 	//Checking if the name is the same as this instance
 	public boolean containName(String name)
 	{
-		
 		if ((this.name.toLowerCase()).equals(name.toLowerCase()))
 		{
 			return true;

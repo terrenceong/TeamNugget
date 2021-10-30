@@ -37,11 +37,14 @@ public class FilterSearch extends AppCompatActivity {
     TextInputLayout ddpLayout;
     AutoCompleteTextView ddpFill;
     ArrayAdapter<String> arrayAdapter_schools;
-    ArrayAdapter<String> arrayAdapter_courses;
+    CourseAdapter arrayAdapter_courses;
     SeekBar gpaSlider;
     TextView gpaValue;
     ListView courseList;
     Switch switchButton;
+    TextView gpaSwitch;
+    TextView nameSwitch;
+    static boolean clicked = false;
 
     Institute instituteFound;
     School schoolFound;
@@ -63,22 +66,55 @@ public class FilterSearch extends AppCompatActivity {
         courseList = (ListView)findViewById(R.id.courseList);
         switchButton = (Switch)findViewById(R.id.gpaSwitch);
         searchCourse = (AutoCompleteTextView)findViewById(R.id.searchCourse);
+        gpaSwitch = (TextView)findViewById(R.id.gpaSW);
+        nameSwitch = (TextView)findViewById(R.id.nameSW);
 
         //Search Name
-        ArrayAdapter<String> arrayAdapter_search = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_list, csvParse.instituteNames(csvParse.universities));
+        ArrayAdapter<String> arrayAdapter_search = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_layout, csvParse.instituteNames(csvParse.universities));
         search.setAdapter(arrayAdapter_search);
 
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (clicked)
+                {
+                    gpaSlider.setVisibility(View.INVISIBLE);
+                    gpaValue.setVisibility(View.INVISIBLE);
+                    courseList.setVisibility(View.INVISIBLE);
+                    switchButton.setVisibility(View.INVISIBLE);
+                    searchCourse.setVisibility(View.INVISIBLE);
+                    nameSwitch.setVisibility(View.INVISIBLE);
+                    gpaSwitch.setVisibility(View.INVISIBLE);
+
+                    ddpFill.setText("School");
+                    clicked = false;
+                }
+            }
+        });
         //Selected Institute
         search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 ddpLayout.setVisibility(View.VISIBLE);
+
+
                 instituteFound = (Institute) csvParse.Contains(csvParse.universities, arrayAdapter_search.getItem(position));
-                arrayAdapter_schools = new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_list, instituteFound.getSchoolName());
+                arrayAdapter_schools = new ArrayAdapter<>(getApplicationContext(),R.layout.dropdown_layout, instituteFound.getSchoolName());
                 ddpFill.setAdapter(arrayAdapter_schools);
                 ddpFill.setThreshold(1);
                 hideKeyboard(view);
+                clicked = true;
 
             }
         });
@@ -88,7 +124,6 @@ public class FilterSearch extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-                    switchButton.setText("GPA");
                     gpaSlider.setVisibility(View.VISIBLE);
                     gpaValue.setVisibility(View.VISIBLE);
 
@@ -96,7 +131,6 @@ public class FilterSearch extends AppCompatActivity {
                 }
                 else
                 {
-                    switchButton.setText("Name");
                     gpaSlider.setVisibility(View.INVISIBLE);
                     gpaValue.setVisibility(View.INVISIBLE);
 
@@ -110,6 +144,8 @@ public class FilterSearch extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switchButton.setVisibility(View.VISIBLE);
+                gpaSwitch.setVisibility(View.VISIBLE);
+                nameSwitch.setVisibility(View.VISIBLE);
                 if (switchButton.getText().equals("GPA"))
                 {
                     gpaSlider.setVisibility(View.VISIBLE);
@@ -125,7 +161,7 @@ public class FilterSearch extends AppCompatActivity {
                     searchCourse.setVisibility(View.VISIBLE);
                 }
                 schoolFound = (School) csvParse.Contains(instituteFound.getSchools(), arrayAdapter_schools.getItem(position));
-                arrayAdapter_courses =  new ArrayAdapter<>(getApplicationContext(), R.layout.dropdown_list, schoolFound.getCoursesName(schoolFound.getCourses()));
+                arrayAdapter_courses =  new CourseAdapter(getApplicationContext(), R.layout.dropdown_list, schoolFound.getCourses());
                 courseList.setAdapter(arrayAdapter_courses);
                 courseList.setVisibility(View.VISIBLE);
                 hideKeyboard(view);
@@ -140,7 +176,7 @@ public class FilterSearch extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 gpa = (progress/100.0f) * GPA_MAX;
                 gpaValue.setText("" + gpa );
-                arrayAdapter_courses =  new ArrayAdapter<String>(getApplicationContext(), R.layout.dropdown_list, schoolFound.getCoursesName(schoolFound.similarCourses(gpa, false)));
+                arrayAdapter_courses =  new CourseAdapter(getApplicationContext(),R.layout.dropdown_list, schoolFound.getCourses());
                 courseList.setAdapter(arrayAdapter_courses);
             }
 
@@ -164,7 +200,7 @@ public class FilterSearch extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                arrayAdapter_courses =  new ArrayAdapter<String>(getApplicationContext(), R.layout.dropdown_list, schoolFound.getCoursesName(schoolFound.similarCourses(searchCourse.getText().toString())));
+                arrayAdapter_courses =  new CourseAdapter(getApplicationContext(), R.layout.dropdown_list, schoolFound.similarCourses(searchCourse.getText().toString()));
                 courseList.setAdapter(arrayAdapter_courses);
             }
 
@@ -178,7 +214,7 @@ public class FilterSearch extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                courseFound = (Course) csvParse.Contains(schoolFound.getCourses(), arrayAdapter_courses.getItem(position));
+                courseFound = (Course) csvParse.Contains(schoolFound.getCourses(), arrayAdapter_courses.getItem(position).getName());
                 Intent intent = new Intent(getApplicationContext(),CourseInfo.class);
                 intent.putExtra("instituteType", csvParse.instituteDeterminator(instituteFound));
                 intent.putExtra("instituteID", csvParse.originalIndex(instituteFound, csvParse.universities));
