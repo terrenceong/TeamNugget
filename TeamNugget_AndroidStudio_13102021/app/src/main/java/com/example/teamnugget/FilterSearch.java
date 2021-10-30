@@ -45,6 +45,7 @@ public class FilterSearch extends AppCompatActivity {
 
     Institute instituteFound;
     School schoolFound;
+    Course courseFound;
 
     float gpa;
 
@@ -170,6 +171,20 @@ public class FilterSearch extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+        courseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                courseFound = (Course) csvParse.Contains(schoolFound.getCourses(), arrayAdapter_courses.getItem(position));
+                Intent intent = new Intent(getApplicationContext(),CourseInfo.class);
+                intent.putExtra("instituteType", csvParse.instituteDeterminator(instituteFound));
+                intent.putExtra("instituteID", csvParse.originalIndex(instituteFound, csvParse.universities));
+                intent.putExtra("schoolID", csvParse.originalIndex(schoolFound, instituteFound.getSchools()));
+                intent.putExtra("courseID", csvParse.originalIndex(courseFound, schoolFound.getCourses()));
+                startActivity(intent);
             }
         });
 

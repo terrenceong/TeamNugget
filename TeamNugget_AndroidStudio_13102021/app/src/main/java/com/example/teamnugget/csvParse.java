@@ -1100,6 +1100,24 @@ public class csvParse extends Application {
 		}
 		return names;
 	}
+	public static Character instituteDeterminator(Institute i)
+	{
+		if (i instanceof University)
+		{
+			return 'U';
+		}
+		else if (i instanceof  Polytechnic)
+		{
+			return 'P';
+		}
+		else if (i instanceof  ITE)
+		{
+			return 'I';
+		}
+
+		return 'J';
+	}
+
 
 
 }
