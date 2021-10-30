@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -64,6 +65,9 @@ public class CCAUI extends AppCompatActivity {
                ccaList = csvParse.polytechnics.get(instituteID).getCCAs();break;
             case 'I':
                 ccaList = csvParse.ites.get(instituteID).getCCAs();break;
+            case 'J':
+                ccaList = csvParse.juniorcolleges.get(instituteID).getCCAs();break;
+
 
 
         }

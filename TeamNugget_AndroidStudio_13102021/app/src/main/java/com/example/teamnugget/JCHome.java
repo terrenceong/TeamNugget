@@ -53,9 +53,10 @@ public class JCHome extends AppCompatActivity {
         btn_CCA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(JCHome.this,CCAUI.class);
-                i.putExtra("jcPosition", jcPosition);
-                i.putExtra("institute", "JC");
+                Intent i = new Intent(getApplicationContext(),CCAUI.class);//can add if statement depending on institute type
+                i.putExtra("institute", 'J');
+                i.putExtra("instituteID", jcPosition);
+                startActivity(i);
                 startActivity(i);
             }
         });
