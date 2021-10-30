@@ -18,6 +18,7 @@ public class CourseInfo extends AppCompatActivity {
     TextView courseTitle;
     TextView desc;
     TextView fullTime;
+    TextView instituteText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +37,18 @@ public class CourseInfo extends AppCompatActivity {
         courseTitle = (TextView) findViewById(R.id.courseTitle);
         desc = (TextView) findViewById(R.id.description);
         fullTime = (TextView) findViewById(R.id.fullTime);
+        instituteText = (TextView) findViewById(R.id.instituteName);
         switch(instituteType){
             case 'P':
+                instituteText.setText(csvParse.polytechnics.get(instituteID).getName());
                 setText(csvParse.polytechnics.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
                 break;
             case 'U':
+                instituteText.setText(csvParse.universities.get(instituteID).getName());
                 setText(csvParse.universities.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
                 break;
             case 'I':
+                instituteText.setText(csvParse.ites.get(instituteID).getName());
                 setText(csvParse.ites.get(instituteID).getSchools().get(schoolID).getCourses().get(courseID));
                 break;
         }

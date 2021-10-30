@@ -30,12 +30,28 @@
     </TextView>
 
     <TextView
-        android:id="@+id/fullTime"
+        android:id="@+id/instituteName"
         android:layout_width="194dp"
         android:layout_height="399dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="88dp"
-        android:text="fullTime"
+        android:layout_marginBottom="76dp"
+        android:text="Temasek Polytechnic"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="194dp"
+        android:layout_height="399dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="56dp"
+        android:text="TextView"
         android:textColor="@color/black"
         android:textSize="8sp"
         app:layout_constrainedWidth="true"
@@ -45,17 +61,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/fullTime"
         android:layout_width="194dp"
         android:layout_height="399dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="76dp"
-        android:text="TextView"
+        android:layout_marginBottom="64dp"
+        android:text="fullTime"
         android:textColor="@color/black"
         android:textSize="8sp"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
