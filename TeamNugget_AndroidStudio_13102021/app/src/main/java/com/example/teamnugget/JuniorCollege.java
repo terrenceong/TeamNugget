@@ -94,6 +94,14 @@ public class JuniorCollege extends Institute {
 	{
 		this.pointsScience = pointsScience;
 	}
+	public int getPointsArts()
+	{
+		return pointsArts;
+	}
+	public int getPointsScience()
+	{
+		return pointsScience;
+	}
 	public void setAttributes(String name, String description, float fees, int pointsArts, int pointsScience)
 	{
 		if (!name.equals("") && this.name.equals(""))

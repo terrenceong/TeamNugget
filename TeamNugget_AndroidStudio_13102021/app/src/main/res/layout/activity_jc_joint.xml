@@ -5,6 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/scienceheader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:text="Science / IB"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JCNameJoint"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/PointScience"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="112dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scienceheader"
+        app:layout_constraintVertical_bias="0.021" />
+
+    <TextView
+        android:id="@+id/artheader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="Arts"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JCNameJoint"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/JCNameJoint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Junior College"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <TextView
+        android:id="@+id/PointArts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artheader"
+        app:layout_constraintVertical_bias="0.021" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         tools:layout_editor_absoluteX="0dp"

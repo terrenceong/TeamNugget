@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,17 +17,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JCJointAdmission extends AppCompatActivity {
-    RecyclerView recyclerView;
-    JCAdapter adapter;
+    int jcPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jc_selector_ui);
+        List<Institute> jcList = csvParse.juniorcolleges;
+        setContentView(R.layout.activity_jc_joint);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
-        recyclerView = findViewById(R.id.recycler_view);
-        setRecyclerView();
+        jcPosition = getIntent().getIntExtra("jcPosition",0);
+
+        TextView header = findViewById(R.id.JCNameJoint);
+        TextView artsView = findViewById(R.id.PointArts);
+        TextView scienceView = findViewById(R.id.PointScience);
+        header.setText(jcList.get(jcPosition).getName());
+        artsView.setText(Integer.toString(((JuniorCollege)jcList.get(jcPosition)).getPointsArts()));
+        scienceView.setText(Integer.toString(((JuniorCollege)jcList.get(jcPosition)).getPointsScience()));
 
         //perform item selectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,13 +57,5 @@ public class JCJointAdmission extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    private void setRecyclerView() {
-        List<Institute> jcList = csvParse.juniorcolleges;
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new JCAdapter(this, jcList);
-        recyclerView.setAdapter(adapter);
     }
 }
