@@ -52,11 +52,11 @@ public class InstitutePage extends AppCompatActivity {
                 switch(instituteID) {
                     case 0:
                         header.setCompoundDrawablesWithIntrinsicBounds(
-                                R.drawable.np, 0, 0, 0);
+                                R.drawable.nyp, 0, 0, 0);
                         break;
                     case 1:
                         header.setCompoundDrawablesWithIntrinsicBounds(
-                                R.drawable.nyp, 0, 0, 0);
+                                R.drawable.np, 0, 0, 0);
                         break;
                     case 2:
                         header.setCompoundDrawablesWithIntrinsicBounds(
@@ -136,17 +136,11 @@ public class InstitutePage extends AppCompatActivity {
         b_cca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch(institute)
-                {
-                    case 'P':
-                        switch(instituteID)
-                        {
-                            case 1:
-                                Intent i = new Intent(InstitutePage.this,CCAUI.class);
-                                i.putExtra("institute", "NP");
-                                startActivity(i);break;
-                        }
-                }
+
+                    Intent i = new Intent(getApplicationContext(),CCAUI.class);//can add if statement depending on institute type
+                    i.putExtra("institute", institute);
+                    i.putExtra("instituteID", instituteID);
+                    startActivity(i);
             }
         });
         Button b_intake = findViewById(R.id.intakerequirement);

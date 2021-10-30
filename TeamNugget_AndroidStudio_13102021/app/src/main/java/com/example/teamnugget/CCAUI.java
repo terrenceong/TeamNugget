@@ -17,6 +17,9 @@ import java.util.List;
 public class CCAUI extends AppCompatActivity {
     RecyclerView recyclerView;
     CCAAdapter adapter;
+    char instituteType;
+    int instituteID;
+    List<CCA> ccaList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,8 @@ public class CCAUI extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         recyclerView = findViewById(R.id.recycler_view);
+        instituteType = getIntent().getCharExtra("institute", 'P');
+        instituteID = getIntent().getIntExtra("instituteID", 0);
         setRecyclerView();
 
         //perform item selectedListener
@@ -52,7 +57,13 @@ public class CCAUI extends AppCompatActivity {
     }
     private void setRecyclerView()
     {
-        List<CCA> ccaList = csvParse.polytechnics.get(1).getCCAs();
+
+        switch(instituteType)
+        {
+            case 'P':
+               ccaList = csvParse.polytechnics.get(instituteID).getCCAs();break;
+
+        }
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new CCAAdapter(this,ccaList);

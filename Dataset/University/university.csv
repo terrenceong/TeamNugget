@@ -1,0 +1,141 @@
+year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,basic_monthly_mean,basic_monthly_median,gross_monthly_mean,gross_monthly_median,gross_mthly_25_percentile,gross_mthly_75_percentile,course_type
+2019,Nanyang Technological University,College of Business (Nanyang Business School),Accountancy,97.5,94,3220,3000,3254,3000,3000,3200,Full-Time
+2019,Nanyang Technological University,College of Business (Nanyang Business School),Accountancy and Business,97.9,95.2,4284,4000,4359,4000,3200,4600,Full-Time
+2019,Nanyang Technological University,College of Business (Nanyang Business School),Business,93.8,83.1,3707,3500,3797,3600,3200,4000,Full-Time
+2019,Nanyang Technological University,College of Business (Nanyang Business School),Business and Computing ^,94.4,83.3,4479,4833,4562,4833,3600,5000,Full-Time
+2019,Nanyang Technological University,College of Engineering,Aerospace Engineering,87.5,80.7,3816,3700,3939,3800,3500,4600,Full-Time
+2019,Nanyang Technological University,College of Engineering,Aerospace Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Bioengineering,81.3,64.1,3445,3400,3548,3500,3200,3700,Full-Time
+2019,Nanyang Technological University,College of Engineering,Business and Computer Engineering **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering,88.6,78.1,3681,3600,3921,3800,3500,4300,Full-Time
+2019,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Civil Engineering,94.9,90.6,3525,3400,3582,3500,3300,3900,Full-Time
+2019,Nanyang Technological University,College of Engineering,Civil Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Computer Engineering,94.6,94.6,3994,4000,4074,4000,3600,4500,Full-Time
+2019,Nanyang Technological University,College of Engineering,Computer Science,97.4,95.9,4270,4050,4309,4200,3800,4900,Full-Time
+2019,Nanyang Technological University,College of Engineering,Electrical and Electronic Engineering,92.6,87.1,3769,3700,3884,3700,3500,4000,Full-Time
+2019,Nanyang Technological University,College of Engineering,Environmental Engineering,83.9,77.4,3574,3500,3596,3510,3400,3800,Full-Time
+2019,Nanyang Technological University,College of Engineering,Environmental Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Information Engineering and Media,90.7,85.3,3934,3970,4006,4000,3600,4350,Full-Time
+2019,Nanyang Technological University,College of Engineering,Maritime Studies,98.3,93.2,3512,3400,3669,3500,3300,3700,Full-Time
+2019,Nanyang Technological University,College of Engineering,Materials Engineering,82,76,3601,3500,3817,3600,3300,4175,Full-Time
+2019,Nanyang Technological University,College of Engineering,Materials Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,College of Engineering,Mechanical Engineering,84.5,82.1,3608,3500,3728,3600,3380,4005,Full-Time
+2019,Nanyang Technological University,College of Engineering,Mechanical Engineering and Economics **,na,na,na,na,na,na,na,na,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",83.6,50.9,3031,3000,3068,3000,2800,3500,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,90.1,79,3158,3150,3260,3210,2980,3500,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,90.4,69.4,3220,3200,3264,3200,2800,3500,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,88.2,79.8,3385,3300,3453,3400,3050,3600,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,83.8,64.9,2987,3000,2997,3000,2565,3500,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",History,73,56.8,3449,3500,3498,3500,3200,3800,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics And Multilingual Studies,81.7,65,3265,3160,3365,3200,3000,3740,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Philosophy ^,82.6,69.6,3288,3300,3369,3500,3300,3584,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,89.2,73.1,3463,3350,3506,3400,3100,3800,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy And Global Affairs,90.2,87.8,3756,3691,3868,3850,3500,4345,Full-Time
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,86.9,70.5,3305,3200,3441,3300,3040,3600,Full-Time
+2019,Nanyang Technological University,College of Sciences,Biological Sciences,81.6,66.3,3315,3300,3450,3300,3100,3600,Full-Time
+2019,Nanyang Technological University,College of Sciences,Biomedical Sciences & Chinese Medicine # ^,95.2,85.7,2964,3000,2979,3000,2780,3200,Full-Time
+2019,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,80.9,66.2,3246,3200,3338,3400,3000,3600,Full-Time
+2019,Nanyang Technological University,College of Sciences,Environmental Earth Systems Sciences ^,87.5,79.2,3401,3500,3416,3500,3200,3500,Full-Time
+2019,Nanyang Technological University,College of Sciences,Mathematical Sciences,91.2,79.6,3741,3549,3848,3599,3215,4070,Full-Time
+2019,Nanyang Technological University,College of Sciences,Mathematics & Economics,93.5,84.8,3838,3570,3996,3700,3400,4167,Full-Time
+2019,Nanyang Technological University,College of Sciences,Physics & Applied Physics,90,78.6,3782,3500,3849,3500,3300,4200,Full-Time
+2019,Nanyang Technological University,Sports Science and Management,Sports Science and Management,87,55.6,3289,3200,3438,3350,3000,3660,Full-Time
+2019,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100,100,3629,3800,3710,3800,3600,3806,Full-Time
+2019,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100,100,3719,3800,3758,3800,3660,3840,Full-Time
+2019,Nanyang Technological University,Lee Kong Chian School of Medicine,Medicine #,100,100,4932,4700,5661,5700,5200,6092,Full-Time
+2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,84.9,64.5,3225,3000,3456,3200,2800,3700,Full-Time
+2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),92.7,68.2,3421,3500,3537,3500,3250,3800,Full-Time
+2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88,75.9,3590,3500,3674,3500,3212,3850,Full-Time
+2019,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100,97.3,4057,4200,4068,4200,4000,4500,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Biomedical Engineering),80.4,68.6,3480,3500,3535,3500,3200,3800,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Chemical Engineering),92.4,86.7,3802,3700,3959,3950,3500,4300,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Civil Engineering),95,93,3685,3500,3746,3600,3400,4025,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Electrical Engineering),89.6,85.2,3957,3800,4101,4000,3600,4600,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Engineering Science) ^,84.6,84.6,4115,3500,4285,3750,3400,5200,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Environmental Engineering),89.5,80.7,3473,3400,3569,3400,3200,3900,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Industrial and Systems Engineering),97.6,96.5,4303,3850,4451,4000,3500,4600,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Materials Science and Engineering),78.6,76.2,3796,3700,4086,4000,3700,4600,Full-Time
+2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Mechanical Engineering),88.6,86.7,3745,3500,3847,3700,3400,4300,Full-Time
+2019,National University of Singapore,Faculty of Law,Bachelor of Laws #,95.7,93,5068,5000,5160,5400,4500,5800,Full-Time
+2019,National University of Singapore,Faculty of Science,Bachelor of Science,84,59.3,3181,3000,3320,3100,2900,3600,Full-Time
+2019,National University of Singapore,Faculty of Science,Bachelor of Science (Hons) ^,88.5,72.3,3510,3355,3605,3500,3100,3800,Full-Time
+2019,National University of Singapore,Faculty of Science,Bachelor of Science (Computational Biology) **,na,na,na,na,na,na,na,na,Full-Time
+2019,National University of Singapore,Faculty of Science,Bachelor of Science (Pharmacy) #,100,95.5,3648,3600,3840,3750,3500,4000,Full-Time
+2019,National University of Singapore,NUS Business School,Bachelor of Business Administration,100,82.6,4799,4000,4925,4000,3400,5500,Full-Time
+2019,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),95.5,91,4451,4000,4593,4150,3500,5000,Full-Time
+2019,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy) ^,93.8,93.8,3897,3000,4005,3000,3000,3800,Full-Time
+2019,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy) (Hons),97.8,97.8,4008,3500,4093,3600,3000,4500,Full-Time
+2019,National University of Singapore,School of Computing,Bachelor of Computing (Computer Science),92.8,90.6,5477,5000,5571,5000,4205,5585,Full-Time
+2019,National University of Singapore,School of Computing,Bachelor of Computing (Electronic Commerce) **,na,na,na,na,na,na,na,na,Full-Time
+2019,National University of Singapore,School of Computing,Bachelor of Computing (Information Security) **,na,na,na,na,na,na,na,na,Full-Time
+2019,National University of Singapore,School of Computing,Bachelor of Computing (Information Systems),95.9,95.9,4210,4000,4330,4228,4000,4685,Full-Time
+2019,National University of Singapore,School of Computing,Bachelor of Science (Business Analytics),100,100,4811,5000,4881,5000,4050,5200,Full-Time
+2019,National University of Singapore,School of Design & Environment,Bachelor of Arts (Architecture) #,100,96,4156,4010,4199,4100,3800,4500,Full-Time
+2019,National University of Singapore,School of Design & Environment,Bachelor of Arts (Industrial Design) ^,86.2,48.3,3142,3200,3245,3300,3000,3500,Full-Time
+2019,National University of Singapore,School of Design & Environment,Bachelor of Science (Project and Facilities Management),88.3,80.6,3189,3100,3243,3155,3000,3480,Full-Time
+2019,National University of Singapore,School of Design & Environment,Bachelor of Science (Real Estate),95.3,89.6,3431,3400,3494,3400,3100,3650,Full-Time
+2019,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Medicine and Bachelor of Surgery #,99.5,99.5,4607,4600,5218,5237,4950,5657,Full-Time
+2019,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing),93.5,89.1,3123,3250,3314,3358,3200,3450,Full-Time
+2019,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing) (Hons),98.8,97.5,3389,3450,3612,3650,3515,3750,Full-Time
+2019,National University of Singapore,YST Conservatory of Music,Bachelor of Music,82.6,39.1,3531,3500,3575,3500,2875,3900,Full-Time
+2019,National University of Singapore,Yale-NUS College,Bachelor of Arts with Honours,96,77,4066,3600,4197,3684,3400,4567,Full-Time
+2019,National University of Singapore,Yale-NUS College,Bachelor of Science with Honours ^,94.7,89.5,6962,5000,7139,5000,4150,9967,Full-Time
+2019,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (Computer Engineering),92.9,91.7,4653,4000,4732,4000,3750,4900,Full-Time
+2019,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Environmental Studies,88.4,67.4,3329,3300,3332,3325,3000,3600,Full-Time
+2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design ^,83.3,79.2,3122,3120,3167,3220,3000,3500,Full-Time
+2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,81.3,50,3036,3150,3051,3150,2750,3275,Full-Time
+2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design ^,91.3,87,3760,3800,3791,3800,3550,4000,Full-Time
+2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,100,94.9,4447,4400,4474,4400,4000,5200,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,93.7,89.2,3181,3100,3239,3100,3000,3250,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),97.5,95,4171,4000,4319,4100,3900,5000,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),100,97.4,4090,4034,4188,4190,3600,4550,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,92.2,90.6,3237,3162,3748,3660,3500,4044,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),92.5,92.5,3433,3360,3484,3500,3200,3700,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Land),93.8,90.6,3856,3800,3976,3842,3700,4210,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Telematics (Intelligent Transportation Systems Engineering),100,97,3777,3750,3811,3750,3500,4000,Full-Time
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Hospitality Business with Honours,89.1,74.6,2972,2800,3102,3000,2800,3270,Full-Time
+2019,Singapore Institute of Technology,SIT-DigiPen Institute of Technology,Bachelor of Engineering in Systems Engineering (ElectroMechanical Systems) ^,95.2,90.5,3931,3921,4024,3975,3500,4470,Full-Time
+2019,Singapore Institute of Technology,SIT-Massey University,Bachelor of Food Technology with Honours,93,88.4,2962,2975,2978,2975,2750,3250,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,82.2,73.3,3217,3200,3463,3500,3200,3600,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering ^,91.3,82.6,3489,3400,3542,3500,3250,3600,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Marine Engineering ^,100,100,3318,3300,3393,3300,3200,3521,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering ^,80,66.7,3227,3100,3269,3100,3050,3500,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Naval Architecture **,na,na,na,na,na,na,na,na,Full-Time
+2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering **,na,na,na,na,na,na,na,na,Full-Time
+2019,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Diagnostic Radiography) **,na,na,na,na,na,na,na,na,Full-Time
+2019,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Occupational Therapy),100,100,3429,3400,3466,3425,3308,3650,Full-Time
+2019,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Physiotherapy),98.3,98.3,3479,3400,3498,3400,3400,3620,Full-Time
+2019,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Radiation Therapy) **,na,na,na,na,na,na,na,na,Full-Time
+2019,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Nursing,100,95.8,3522,3500,3772,3800,3450,4085,Full-Time
+2019,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,81.8,77.3,3213,3100,3471,3300,3110,3600,Full-Time
+2019,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology **,na,na,na,na,na,na,na,na,Full-Time
+2019,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Business Administration in Food Business Management ^,81,61.9,2532,2350,2852,2625,2200,3350,Full-Time
+2019,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,78.7,55.3,2724,2800,2832,2800,2450,3000,Full-Time
+2019,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,87.1,80.6,2692,2700,2760,2700,2400,3000,Full-Time
+2019,Singapore Institute of Technology,University of Glasgow,Bachelor of Engineering with Honours in Aeronautical Engineering,77.1,64.6,3500,3500,3597,3500,3200,4000,Full-Time
+2019,Singapore Institute of Technology,University of Glasgow,Bachelor of Engineering with Honours in Aerospace Systems,82.4,67.6,3863,3550,3993,3700,3400,4600,Full-Time
+2019,Singapore Institute of Technology,University of Glasgow,Bachelor of Engineering with Honours in Mechanical Design Engineering,97,93.9,3569,3500,3722,3500,3300,3800,Full-Time
+2019,Singapore Institute of Technology,University of Glasgow,Bachelor of Engineering with Honours in Mechatronics,93.2,83.1,3764,3600,3793,3600,3300,4000,Full-Time
+2019,Singapore Institute of Technology,University of Glasgow,Bachelor of Science with Honours in Computing Science,92.3,89.2,4294,4000,4366,4200,3700,5100,Full-Time
+2019,Singapore Institute of Technology,University of Liverpool,Bachelor of Arts with Honours in Criminology and Security,80.2,70.4,3647,3526,3823,3695,3400,4050,Full-Time
+2019,Singapore Management University,School of Accountancy (4-year programme) *,Accountancy,96.4,93.7,3753,3000,3802,3050,3000,4000,Full-Time
+2019,Singapore Management University,School of Accountancy (4-year programme) *,Accountancy (Cum Laude and above),97.9,97.9,4364,3500,4431,3600,3000,5000,Full-Time
+2019,Singapore Management University,School of Business (4-year programme) *,Business Management,91,84.8,4056,3600,4181,3750,3300,4600,Full-Time
+2019,Singapore Management University,School of Business (4-year programme) *,Business Management (Cum Laude and above),93,90.4,4504,4000,4614,4167,3600,5120,Full-Time
+2019,Singapore Management University,School of Economics (4-year programme) *,Economics,87.1,81.3,4042,3800,4159,3900,3500,4500,Full-Time
+2019,Singapore Management University,School of Economics (4-year programme) *,Economics (Cum Laude and above),94.2,89.9,4401,4000,4520,4038,3600,4600,Full-Time
+2019,Singapore Management University,School of Information Systems (4-year programme) *,Information Systems,95.1,90.2,4413,4166,4549,4300,4000,5000,Full-Time
+2019,Singapore Management University,School of Information Systems (4-year programme) *,Information Systems (Cum Laude and above),98,96,5029,5000,5212,5000,4300,5550,Full-Time
+2019,Singapore Management University,School of Social Sciences (4-year programme) *,Social Sciences,92.2,82.8,3523,3400,3629,3500,3065,4000,Full-Time
+2019,Singapore Management University,School of Social Sciences (4-year programme) *,Social Sciences (Cum Laude and above),92.7,90.2,3599,3500,3742,3500,3100,4070,Full-Time
+2019,Singapore Management University,School of Law (4-year programme) *,Law #,99.1,98.2,4942,4600,5064,4900,4200,5800,Full-Time
+2019,Singapore Management University,School of Law (4-year programme) *,Law (Cum Laude and above) #,98.6,97.1,5136,5000,5324,5550,4500,6000,Full-Time
+2019,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Human Resource Management,87.1,74.2,2942,3000,2975,3000,2800,3300,Full-Time
+2019,Singapore University of Social Sciences,School of Business,Bachelor of Accountancy,91.1,83.3,2880,3000,2900,3000,2750,3000,Full-Time
+2019,Singapore University of Social Sciences,School of Business,Bachelor of Science in Finance,88.6,88.6,3708,3400,3722,3450,3085,3750,Full-Time
+2019,Singapore University of Social Sciences,School of Business,Bachelor of Science in Marketing,88.3,70,2993,3000,3169,3000,2800,3400,Full-Time
+2019,Singapore University of Technology and Design,na,Bachelor of Engineering (Engineering Product Development),84.2,80.2,3991,3900,4042,4000,3660,4500,Full-Time
+2019,Singapore University of Technology and Design,na,Bachelor of Engineering (Information Systems Technology and Design),88.8,85.7,4599,4400,4636,4400,3800,5000,Full-Time
+2019,Singapore University of Technology and Design,na,Bachelor of Engineering (Engineering Systems and Design),89.9,87.3,3944,3800,4082,4000,3500,4400,Full-Time
+2019,Singapore University of Technology and Design,na,Bachelor of Science (Architecture and Sustainable Design) #,100,91.8,3923,3897,3985,3900,3600,4100,Full-Time

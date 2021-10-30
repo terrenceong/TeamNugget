@@ -14,11 +14,7 @@
         <entry key="..\:/NTU/Y2S1/CZ2006/Project/TeamNugget/app/src/main/res/layout/activity_search.xml" value="0.1925925925925926" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project/TeamNugget/app/src/main/res/menu/menu_navigation.xml" value="0.22" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable-v24/button.xml" value="0.2635416666666667" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable/empty_divider.xml" value="0.2635416666666667" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable/searchBar.xml" value="0.1" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_cca_ui.xml" value="0.1" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_ccadescription_ui.xml" value="0.15" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_info.xml" value="0.33" />
+        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_info.xml" value="0.25" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_course_list.xml" value="0.18" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_filter_search.xml" value="0.29030797101449274" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_institute_page.xml" value="0.20871327254305977" />
@@ -30,24 +26,23 @@
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_polytechnic_list.xml" value="0.20871327254305977" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_post_alevel_diploma_ui.xml" value="0.11730072463768115" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_school_list.xml" value="0.18" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_search.xml" value="0.33" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_university_list.xml" value="0.11730072463768115" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout.xml" value="0.20871327254305977" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout2.xml" value="0.20871327254305977" />
         <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout_jc.xml" value="0.1" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/menu/menu.xml" value="0.2446043165467626" />
-        <entry key="..\:/NTU/Y2S1/CZ2006/Project_GitHub/TeamNugget/TeamNugget_AndroidStudio_13102021/app/src/main/res/menu/menu_navigation.xml" value="0.26944444444444443" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget/app/src/main/res/layout/activity_post_alevel_diploma_ui.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable-v24/button.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable-v24/selector.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/drawable/custombutton.xml" value="0.15364583333333334" />
-        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_cca_ui.xml" value="0.3310810810810811" />
+        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_cca_ui.xml" value="0.2762520193861066" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_ccadescription_ui.xml" value="0.22" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_entry_requirement_ui.xml" value="0.7137096774193549" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_entry_requirement_ui2.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_institute_page.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_intake_req_ui.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_iteui.xml" value="0.22" />
+        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_jc_home.xml" value="0.1" />
+        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_jc_selector_ui.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_main.xml" value="0.13903985507246377" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_poly_courses.xml" value="0.13405797101449277" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_polytechnic_list.xml" value="0.1" />
@@ -56,6 +51,8 @@
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/activity_university_list.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout2.xml" value="0.14895833333333333" />
+        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/item_layout_jc.xml" value="0.1" />
+        <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/layout/text_row_item.xml" value="0.1" />
         <entry key="..\:/Users/terre/Administrator/Desktop/CZ2006/TeamNugget_AndroidStudio_13102021/app/src/main/res/menu/menu_navigation.xml" value="0.1638888888888889" />
         <entry key="..\:/Users/terre/AndroidStudioProjects/TeamNugget/app/src/main/res/drawable-v24/ic_filter.xml" value="0.1" />
         <entry key="..\:/Users/terre/AndroidStudioProjects/TeamNugget/app/src/main/res/drawable-v24/ic_home.xml" value="0.1" />
@@ -75,12 +72,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.33" />
-      </ProjectState>
-    </option>
   </component>
 </project>
