@@ -62,6 +62,13 @@ public class JuniorCollege extends Institute {
 		this.pointsArts = pointsArts;
 		this.pointsScience = pointsScience;
 	}
+
+	@Override
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {
+		JuniorCollege jc = new JuniorCollege(this.name, this.description, this.fees, this.subjects, this.dsa, this.electives, ccas, this.pointsArts, this.pointsScience);
+		return jc;
+	}
+
 	//Obtain Subjects in JC
 	public List<String> getSubjects()
 	{
@@ -139,6 +146,55 @@ public class JuniorCollege extends Institute {
 		Log.i("JCDebug", "==============================================");
 
 	}
+
+	@Override
+	public void printSpecific(boolean school, boolean course, boolean cca) {
+
+		Log.i("JCDebug","INSTITUTE NAME : " + this.name);
+		Log.i("JCDebug","--------------------------------------------------------------------");
+		Log.i("JCDebug", "POINTS ART: " + this.pointsArts + " POINTS SCIENCE/IB: " + this.pointsScience);
+		if (course)
+		{
+			Log.i("JCDebug", "Subjects");
+			Log.i("JCDebug", "--------------------------------------------------------------------");
+			for (int i = 0; i < subjects.size(); i++) {
+				Log.i("JCDebug", subjects.get(i));
+			}
+		}
+		if (school)
+		{
+			Log.i("JCDebug","--------------------------------------------------------------------");
+			Log.i("JCDebug","\nDSA");
+			Log.i("JCDebug","--------------------------------------------------------------------");
+			for (int i = 0; i < dsa.size(); i++)
+			{
+				Log.i("JCDebug", dsa.get(i));
+			}
+			Log.i("JCDebug","--------------------------------------------------------------------");
+			Log.i("JCDebug","\nElectives");
+			Log.i("JCDebug","--------------------------------------------------------------------");
+			for (int i = 0; i < electives.size(); i++)
+			{
+				Log.i("JCDebug", electives.get(i));
+			}
+			Log.i("JCDebug","--------------------------------------------------------------------");
+		}
+		if (cca)
+		{
+			if (ccas != null && ccas.size() != 0)
+			{
+				Log.i("JCDebug","CCA");
+				Log.i("JCDebug","--------------------------------------------------------------------");
+				for (int i = 0; i < ccas.size(); i++)
+				{
+					ccas.get(i).print("J");
+				}
+			}
+		}
+
+		Log.i("JCDebug", "==============================================");
+	}
+
 	//Obtain all the attributes variation to check if they exist in csv
 	public static List<List<String>> getAttributesRequired()
 	{

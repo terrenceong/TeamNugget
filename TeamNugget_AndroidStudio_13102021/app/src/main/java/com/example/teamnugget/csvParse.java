@@ -1,4 +1,5 @@
 package com.example.teamnugget;
+import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -13,7 +14,7 @@ import java.util.*;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class csvParse {
+public class csvParse extends Application {
 	
 	//Storing every Institute from the csv(s)
 	static List<Institute> universities = new ArrayList<Institute>();
@@ -56,6 +57,37 @@ public class csvParse {
 		}
 	}
 
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		parseCSV();
+	}
+
+
+	public void parseCSV()
+	{
+		csvParse cp = new csvParse();
+		Field[] fields=R.raw.class.getFields();
+		for(int count=0; count < fields.length; count++){
+
+			int resourceID = 0;
+			try
+			{
+				resourceID = fields[count].getInt(fields[count]);
+			}
+			catch (IllegalAccessException e)
+			{
+				e.printStackTrace();
+			}
+			System.out.println("Raw Asset: " + fields[count].getName() + "ID: " + resourceID);
+			InputStream is = getResources().openRawResource(resourceID);
+			cp.parseData(is, fields[count].getName() );
+		}
+		csvParse.sortAllInstitutes();
+		csvParse.printInstitutes();
+		SearchSortAlgorithm.searchTest();
+
+	}
 	//Pass the folder path of the folder that contain all the csv and watch the magic happen
 
 	//Converting CSV to Classes in Java
@@ -133,18 +165,19 @@ public class csvParse {
 
 								List<School> schoolToAdd = new ArrayList<School>();
 								List<Course> courseToAdd = new ArrayList<Course>();
+								List<CCA> ccaToAdd = new ArrayList<CCA>();
 								
 								courseToAdd.add(InitialiseUniversityCourse(attributeDict, row, null));							
-								
+								ccaToAdd.add(InitialiseCCA(attributeDict, row, null));
 								schoolToAdd.add(InitialiseSchool(attributeDict, row, courseToAdd, null));
 															
-								universities.add(InitialiseUniversity(attributeDict, row, schoolToAdd, obtainInstituteName(file), null));
+								universities.add(InitialiseUniversity(attributeDict, row, schoolToAdd, ccaToAdd, obtainInstituteName(file), null));
 							}
 							//Exist University
 							else
 							{
 								//Update University Attributes if needed
-								InitialiseUniversity(attributeDict, row, null, obtainInstituteName(file), (University)currentI);
+								InitialiseUniversity(attributeDict, row, null, null, obtainInstituteName(file), (University)currentI);
 								
 								School currentS = null;
 								
@@ -183,8 +216,24 @@ public class csvParse {
 											//Update Course Attributes if needed
 											InitialiseUniversityCourse(attributeDict, row, (UniversityCourse) currentC);
 										}
-									}		
-									
+									}
+									if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
+									{
+										CCA currentCCA = (CCA)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
+
+										//New CCA
+										if (currentCCA == null)
+										{
+											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
+										}
+										//Exist CCA
+										else
+										{
+											//Update CCA Attributes if needed
+											InitialiseCCA(attributeDict, row, currentCCA);
+										}
+									}
+
 								}
 							}						
 						}
@@ -594,7 +643,7 @@ public class csvParse {
 		
 	}
 	//Constructing a new University based on row values
-	public University InitialiseUniversity(Hashtable<String, Integer> dict, String[] row, List<School> schools, String convert, University uni)
+	public University InitialiseUniversity(Hashtable<String, Integer> dict, String[] row, List<School> schools, List<CCA> ccas, String convert, University uni)
 	{
 		String iName = ((dict.get(DesiredAttributes.INSTITUTENAME.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 		String iDescription = ((dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName())]);
@@ -606,7 +655,7 @@ public class csvParse {
 			
 			if (iName.equals(""))
 				iName = convert;
-			University u = new University(iName, iDescription, Float.parseFloat(iFees) , schools, Integer.parseInt(uRank));
+			University u = new University(iName, iDescription, Float.parseFloat(iFees), schools, ccas, Integer.parseInt(uRank));
 			return u;
 		}
 		//Update University
@@ -682,7 +731,7 @@ public class csvParse {
 		
 	}
 	//Check if Institute/School/Course already exist based on their name
-	public Object Contains(List<?> listToCheck, String name)
+	public static Object Contains(List<?> listToCheck, String name)
 	{
 
 		if (listToCheck != null && !listToCheck.isEmpty())
@@ -735,6 +784,82 @@ public class csvParse {
 				}
 		}
 		return null;
+	}
+	public static int originalIndex(Object objectToCheck, List<?> listToCheck)
+	{
+		if (listToCheck != null)
+		{
+			if (objectToCheck instanceof University)
+			{
+				for (int i =0 ; i < universities.size(); i++)
+				{
+					Institute institute = universities.get(i);
+					if (institute.containName(((University) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+			else if (objectToCheck instanceof Polytechnic)
+			{
+				for (int i =0 ; i < polytechnics.size(); i++)
+				{
+					Institute institute = polytechnics.get(i);
+					if (institute.containName(((Polytechnic) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+			else if (objectToCheck instanceof ITE)
+			{
+				for (int i =0 ; i < ites.size(); i++)
+				{
+					Institute institute = ites.get(i);
+					if (institute.containName(((ITE) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+			else if (objectToCheck instanceof JuniorCollege)
+			{
+				for (int i =0 ; i < juniorcolleges.size(); i++)
+				{
+					Institute institute = juniorcolleges.get(i);
+					if (institute.containName(((JuniorCollege) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+			else if (objectToCheck instanceof School)
+			{
+				for (int i =0 ; i < listToCheck.size(); i++)
+				{
+					School school = (School) listToCheck.get(i);
+					if (school.containName(((School) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+			else if (objectToCheck instanceof Course)
+			{
+				for (int i =0 ; i < listToCheck.size(); i++)
+				{
+					Course course = (Course) listToCheck.get(i);
+					if (course.containName(((Course) objectToCheck).getName()))
+					{
+						return i;
+					}
+				}
+			}
+		}
+
+
+
+		return -1;
 	}
 	public boolean Exist(List<String> listToCheck, String strToCheck)
 	{
@@ -945,7 +1070,7 @@ public class csvParse {
 		//Print JC
 		printSelectedInstitute(juniorcolleges);
 	}
-	public static void SortAllInstitutes()
+	public static void sortAllInstitutes()
     {
         universities = (List<Institute>)SearchSortAlgorithm.sortList(universities, false);
         polytechnics = (List<Institute>)SearchSortAlgorithm.sortList(polytechnics, false);
@@ -966,6 +1091,34 @@ public class csvParse {
 		}
 
     }
+    public static List<String> instituteNames(List<Institute> institutes)
+	{
+		List<String> names = new ArrayList<String>();
+		for (Institute i : institutes)
+		{
+			names.add(i.getName());
+		}
+		return names;
+	}
+	public static Character instituteDeterminator(Institute i)
+	{
+		if (i instanceof University)
+		{
+			return 'U';
+		}
+		else if (i instanceof  Polytechnic)
+		{
+			return 'P';
+		}
+		else if (i instanceof  ITE)
+		{
+			return 'I';
+		}
+
+		return 'J';
+	}
+
+
 
 }
 

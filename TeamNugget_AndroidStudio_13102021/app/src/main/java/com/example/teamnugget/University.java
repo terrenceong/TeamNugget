@@ -9,6 +9,8 @@ public class University extends Institute  {
 	
 	//Storing all school in University
 	List<School> schools = new ArrayList<School>();
+	//Storing all ccas in University
+	List<CCA> ccas = new ArrayList<CCA>();
 	//Store the ranking of the University
 	int ranking = 0; 
 	
@@ -30,6 +32,8 @@ public class University extends Institute  {
 	static List<String> i_Description = Arrays.asList("Description");
 	static List<String> i_Fees = Arrays.asList("Fee");
 	static List<String> u_Rank = Arrays.asList("Ranking");
+	static List<String> cca_Name = Arrays.asList("CCA","cca_name");
+	static List<String> cca_Description = Arrays.asList("CCA_Description","cca_description");
 	static List<String> s_Name = Arrays.asList("School");
 	static List<String> s_Description = Arrays.asList("School_Description");
 	static List<String> c_Name = Arrays.asList("Degree");
@@ -45,16 +49,17 @@ public class University extends Institute  {
 	static List<String> c_Type = Arrays.asList("Type");
 	
 	//Constructor for University Object
-	public University(String name, String description, float fees, List<School> schools, int ranking)
+	public University(String name, String description, float fees, List<School> schools, List<CCA> ccas, int ranking)
 	{
 		super(name, description, fees);
 		this.schools = schools;
+		this.ccas = ccas;
 		this.ranking = ranking;
 	}
 
 	@Override
-	public Institute instituteCopy(List<School> schools) {
-		University u = new University(this.name, this.description, this.fees, schools, this.ranking);
+	public Institute instituteCopy(List<School> schools, List<CCA> ccas) {
+		University u = new University(this.name, this.description, this.fees, schools, ccas, this.ranking);
 		return u;
 	}
 
@@ -63,10 +68,15 @@ public class University extends Institute  {
 	{
 		return schools;
 	}
+
 	//Obtain Ranking of the University
 	public int getRanking()
 	{
 		return ranking;
+	}
+	public List<CCA> getCCAs()
+	{
+		return ccas;
 	}
 	public void setRanking(int ranking)
 	{
@@ -114,6 +124,13 @@ public class University extends Institute  {
 			for (int i = 0; i < schools.size(); i++)
 			{
 				schools.get(i).print("U", course);
+			}
+		}
+		if (cca)
+		{
+			for (int i = 0; i < ccas.size(); i++)
+			{
+				ccas.get(i).print("U");
 			}
 		}
 

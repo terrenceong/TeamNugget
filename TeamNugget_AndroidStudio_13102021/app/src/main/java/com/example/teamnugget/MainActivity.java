@@ -63,31 +63,5 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        parseCSV();
-
-    }
-    public void parseCSV()
-    {
-        csvParse cp = new csvParse();
-        Field[] fields=R.raw.class.getFields();
-        for(int count=0; count < fields.length; count++){
-
-            int resourceID = 0;
-            try
-            {
-                resourceID = fields[count].getInt(fields[count]);
-            }
-            catch (IllegalAccessException e)
-            {
-                e.printStackTrace();
-            }
-            System.out.println("Raw Asset: " + fields[count].getName() + "ID: " + resourceID);
-            InputStream is = getResources().openRawResource(resourceID);
-            cp.parseData(is, fields[count].getName() );
-        }
-        csvParse.SortAllInstitutes();
-        csvParse.printInstitutes();
-        SearchSortAlgorithm.searchTest();
-
     }
 }

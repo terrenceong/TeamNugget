@@ -66,7 +66,6 @@ public class Course implements Comparable<Object>{
 	//Checking if the name is the same as this instance
 	public boolean containName(String name)
 	{
-		
 		if ((this.name.toLowerCase()).equals(name.toLowerCase()))
 		{
 			return true;
@@ -115,11 +114,46 @@ public class Course implements Comparable<Object>{
 	}
 	public Course similarName(String nameToCheck)
 	{
-		if (this.getName().contains(nameToCheck))
+		if (this.getName().toLowerCase().contains(nameToCheck.toLowerCase()))
 		{
 			return this;
 		}
 		return null;
 	}
+	public Course similarGPA(float gpa, boolean equal)
+	{
+		if (this instanceof PolyITECourse)
+		{
+			if (((PolyITECourse)this).getCutOffPoints() <= gpa && !equal)
+			{
+				return this;
+			}
+			else if (((PolyITECourse)this).getCutOffPoints() == gpa && equal)
+			{
+				return this;
+			}
+		}
+		else
+		{
+			if (((UniversityCourse)this).getCutOffPointsGPA() <= gpa && !equal)
+			{
+				return this;
+			}
+			else if (((UniversityCourse)this).getCutOffPointsGPA() == gpa && equal)
+			{
+				return this;
+			}
+		}
+		return null;
+	}
+	public Course similarALevel (String ALevel)
+	{
+		if (((UniversityCourse)this).getCutOffPointsAL().equals(ALevel))
+		{
+			return this;
+		}
+		return null;
+	}
+
 
 }

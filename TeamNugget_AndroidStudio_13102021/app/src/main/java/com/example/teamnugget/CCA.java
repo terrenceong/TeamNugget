@@ -69,9 +69,22 @@ public class CCA {
 				Log.i("ITEDebug","CCA NAME : " + this.name);
 				if (this.description != "")
 					Log.i("ITEDebug","CCA DSCRIPTION: " + this.description);
+			case "U":
+				Log.i("UniDebug", "CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("UniDebug","CCA DSCRIPTION: " + this.description);
+
 				break;
 
 		}
 
+	}
+	public CCA similarCCA(String nameToCheck)
+	{
+		if (this.getName().contains(nameToCheck))
+		{
+			return this;
+		}
+		return null;
 	}
 }

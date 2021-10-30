@@ -36,6 +36,15 @@ public class School implements Comparable<Object> {
 	{
 		return courses;
 	}
+	public List<String> getCoursesName(List<Course> courseToCheck)
+	{
+		List<String> names = new ArrayList<String>();
+		for (Course c : courseToCheck)
+		{
+			names.add(c.getName());
+		}
+		return names;
+	}
 	//Obtain Description from the School
 	public String getDescription()
 	{
@@ -143,7 +152,7 @@ public class School implements Comparable<Object> {
 	}
 	public School similarName(String nameToCheck)
 	{
-		if (this.getName().contains(nameToCheck))
+		if (this.getName().toLowerCase().contains(nameToCheck.toLowerCase()))
 		{
 			return this;
 		}
@@ -162,4 +171,18 @@ public class School implements Comparable<Object> {
 		}
 		return similarCourses;
 	}
+	public List<Course> similarCourses(float gpa, boolean equal) {
+
+		List<Course> similarCourses = new ArrayList<Course>();
+
+		for (Course c : courses)
+		{
+			if (c.similarGPA(gpa, equal) != null)
+			{
+				similarCourses.add(c);
+			}
+		}
+		return similarCourses;
+	}
+
 }

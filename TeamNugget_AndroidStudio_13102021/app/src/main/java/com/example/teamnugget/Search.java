@@ -23,6 +23,10 @@ public class Search extends AppCompatActivity {
     LinearLayout layout;
     TextView title;
     Button b_result;
+    //int instituteID;
+    //int schoolID;
+    //int courseID;
+    //char instituteType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,24 +62,11 @@ public class Search extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 //Log.d("info", s);
+
                 layout.removeAllViews();
-                List<Institute> result = SearchSortAlgorithm.searchByCourses(csvParse.universities,s);
-                Log.d("info", Integer.toString(result.size()));
-                for(int i = 0;i<result.size();i++) {
-                    title = new TextView(getApplicationContext());
-                    title.setText(result.get(i).getName());
-                    layout.addView(title);
-                    for (int j = 0; j < result.get(i).getSchools().size(); j++) {
-                        for (int k = 0; k < result.get(i).getSchools().get(j).getCourses().size(); k++) {
-                            b_result = new Button(getApplicationContext());
-                            b_result.setText(result.get(i).getSchools().get(j).getCourses().get(k).getName());
-                            b_result.setBackgroundResource(R.drawable.button);
-                            layout.addView(b_result);
-                            //result.get(i).getSchools().get(j).getCourses().get(k).print("U");
-                            //Log.d("info", result.get(i).getSchools().get(j).getCourses().get(k).getName());
-                        }
-                    }
-                }
+                showSearchResults(s,'U');
+                showSearchResults(s,'P');
+                showSearchResults(s,'I');
                 return false;
             }
 
@@ -89,4 +80,58 @@ public class Search extends AppCompatActivity {
 
 
     }
+    void showSearchResults(String s, char type){
+        List<Institute> result;
+        List<Institute> listToCheck;
+        switch(type){
+            case 'U':
+                result = SearchSortAlgorithm.searchByCourses(csvParse.universities,s);
+                listToCheck = csvParse.universities;
+                break;
+            case 'P':
+                result = SearchSortAlgorithm.searchByCourses(csvParse.polytechnics,s);
+                listToCheck = csvParse.polytechnics;
+                break;
+            default:
+                result = SearchSortAlgorithm.searchByCourses(csvParse.ites,s);
+                listToCheck = csvParse.ites;
+                break;
+        }
+
+        final char instituteType = type;
+        for(int i = 0;i<result.size();i++) {
+            title = new TextView(getApplicationContext());
+            title.setText(result.get(i).getName());
+            layout.addView(title);
+            //get original index of institute
+            final int instituteID = csvParse.originalIndex(result.get(i),listToCheck);
+            Log.d("searchDebug", "Institute" + Integer.toString(instituteID));
+            for (int j = 0; j < result.get(i).getSchools().size(); j++) {
+                //get original index of school
+                final int schoolID = csvParse.originalIndex((School)result.get(i).getSchools().get(j), listToCheck.get(instituteID).getSchools());
+                Log.d("searchDebug", "School" + Integer.toString(schoolID));
+                for (int k = 0; k < result.get(i).getSchools().get(j).getCourses().size(); k++) {
+                    // get original index of course
+                    final int courseID = csvParse.originalIndex(result.get(i).getSchools().get(j).getCourses().get(k),listToCheck.get(instituteID).getSchools().get(schoolID).getCourses());
+                    b_result = new Button(getApplicationContext());
+                    b_result.setText(result.get(i).getSchools().get(j).getCourses().get(k).getName());
+                    b_result.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(),CourseInfo.class);
+                            intent.putExtra("instituteType", instituteType);
+                            intent.putExtra("instituteID", instituteID);
+                            intent.putExtra("schoolID", schoolID);
+                            intent.putExtra("courseID", courseID);
+                            startActivity(intent);
+                        }
+                    });
+                    b_result.setBackgroundResource(R.drawable.button);
+                    layout.addView(b_result);
+                    //result.get(i).getSchools().get(j).getCourses().get(k).print("U");
+                    //Log.d("info", result.get(i).getSchools().get(j).getCourses().get(k).getName());
+                }
+            }
+        }
+    }
+
 }
