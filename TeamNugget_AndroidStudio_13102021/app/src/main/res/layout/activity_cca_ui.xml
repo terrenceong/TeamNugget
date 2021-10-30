@@ -17,27 +17,33 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/menu_navigation"
         tools:layout_editor_absoluteX="0dp" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
         android:stretchColumns="1"
-        android:layout_margin="10dp">
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        tools:layout_editor_absoluteX="10dp">
+
         <TableRow>
+
             <TextView
-                android:text="CCA Offered"
-                android:textSize="35sp"
-                android:textStyle="bold"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="#D5FFAB"
                 android:padding="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_column="1"
-                android:layout_gravity="center" />
+                android:text="CCA Offered"
+                android:textSize="35sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
 
     </TableLayout>
 

@@ -62,6 +62,9 @@ public class CCAUI extends AppCompatActivity {
         {
             case 'P':
                ccaList = csvParse.polytechnics.get(instituteID).getCCAs();break;
+            case 'I':
+                ccaList = csvParse.ites.get(instituteID).getCCAs();break;
+
 
         }
         recyclerView.setHasFixedSize(true);
