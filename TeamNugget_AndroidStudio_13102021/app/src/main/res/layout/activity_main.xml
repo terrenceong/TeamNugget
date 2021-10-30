@@ -21,11 +21,11 @@
         tools:layout_editor_absoluteX="0dp" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/postSecondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custombutton"
+        android:background="@drawable/button"
         android:text="Post Secondary"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -37,11 +37,11 @@
         app:layout_constraintTop_toBottomOf="@+id/postdiploma"
         app:layout_constraintVertical_bias="0.49" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/postdiploma"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custombutton"
+        android:background="@drawable/button"
         android:text="Post A Level / Diploma"
         android:textColor="@color/white"
         android:textSize="20sp"

@@ -19,13 +19,13 @@
         app:menu="@menu/menu_navigation"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/facultiesandschool"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginBottom="244dp"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="Faculties and School"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -37,11 +37,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.112" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/intakerequirement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="Intake Requirement"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -54,11 +54,11 @@
         app:layout_constraintTop_toBottomOf="@+id/facultiesandschool"
         app:layout_constraintVertical_bias="0.084" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cca"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="CCA"
         android:textAlignment="center"
         android:textColor="@color/white"

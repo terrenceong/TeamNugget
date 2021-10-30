@@ -20,7 +20,7 @@
         app:menu="@menu/menu_navigation"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/juniorCollege"
         android:layout_width="310dp"
         android:layout_height="112dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="83dp"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="Junior College"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -39,14 +39,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/polytechnic"
         android:layout_width="310dp"
         android:layout_height="112dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="84dp"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="Polytechnic"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -55,12 +55,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/juniorCollege" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ite"
         android:layout_width="310dp"
         android:layout_height="112dp"
         android:layout_margin="20dp"
-        android:background="#37A49D"
+        android:background="@drawable/button"
         android:text="Institute of Technical Education"
         android:textColor="@color/white"
         android:textSize="20sp"
