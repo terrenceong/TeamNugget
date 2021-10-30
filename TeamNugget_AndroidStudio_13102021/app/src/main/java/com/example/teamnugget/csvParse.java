@@ -787,7 +787,7 @@ public class csvParse extends Application {
 	}
 	public static int originalIndex(Object objectToCheck, List<?> listToCheck)
 	{
-		if (listToCheck == null)
+		if (listToCheck != null)
 		{
 			if (objectToCheck instanceof University)
 			{
@@ -833,10 +833,7 @@ public class csvParse extends Application {
 					}
 				}
 			}
-		}
-		else
-		{
-			if (objectToCheck instanceof School)
+			else if (objectToCheck instanceof School)
 			{
 				for (int i =0 ; i < listToCheck.size(); i++)
 				{
@@ -859,6 +856,7 @@ public class csvParse extends Application {
 				}
 			}
 		}
+
 
 
 		return -1;

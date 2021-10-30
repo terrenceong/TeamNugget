@@ -22,7 +22,7 @@ public class CourseInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("MyApp","I am here");
+        //Log.d("MyApp","I am here");
         setContentView(R.layout.activity_course_info);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
