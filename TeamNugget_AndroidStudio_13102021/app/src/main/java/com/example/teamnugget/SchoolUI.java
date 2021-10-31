@@ -47,10 +47,10 @@ public class SchoolUI extends AppCompatActivity {
         Uni List Index:
         0 = NTU
         1 = NUS
-        2 = SMU
-        3 = SIT
-        4 = SUTD
-        5 = SUSS
+        3 = SMU
+        2 = SIT
+        5 = SUTD
+        4 = SUSS
         */
         switch(instituteType)
         {
