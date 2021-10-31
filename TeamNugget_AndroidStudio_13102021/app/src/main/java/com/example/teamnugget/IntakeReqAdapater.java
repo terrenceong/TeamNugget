@@ -14,10 +14,14 @@ import java.util.List;
 public class IntakeReqAdapater extends RecyclerView.Adapter<IntakeReqAdapater.ViewHolder> {
 
     Context context;
-    List<UniversityCourse> courseList;
-    public IntakeReqAdapater(Context context, List<UniversityCourse> courseslist) {
+    List<String> alevel;
+    List<String> gpa;
+    List<String> name;
+    public IntakeReqAdapater(Context context, List<String> alevel,List<String> gpa,List<String> name) {
         this.context = context;
-        this.courseList = courseslist;
+        this.alevel = alevel;
+        this.gpa = gpa;
+        this.name = name;
     }
 
     @NonNull
@@ -30,17 +34,20 @@ public class IntakeReqAdapater extends RecyclerView.Adapter<IntakeReqAdapater.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            if(courseList.size() > 0 && courseList!=null)
+
+            if(name.size()!=0 && alevel.size()!=0 && gpa.size()!=0)
             {
-                holder.programmeName.setText(courseList.get(position).name);
-                holder.alevel.setText(courseList.get(position).getCutOffPointsAL());
-                holder.gpa.setText(courseList.get(position).getCutOffPointsGPA()+"");
+                holder.programmeName.setText(name.get(position));
+                holder.alevel.setText(alevel.get(position));
+                holder.gpa.setText(gpa.get(position));
             }
+
+
     }
 
     @Override
     public int getItemCount() {
-        return courseList.size();
+        return alevel.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

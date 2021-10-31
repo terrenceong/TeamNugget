@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,6 +20,12 @@ import java.util.List;
 public class IntakeReqUI extends AppCompatActivity {
     RecyclerView intakereq;
     TextView title1,title2,title3;
+    char instituteType;
+    int instituteID;
+    List<School> schoolList;
+    List<String> alevel = new ArrayList<>();
+    List<String> gpa = new ArrayList<>();
+    List<String> name = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +36,10 @@ public class IntakeReqUI extends AppCompatActivity {
          title1 = findViewById(R.id.title1);
          title2 = findViewById(R.id.title2);
          title3 = findViewById(R.id.title3);
+        instituteType = getIntent().getCharExtra("institute", 'P');
+        instituteID = getIntent().getIntExtra("instituteID", 0);
+
+
         setRecyclerView();
 
 
@@ -58,15 +70,51 @@ public class IntakeReqUI extends AppCompatActivity {
     private void setRecyclerView()
     {
 
-        title1.setText("Programme");
-        title2.setText("A-level");
-        title3.setText("GPA");
-        List<UniversityCourse> universityCourses = new ArrayList<>();
+
+       //String str = schoolList.get(0).getName();
+        switch (instituteType)
+        {
+            case 'U':schoolList = csvParse.universities.get(instituteID).getSchools();
+                title1.setText("Programme");
+                title2.setText("A-level");
+                title3.setText("GPA");
+                for(School s:schoolList)
+                {
+                    for(Course c:s.getCourses())
+                    {
+                        name.add(c.getName());
+                        if(c.getCutOffPointsGPA()==-1)
+                            gpa.add("NA");
+                        else
+                            gpa.add(c.getCutOffPointsGPA()+"");
+                        alevel.add(c.getCutOffPointsAL());
+                    }
+                }
+                break;
+            case 'P':schoolList = csvParse.polytechnics.get(instituteID).getSchools();
+                title1.setText("Programme");
+                title3.setText("Cut-off points");
+                title2.setVisibility(View.INVISIBLE);
+                for(School s:schoolList)
+                {
+                    for(Course c:s.getCourses())
+                    {
+                        name.add(c.getName());
+                        gpa.add("NA");
+                        alevel.add("NA");
+                    }
+                }
+                break;
+        }
+
+
+        /*List<UniversityCourse> universityCourses = new ArrayList<>();
         universityCourses.add(new UniversityCourse("Accountancy","true","Nanyang Business School (College of Business) ","BBC/C",3.74,"Nanyang Business School (College of Business) "));
-        universityCourses.add(new UniversityCourse("Aerospace Engineering ","true","College of Engineering ","AAB/C",3.8,"College of Engineering "));
+        universityCourses.add(new UniversityCourse("Aerospace Engineering ","true","College of Engineering ","AAB/C",3.8,"College of Engineering "));*/
         intakereq.setHasFixedSize(true);
         intakereq.setLayoutManager(new LinearLayoutManager(this));
-        IntakeReqAdapater adapter = new IntakeReqAdapater(this,universityCourses);
+        IntakeReqAdapater adapter = new IntakeReqAdapater(this,alevel,gpa,name);
         intakereq.setAdapter(adapter);
+
     }
 }

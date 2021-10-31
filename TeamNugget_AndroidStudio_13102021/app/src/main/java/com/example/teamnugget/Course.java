@@ -182,6 +182,19 @@ public class Course implements Comparable<Object>{
 
 		return stringToReturn;
 	}
+	public String getCutOffPointsAL()
+	{
+		return "NA";
+	}
+	//Obtain the cut-off points for GPA
+	public double getCutOffPointsGPA ()
+	{
+		return -1;
+	}
 
+	public int getCutOffPoints()
+	{
+		return -1;
+	}
 
 }

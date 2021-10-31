@@ -11,21 +11,18 @@
             android:id="@+id/programmeName"
             android:layout_column="1"
             android:layout_gravity="left"
-            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="16sp" />
         <TextView
             android:id="@+id/alevel"
             android:layout_column="2"
-            android:textAlignment="center"
-            android:padding="10dp"
+            android:layout_gravity="left"
             android:textColor="@color/black"
             android:textSize="16sp" />
         <TextView
             android:id="@+id/gpa"
             android:layout_column="3"
             android:layout_gravity="right"
-            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="16sp" />
 

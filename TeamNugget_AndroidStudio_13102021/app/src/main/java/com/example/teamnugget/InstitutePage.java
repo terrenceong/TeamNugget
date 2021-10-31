@@ -37,11 +37,11 @@ public class InstitutePage extends AppCompatActivity {
                 switch(instituteID) {
                     case 1:
                         header.setCompoundDrawablesWithIntrinsicBounds(
-                                R.drawable.sg_itec, 0, 0, 0);
+                                R.drawable.sg_itee, 0, 0, 0);
                         break;
                     case 0:
                         header.setCompoundDrawablesWithIntrinsicBounds(
-                                R.drawable.sg_itee, 0, 0, 0);
+                                R.drawable.sg_itec, 0, 0, 0);
                         break;
                     case 2:
                         header.setCompoundDrawablesWithIntrinsicBounds(
@@ -147,7 +147,9 @@ public class InstitutePage extends AppCompatActivity {
         b_intake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(InstitutePage.this,IntakeReqUI.class);
+                Intent i = new Intent(getApplicationContext(),IntakeReqUI.class);//can add if statement depending on institute type
+                i.putExtra("institute", institute);
+                i.putExtra("instituteID", instituteID);
                 startActivity(i);
             }
         });
