@@ -81,19 +81,19 @@ public class InstitutePage extends AppCompatActivity {
                         header.setCompoundDrawablesWithIntrinsicBounds(
                                 R.drawable.nus, 0, 0, 0);
                         break;
-                    case 2:
+                    case 3:
                         header.setCompoundDrawablesWithIntrinsicBounds(
                                 R.drawable.smu, 0, 0, 0);
                         break;
-                    case 3:
+                    case 2:
                         header.setCompoundDrawablesWithIntrinsicBounds(
                                 R.drawable.sit, 0, 0, 0);
                         break;
-                    case 4:
+                    case 5:
                         header.setCompoundDrawablesWithIntrinsicBounds(
                                 R.drawable.sutd, 0, 0, 0);
                         break;
-                    case 5:
+                    case 4:
                         header.setCompoundDrawablesWithIntrinsicBounds(
                                 R.drawable.suss, 0, 0, 0);
                         break;
