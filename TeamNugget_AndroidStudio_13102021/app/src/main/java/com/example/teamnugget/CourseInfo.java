@@ -19,6 +19,7 @@ public class CourseInfo extends AppCompatActivity {
     TextView desc;
     TextView fullTime;
     TextView instituteText;
+    TextView cutoff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
