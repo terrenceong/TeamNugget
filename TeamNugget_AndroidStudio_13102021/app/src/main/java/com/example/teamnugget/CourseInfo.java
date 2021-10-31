@@ -38,6 +38,7 @@ public class CourseInfo extends AppCompatActivity {
         desc = (TextView) findViewById(R.id.description);
         fullTime = (TextView) findViewById(R.id.fullTime);
         instituteText = (TextView) findViewById(R.id.instituteName);
+        cutoff = (TextView) findViewById(R.id.cutOffPoints);
         switch(instituteType){
             case 'P':
                 instituteText.setText(csvParse.polytechnics.get(instituteID).getName());
@@ -85,5 +86,14 @@ public class CourseInfo extends AppCompatActivity {
         courseTitle.setText(course.getName());
         desc.setText(course.getDescription());
         fullTime.setText("Type: "+course.isFullTime());
+        if(instituteType == 'U'){
+            UniversityCourse uc = (UniversityCourse)course;
+            if(uc.getCutOffPointsGPA() < 0 || uc.getCutOffPointsAL() == "#")
+                cutoff.setText("GPA Req: N/A\nA-Level Req: N/A");
+            else
+                cutoff.setText("GPA Req: "+uc.getCutOffPointsGPA()+"\nA-Level Req:"+uc.getCutOffPointsAL());
+        }
+        else
+            cutoff.setText(" ");
     }
 }
