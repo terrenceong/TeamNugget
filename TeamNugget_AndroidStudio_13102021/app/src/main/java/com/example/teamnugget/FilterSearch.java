@@ -176,7 +176,7 @@ public class FilterSearch extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 gpa = (progress/100.0f) * GPA_MAX;
                 gpaValue.setText("" + gpa );
-                arrayAdapter_courses =  new CourseAdapter(getApplicationContext(),R.layout.dropdown_list, schoolFound.getCourses());
+                arrayAdapter_courses =  new CourseAdapter(getApplicationContext(),R.layout.dropdown_list, schoolFound.similarCourses(gpa, false));
                 courseList.setAdapter(arrayAdapter_courses);
             }
 

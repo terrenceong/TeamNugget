@@ -33,6 +33,7 @@ public class UniversityCourse extends Course {
 	{
 		return cutOffPointsGPA;
 	}
+
 	//Obtain the type?
 	public String getType()
 	{

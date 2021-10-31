@@ -154,6 +154,34 @@ public class Course implements Comparable<Object>{
 		}
 		return null;
 	}
+	public String getCutOffPointsGPADisplay()
+	{
+		String stringToReturn ="NA";
+		if (this instanceof UniversityCourse)
+		{
+			if (((UniversityCourse)this).getCutOffPointsGPA() == -1)
+			{
+				stringToReturn = "NA";
+			}
+			else
+			{
+				stringToReturn = String.valueOf(((UniversityCourse)this).getCutOffPointsGPA());
+			}
+		}
+		else
+		{
+			if (((PolyITECourse)this).getCutOffPoints() == -1)
+			{
+				stringToReturn = "NA";
+			}
+			else
+			{
+				stringToReturn = String.valueOf(((PolyITECourse)this).getCutOffPoints());
+			}
+		}
+
+		return stringToReturn;
+	}
 
 
 }

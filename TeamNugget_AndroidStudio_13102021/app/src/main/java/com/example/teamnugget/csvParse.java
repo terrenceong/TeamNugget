@@ -87,7 +87,7 @@ public class csvParse extends Application {
 		}
 		csvParse.sortAllInstitutes();
 		csvParse.printInstitutes();
-		//SearchSortAlgorithm.searchTest();
+		SearchSortAlgorithm.searchTest();
 
 	}
 	//Pass the folder path of the folder that contain all the csv and watch the magic happen

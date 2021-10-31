@@ -30,15 +30,8 @@ public class CourseAdapter extends ArrayAdapter<Course> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         String courseName = getItem(position).getName();
-        float cop = 0.0f;
-        if (getItem(position) instanceof PolyITECourse)
-        {
-            cop = ((PolyITECourse) getItem(position)).getCutOffPoints();
-        }
-        else
-        {
-            cop = (float)((UniversityCourse)getItem(position)).getCutOffPointsGPA();
-        }
+        String cop = getItem(position).getCutOffPointsGPADisplay();
+
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(resource, parent, false);
 
@@ -46,7 +39,7 @@ public class CourseAdapter extends ArrayAdapter<Course> {
         TextView tvCOP = (TextView)convertView.findViewById(R.id.courseGPA);
 
         tvName.setText(courseName);
-        tvCOP.setText(String.valueOf(cop));
+        tvCOP.setText(cop);
 
         return convertView;
     }

@@ -229,7 +229,7 @@ public class SearchSortAlgorithm {
 		csvParse.printSelectedInstitute((List<Institute>) searchList(csvParse.universities, "University"), false, false, false);
 		Log.i("SearchingTest","======================SEARCHING TEST=================================================================================================================");
 		//NEED TO TEST
-		csvParse.printSelectedInstitute((List<Institute>) searchByGPA(csvParse.universities, 3.6f, true));
+		csvParse.printSelectedInstitute((List<Institute>) searchByGPA(csvParse.universities, 3.6f, false));
 		Log.i("SearchingTest","======================SEARCHING TEST=================================================================================================================");
 		//NEED TO TEST
 		csvParse.printSelectedInstitute((List<Institute>) searchByCCAs(csvParse.juniorcolleges, "Chinese"), false, false, true);
