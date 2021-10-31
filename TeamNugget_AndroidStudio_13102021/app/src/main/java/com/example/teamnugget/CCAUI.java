@@ -67,6 +67,8 @@ public class CCAUI extends AppCompatActivity {
                 ccaList = csvParse.ites.get(instituteID).getCCAs();break;
             case 'J':
                 ccaList = csvParse.juniorcolleges.get(instituteID).getCCAs();break;
+            case 'U':
+                 ccaList = csvParse.universities.get(instituteID).getCCAs();break;
 
 
 

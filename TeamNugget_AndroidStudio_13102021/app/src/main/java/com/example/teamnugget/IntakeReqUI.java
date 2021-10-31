@@ -57,6 +57,7 @@ public class IntakeReqUI extends AppCompatActivity {
     }
     private void setRecyclerView()
     {
+
         title1.setText("Programme");
         title2.setText("A-level");
         title3.setText("GPA");
