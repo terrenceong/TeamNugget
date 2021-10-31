@@ -90,7 +90,7 @@ public class ITE extends Institute {
 		}
 		if (ccas != null && ccas.size() != 0)
 		{
-			Log.i("ITEDebug", "CCA");
+			Log.i("ITEDebug", "CCA: " + ccas.size());
 			Log.i("ITEDebug", "--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{

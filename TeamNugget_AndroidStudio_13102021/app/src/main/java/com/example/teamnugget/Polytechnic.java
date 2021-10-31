@@ -86,7 +86,7 @@ public class Polytechnic extends Institute{
 		}
 		if (ccas != null && ccas.size() != 0)
 		{
-			Log.i("PolyDebug","CCA");
+			Log.i("PolyDebug","CCA: " + ccas.size());
 			Log.i("PolyDebug","--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{

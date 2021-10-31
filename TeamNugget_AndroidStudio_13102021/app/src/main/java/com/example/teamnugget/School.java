@@ -85,6 +85,7 @@ public class School implements Comparable<Object> {
 		{
 			case "U":
 				Log.i("UniDebug","SCHOOL NAME : " + this.name);
+				Log.i("UniDebug","COURSES: " + courses.size());
 				if (!this.description.equals(""))
 					Log.i("UniDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("UniDebug","_________________________________________________________________________");
@@ -100,6 +101,7 @@ public class School implements Comparable<Object> {
 				break;
 			case "P":
 				Log.i("PolyDebug","SCHOOL NAME : " + this.name);
+				Log.i("PolyDebug","COURSES: " + courses.size());
 				if (!this.description.equals(""))
 					Log.i("PolyDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("PolyDebug","_________________________________________________________________________");
@@ -116,6 +118,7 @@ public class School implements Comparable<Object> {
 				break;
 			case "I":
 				Log.i("ITEDebug","SCHOOL NAME : " + this.name);
+				Log.i("ITEDebug","COURSES: " + courses.size());
 				if (!this.description.equals(""))
 					Log.i("ITEDebug","SCHOOL DESCRIPTION: " + this.description);
 				Log.i("ITEDebug","_________________________________________________________________________");

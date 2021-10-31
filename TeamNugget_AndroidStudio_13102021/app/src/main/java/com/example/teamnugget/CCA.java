@@ -65,14 +65,14 @@ public class CCA {
 				if (this.description != "")
 					Log.i("PolyDebug","CCA DSCRIPTION: " + this.description);
 				break;
-			case "I":
-				Log.i("ITEDebug","CCA NAME : " + this.name);
-				if (this.description != "")
-					Log.i("ITEDebug","CCA DSCRIPTION: " + this.description);
 			case "U":
-				Log.i("UniDebug", "CCA NAME : " + this.name);
+				Log.i("UniDebug","CCA NAME : " + this.name);
 				if (this.description != "")
 					Log.i("UniDebug","CCA DSCRIPTION: " + this.description);
+			case "I":
+				Log.i("ITEDebug", "CCA NAME : " + this.name);
+				if (this.description != "")
+					Log.i("ITEDebug","CCA DSCRIPTION: " + this.description);
 
 				break;
 

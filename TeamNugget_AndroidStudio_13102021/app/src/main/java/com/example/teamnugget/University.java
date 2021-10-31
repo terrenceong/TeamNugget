@@ -126,11 +126,13 @@ public class University extends Institute  {
 				schools.get(i).print("U", course);
 			}
 		}
-		if (cca)
+		if (cca && ccas != null)
 		{
+			Log.i("UniDebug","CCA: " + ccas.size());
+			Log.i("UniDebug","--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{
-				ccas.get(i).print("U");
+				//ccas.get(i).print("U");
 			}
 		}
 

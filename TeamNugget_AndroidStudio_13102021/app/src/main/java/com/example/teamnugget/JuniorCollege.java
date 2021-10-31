@@ -144,7 +144,7 @@ public class JuniorCollege extends Institute {
 		Log.i("JCDebug","--------------------------------------------------------------------");
 		if (ccas != null && ccas.size() != 0)
 		{
-			Log.i("JCDebug","CCA");
+			Log.i("JCDebug","CCA: " + ccas.size());
 			Log.i("JCDebug","--------------------------------------------------------------------");
 			for (int i = 0; i < ccas.size(); i++)
 			{

@@ -9,13 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.*;
 import java.lang.reflect.Field;
+import java.text.DecimalFormat;
 import java.util.*;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class csvParse extends Application {
-	
+
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 	//Storing every Institute from the csv(s)
 	static List<Institute> universities = new ArrayList<Institute>();
 	static List<Institute> polytechnics = new ArrayList<Institute>();
@@ -85,7 +87,7 @@ public class csvParse extends Application {
 		}
 		csvParse.sortAllInstitutes();
 		csvParse.printInstitutes();
-		SearchSortAlgorithm.searchTest();
+		//SearchSortAlgorithm.searchTest();
 
 	}
 	//Pass the folder path of the folder that contain all the csv and watch the magic happen
@@ -149,7 +151,8 @@ public class csvParse extends Application {
 						{
 
 							String[] row = line.split(",");
-							row = fixRow(row, attributeDict.size());
+							row = fixRow(row, csvAttributes.length);
+
 
 							Institute currentI = null;
 
@@ -167,13 +170,14 @@ public class csvParse extends Application {
 								List<Course> courseToAdd = new ArrayList<Course>();
 								List<CCA> ccaToAdd = new ArrayList<CCA>();
 								
-								courseToAdd.add(InitialiseUniversityCourse(attributeDict, row, null));							
+								courseToAdd.add(InitialiseUniversityCourse(attributeDict, row, null));
 								ccaToAdd.add(InitialiseCCA(attributeDict, row, null));
 								schoolToAdd.add(InitialiseSchool(attributeDict, row, courseToAdd, null));
 															
 								universities.add(InitialiseUniversity(attributeDict, row, schoolToAdd, ccaToAdd, obtainInstituteName(file), null));
 							}
 							//Exist University
+
 							else
 							{
 								//Update University Attributes if needed
@@ -217,25 +221,25 @@ public class csvParse extends Application {
 											InitialiseUniversityCourse(attributeDict, row, (UniversityCourse) currentC);
 										}
 									}
-									if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
-									{
-										CCA currentCCA = (CCA)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
-
-										//New CCA
-										if (currentCCA == null)
-										{
-											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
-										}
-										//Exist CCA
-										else
-										{
-											//Update CCA Attributes if needed
-											InitialiseCCA(attributeDict, row, currentCCA);
-										}
-									}
-
 								}
-							}						
+								if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
+								{
+									CCA currentCCA = (CCA)Contains(currentI.getCCAs(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
+
+									//New CCA
+									if (currentCCA == null)
+									{
+										if (!row[attributeDict.get(DesiredAttributes.CCANAME.getName())].equals(""))
+											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
+									}
+									//Exist CCA
+									else
+									{
+										//Update CCA Attributes if needed
+										InitialiseCCA(attributeDict, row, currentCCA);
+									}
+								}
+							}
 						}
 						
 						break;
@@ -251,7 +255,10 @@ public class csvParse extends Application {
 							{
 								System.out.println(row[i]);
 							}*/
-							row = fixRow(row, attributeDict.size());
+
+							row = fixRow(row, csvAttributes.length);
+
+
 							
 							Institute currentI = null;
 																						
@@ -319,15 +326,16 @@ public class csvParse extends Application {
 										}
 									}										
 								}
-								
+
 								if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
 								{
-									CCA currentCCA = (CCA)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
-									
+									CCA currentCCA = (CCA)Contains(currentI.getCCAs(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
+
 									//New CCA
-									if (currentCCA == null)
+									if (currentCCA == null && !row[attributeDict.get(DesiredAttributes.CCANAME.getName())].equals("") )
 									{
-										currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
+										if (!row[attributeDict.get(DesiredAttributes.CCANAME.getName())].equals(""))
+											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
 									}
 									//Exist CCA
 									else
@@ -335,21 +343,23 @@ public class csvParse extends Application {
 										//Update CCA Attributes if needed
 										InitialiseCCA(attributeDict, row, currentCCA);
 									}
-								}						
-								
-							}							
+								}
+
+							}
 						}
-						
+
 						break;
-					//=========================================================================================================================================	
+					//=========================================================================================================================================
 					// ITE
 					case "I":
-						
+
 						//Traversing the entire files row by row
 						while ((line = reader.readLine()) != null)
 						{
 							String[] row = line.split(",");
-							row = fixRow(row, attributeDict.size());
+							row = fixRow(row, csvAttributes.length);
+							System.out.println(Arrays.asList(row));
+
 
 							Institute currentI = null;
 
@@ -359,7 +369,7 @@ public class csvParse extends Application {
 							}
 							else
 								currentI = (Institute)Contains(ites, obtainInstituteName(file));
-							
+
 							//New ITE
 							if (currentI == null)
 							{
@@ -367,8 +377,8 @@ public class csvParse extends Application {
 								List<School> schoolToAdd = new ArrayList<School>();
 								List<CCA> ccaToAdd = new ArrayList<CCA>();
 								List<Course> courseToAdd = new ArrayList<Course>();
-								
-								courseToAdd.add(InitialisePolyITECourse(attributeDict, row, null));							
+
+								courseToAdd.add(InitialisePolyITECourse(attributeDict, row, null));
 								ccaToAdd.add(InitialiseCCA(attributeDict, row, null));
 								schoolToAdd.add(InitialiseSchool(attributeDict, row, courseToAdd, null));
 
@@ -382,19 +392,19 @@ public class csvParse extends Application {
 								InitialiseITE(attributeDict, row, null, null, obtainInstituteName(file), (ITE) currentI);
 
 								School currentS = null;
-								
+
 								if (attributeDict.get(DesiredAttributes.SCHOOLNAME.getName()) != null)
 									currentS = (School)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.SCHOOLNAME.getName())]);
 								else
 									currentS = (School)Contains(currentI.getSchools(), "School");
-								
+
 								//New School
 								if (currentS == null)
-									
-								{	List<Course> courseToAdd = new ArrayList<Course>();									
-									//Initialising Course								
+
+								{	List<Course> courseToAdd = new ArrayList<Course>();
+									//Initialising Course
 									courseToAdd.add(InitialisePolyITECourse(attributeDict, row, null));
-									
+
 									currentI.getSchools().add(InitialiseSchool(attributeDict, row, courseToAdd, null));
 								}
 								//Exist School
@@ -406,7 +416,7 @@ public class csvParse extends Application {
 									if (attributeDict.get(DesiredAttributes.COURSENAME.getName()) != null)
 									{
 										Course currentC = (Course)Contains(currentS.getCourses(), row[attributeDict.get(DesiredAttributes.COURSENAME.getName())]);
-										
+
 										//New Course
 										if (currentC == null)
 										{
@@ -418,17 +428,18 @@ public class csvParse extends Application {
 											//Update Course Attributes if needed
 											InitialisePolyITECourse(attributeDict, row, (PolyITECourse) currentC);
 										}
-									}										
+									}
 								}
-																
+
 								if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
 								{
-									CCA currentCCA = (CCA)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
-									
+									CCA currentCCA = (CCA)Contains(currentI.getCCAs(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
+
 									//New CCA
 									if (currentCCA == null)
 									{
-										currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
+										if (!row[attributeDict.get(DesiredAttributes.CCANAME.getName())].equals(""))
+											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
 									}
 									//Exist CCA
 									else
@@ -436,37 +447,37 @@ public class csvParse extends Application {
 										//Update CCA Attributes if needed
 										InitialiseCCA(attributeDict, row, currentCCA);
 									}
-								}						
-								
-							}							
+								}
+
+							}
 						}
 						break;
-					//=========================================================================================================================================	
+					//=========================================================================================================================================
 					//Junior College
 					case "J":
-						
+
 						//Traversing the entire files row by row
 						while ((line = reader.readLine()) != null)
 						{
 							String[] row = line.split(",");
-							row = fixRow(row, attributeDict.size());
+							row = fixRow(row, csvAttributes.length);
 							Institute currentI = null;
-																						
+
 							if (general)
 								currentI = (Institute)Contains(juniorcolleges, row[attributeDict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 							else
 								currentI = (Institute)Contains(juniorcolleges, obtainInstituteName(file));
-							
+
 							//New Junior College
 							if (currentI == null)
 							{
-								
+
 								List<CCA> ccaToAdd = new ArrayList<CCA>();
 								List<String> subjects = new ArrayList<String>();
 								List<String> dsas = new ArrayList<String>();
 								List<String> electives = new ArrayList<String>();
 
-														
+
 								ccaToAdd.add(InitialiseCCA(attributeDict, row, null));
 								subjects.add(InitialiseSubject(attributeDict,row));
 								dsas.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCDSA));
@@ -481,12 +492,13 @@ public class csvParse extends Application {
 
 								if (attributeDict.get(DesiredAttributes.CCANAME.getName()) != null)
 								{
-									CCA currentCCA = (CCA)Contains(currentI.getSchools(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
-									
+									CCA currentCCA = (CCA)Contains(currentI.getCCAs(), row[attributeDict.get(DesiredAttributes.CCANAME.getName())]);
+
 									//New CCA
 									if (currentCCA == null)
 									{
-										currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
+										if (!row[attributeDict.get(DesiredAttributes.CCANAME.getName())].equals(""))
+											currentI.getCCAs().add(InitialiseCCA(attributeDict, row, null));
 									}
 									//Exist CCA
 									else
@@ -525,16 +537,16 @@ public class csvParse extends Application {
 										electives.add(InitialiseGeneral(attributeDict, row, DesiredAttributes.JCELECTIVES));
 									}
 								}
-								
-							}							
+
+							}
 						}
 						break;
-						//=========================================================================================================================================	
+						//=========================================================================================================================================
 					default:
 						break;
-				
+
 				}
-				
+
 			}
 			//Display Error
 			catch(Exception e)
@@ -563,10 +575,18 @@ public class csvParse extends Application {
 		String cCOPOL = ((dict.get(DesiredAttributes.COURSEOL.getName()) == null) ? "-1" : row[dict.get(DesiredAttributes.COURSEOL.getName())]);
 
 		if (pc == null)
-		{	
+		{
+			int olevel = 0;
+			//Initialising UniversityCourse
+			try{
+				olevel = Integer.parseInt(cCOPOL);
+			}catch(NumberFormatException e){
+
+				olevel = -1;
+			}
 			//Initialising PolyITECourse
-			PolyITECourse c = new PolyITECourse(cName, cfullTime, cDescription, Integer.parseInt(cCOPOL));
-		
+			PolyITECourse c = new PolyITECourse(cName, cfullTime, cDescription, olevel);
+
 			return c;
 		}
 		//Update PolyITECourse
@@ -581,12 +601,22 @@ public class csvParse extends Application {
 		String cCOPAL = ((dict.get(DesiredAttributes.COURSEAL.getName()) == null) ? "" : row[dict.get(DesiredAttributes.COURSEAL.getName())]);
 		String cCOPGPA = ((dict.get(DesiredAttributes.COURSEGPA.getName()) == null) ? "-1.0" : row[dict.get(DesiredAttributes.COURSEGPA.getName())]);
 		String cType = ((dict.get(DesiredAttributes.COURSETYPE.getName()) == null) ? "" : row[dict.get(DesiredAttributes.COURSETYPE.getName())]);
-		
+
+
 		if (uc == null)
 		{
+			float gpa = 0.0f;
 			//Initialising UniversityCourse
-			UniversityCourse c = new UniversityCourse(cName, cfullTime, cDescription, cCOPAL, Float.parseFloat(cCOPGPA), cType);
-			
+			try{
+				gpa = Float.parseFloat(cCOPGPA);
+
+			}catch(NumberFormatException e){
+
+				gpa = -1;
+			}
+			System.out.println("HERE");
+			UniversityCourse c = new UniversityCourse(cName, cfullTime, cDescription, cCOPAL, gpa, cType);
+
 			return c;
 		}
 		//Update UniversityCourse
@@ -601,7 +631,7 @@ public class csvParse extends Application {
 		String jSubject = ((dict.get(DesiredAttributes.JCSUBJECTS.getName()) == null) ? "" : row[dict.get(DesiredAttributes.JCSUBJECTS.getName())]);
 		//String subDescription = ((dict.get("ccaDescription") == null) ? "" : row[dict.get("ccaDescription")]);
 		//CCA cca = new CCA(ccaName, ccaDescription);
-		
+
 		return jSubject;
 	}
 	public String InitialiseGeneral(Hashtable<String, Integer> dict, String[] row, DesiredAttributes attributesToFind )
@@ -618,29 +648,29 @@ public class csvParse extends Application {
 		String ccaDescription = ((dict.get(DesiredAttributes.CCADESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.CCADESCRIPTION.getName())]);
 		//Initialising CCA
 		if (cc == null)
-		{			
-			CCA cca = new CCA(ccaName, ccaDescription);	
+		{
+			CCA cca = new CCA(ccaName, ccaDescription);
 			return cca;
 		}
 		//UpdateCCA
 		cc.setAttributes(ccaName, ccaDescription);
 		return cc;
 	}
-	//Constructing a new School based on row 
+	//Constructing a new School based on row
 	public School InitialiseSchool(Hashtable<String, Integer> dict, String[] row, List<Course> courses, School sc)
 	{
 		String sName = ((dict.get(DesiredAttributes.SCHOOLNAME.getName()) == null) ? "School" : row[dict.get(DesiredAttributes.SCHOOLNAME.getName())]);
 		String sDescription = ((dict.get(DesiredAttributes.SCHOOLDESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.SCHOOLDESCRIPTION.getName())]);
 		if (sc == null)
 		{
-			//Initialising School		
+			//Initialising School
 			School s = new School(sName, courses, sDescription);
 			return s;
 		}
 		//Update School
 		sc.setAttributes(sName, sDescription);
 		return sc;
-		
+
 	}
 	//Constructing a new University based on row values
 	public University InitialiseUniversity(Hashtable<String, Integer> dict, String[] row, List<School> schools, List<CCA> ccas, String convert, University uni)
@@ -652,7 +682,7 @@ public class csvParse extends Application {
 		if (uni == null)
 		{
 			//Inititalising University
-			
+
 			if (iName.equals(""))
 				iName = convert;
 			University u = new University(iName, iDescription, Float.parseFloat(iFees), schools, ccas, Integer.parseInt(uRank));
@@ -661,23 +691,23 @@ public class csvParse extends Application {
 		//Update University
 		uni.setAttributes(iName, iDescription, Float.parseFloat(iFees), Integer.parseInt(uRank));
 		return uni;
-				
+
 	}
-	//Constructing a new Polytechnics based on row 
+	//Constructing a new Polytechnics based on row
 	public Polytechnic InitialisePolytechnics(Hashtable<String, Integer> dict, String[] row, List<School> schools, List<CCA> ccas, String convert, Polytechnic poly)
 	{
 		String iName = ((dict.get(DesiredAttributes.INSTITUTENAME.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTENAME.getName())]);
 		String iDescription = ((dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName()) == null) ? "" : row[dict.get(DesiredAttributes.INSTITUTEDESCRIPTION.getName())]);
 		String iFees = ((dict.get(DesiredAttributes.INSTITUTEFEES.getName()) == null) ? "-1.0" : row[dict.get(DesiredAttributes.INSTITUTEFEES.getName())]);
-		
+
 		if (poly == null)
 		{
 			//Inititalising Polytechnic
-			
+
 			if (iName.equals(""))
 				iName = convert;
 			Polytechnic p = new Polytechnic(iName, iDescription, Float.parseFloat(iFees) , schools, ccas);
-			
+
 			return p;
 		}
 		//Update Polytechnics
@@ -717,18 +747,18 @@ public class csvParse extends Application {
 
 		if (jc == null)
 		{
-			//Inititalising JC			
+			//Inititalising JC
 			if (iName.equals(""))
 				iName = convert;
 			JuniorCollege j = new JuniorCollege(iName, iDescription, Float.parseFloat(iFees) , subjects, dsas, electives, ccas,
 					Integer.parseInt(cPOINTART), Integer.parseInt(cPOINTSCIENCE));
-			
+
 			return j;
 		}
 		//Update JC
 		jc.setAttributes(iName, iDescription, Float.parseFloat(iFees), Integer.parseInt(cPOINTART), Integer.parseInt(cPOINTSCIENCE));
 		return jc;
-		
+
 	}
 	//Check if Institute/School/Course already exist based on their name
 	public static Object Contains(List<?> listToCheck, String name)
@@ -736,10 +766,10 @@ public class csvParse extends Application {
 
 		if (listToCheck != null && !listToCheck.isEmpty())
 		{
-				
+
 				if (listToCheck.get(0) instanceof Institute)
-				{	
-					
+				{
+
 					for (int i = 0; i < listToCheck.size(); i++)
 					{
 						Institute institute = (Institute)listToCheck.get(i);
@@ -910,11 +940,14 @@ public class csvParse extends Application {
 			{
 				fixedString.add(s);
 			}
-		}		
+		}
+		System.out.println("FIXSIZE: "+ fixedString.size() + "DICTSIZE: " + dictSize);
 		if (fixedString.size() < dictSize)
 		{
+
 			while (fixedString.size() < dictSize)
 			{
+
 				fixedString.add("");
 			}
 		}

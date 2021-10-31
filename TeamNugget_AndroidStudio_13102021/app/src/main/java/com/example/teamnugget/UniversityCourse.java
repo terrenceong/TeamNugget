@@ -18,7 +18,7 @@ public class UniversityCourse extends Course {
 		super(name, fullTime, description);
 		
 		this.cutOffPointsAL = cutOffPointsAL;
-		this.cutOffPointsGPA = cutOffPointsGPA;
+		this.cutOffPointsGPA = Math.round(cutOffPointsGPA * 100.0) / 100.0;
 		this.type = type;
 		// TODO Auto-generated constructor stub
 	}
