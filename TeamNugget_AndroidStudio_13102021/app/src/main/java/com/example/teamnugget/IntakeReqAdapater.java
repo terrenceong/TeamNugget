@@ -35,12 +35,9 @@ public class IntakeReqAdapater extends RecyclerView.Adapter<IntakeReqAdapater.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-            if(name.size()!=0 && alevel.size()!=0 && gpa.size()!=0)
-            {
                 holder.programmeName.setText(name.get(position));
                 holder.alevel.setText(alevel.get(position));
                 holder.gpa.setText(gpa.get(position));
-            }
 
 
     }

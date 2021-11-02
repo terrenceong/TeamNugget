@@ -70,7 +70,6 @@ public class IntakeReqUI extends AppCompatActivity {
     private void setRecyclerView()
     {
 
-
        //String str = schoolList.get(0).getName();
         switch (instituteType)
         {
@@ -100,11 +99,26 @@ public class IntakeReqUI extends AppCompatActivity {
                     for(Course c:s.getCourses())
                     {
                         name.add(c.getName());
-                        gpa.add("NA");
-                        alevel.add("NA");
+                       alevel.add("");
+                        gpa.add(c.getCutOffPoints()+"");
                     }
                 }
                 break;
+            case 'I':schoolList = csvParse.ites.get(instituteID).getSchools();
+                title1.setText("Programme");
+                title3.setText("O Level");
+                title2.setText("N Level");
+                for(School s:schoolList)
+                {
+                    for(Course c:s.getCourses())
+                    {
+                        name.add(c.getName());
+                        alevel.add("NA");
+                        gpa.add("NA");
+                    }
+                }
+                break;
+
         }
 
 
