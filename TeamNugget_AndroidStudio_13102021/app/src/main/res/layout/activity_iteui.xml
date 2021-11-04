@@ -21,6 +21,20 @@
       tools:layout_editor_absoluteX="0dp" />
 
   <Button
+      android:id="@+id/iteeast"
+      android:layout_width="400dp"
+      android:layout_height="85dp"
+      android:layout_gravity="center"
+      android:background="@drawable/button"
+      android:text="College East"
+      app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.454"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/itecc"
+      app:layout_constraintVertical_bias="0.012" />
+
+  <Button
       android:id="@+id/itecc"
       android:layout_width="400dp"
       android:layout_height="85dp"
@@ -29,10 +43,10 @@
       android:text="College Central"
       app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintHorizontal_bias="0.454"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.306" />
+      app:layout_constraintVertical_bias="0.327" />
 
   <Button
       android:id="@+id/itewest"
@@ -43,24 +57,10 @@
       android:text="College West"
       app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintHorizontal_bias="0.454"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/iteeast"
-      app:layout_constraintVertical_bias="0.038" />
-
-  <Button
-      android:id="@+id/iteeast"
-      android:layout_width="400dp"
-      android:layout_height="85dp"
-      android:layout_gravity="center"
-      android:background="@drawable/button"
-      android:text="College East"
-      app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="1.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/itecc"
-      app:layout_constraintVertical_bias="0.021" />
+      app:layout_constraintVertical_bias="0.044" />
 
   <TextView
       android:id="@+id/textView2"
