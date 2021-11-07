@@ -15,10 +15,10 @@ public class CCADescriptionUI extends AppCompatActivity {
         String description = getIntent().getStringExtra("description");
         String ccaname = getIntent().getStringExtra("ccaname");
         setContentView(R.layout.activity_ccadescription_ui);
-        TextView name = findViewById(R.id.tv_cc_name);
-        TextView descrip = findViewById(R.id.tv_cc_description);
-        name.setText(ccaname);
-        descrip.setText(description);
+        TextView tvname = findViewById(R.id.tv_cc_name);
+        TextView tvdescription = findViewById(R.id.tv_cc_description);
+        tvname.setText(ccaname);
+        tvdescription.setText(description);
 
 
     }
