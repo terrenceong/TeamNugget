@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +52,7 @@ public class PolytechnicUI extends AppCompatActivity {
         for(int i = 0 ; i < poly.size(); i++) {
             b_poly = new Button(this);
             b_poly.setText(poly.get(i).getName());
+            b_poly.setTextColor(Color.parseColor("#FFFFFF"));
             final int id = i;
             b_poly.setOnClickListener(new View.OnClickListener() {
                 @Override

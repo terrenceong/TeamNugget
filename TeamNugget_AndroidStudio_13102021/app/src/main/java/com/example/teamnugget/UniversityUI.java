@@ -1,6 +1,7 @@
 package com.example.teamnugget;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,6 +55,7 @@ public class UniversityUI extends AppCompatActivity {
         for(int i = 0 ; i < uni.size(); i++) {
             b_uni = new Button(this);
             b_uni.setText(uni.get(i).getName());
+            b_uni.setTextColor(Color.parseColor("#FFFFFF"));
             final int id = i;
             b_uni.setOnClickListener(new View.OnClickListener() {
                 @Override

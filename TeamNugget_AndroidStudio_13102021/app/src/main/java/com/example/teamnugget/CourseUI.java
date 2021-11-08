@@ -1,6 +1,7 @@
 package com.example.teamnugget;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,6 +124,7 @@ public class CourseUI extends AppCompatActivity {
         for(int i = 0 ; i < courses.size(); i++) {
             b_course = new Button(this);
             b_course.setText(courses.get(i).getName());
+            b_course.setTextColor(Color.parseColor("#FFFFFF"));
             final int index = i;
             b_course.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {

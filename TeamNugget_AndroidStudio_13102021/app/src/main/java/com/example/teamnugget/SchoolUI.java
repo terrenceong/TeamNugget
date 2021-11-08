@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -101,6 +102,7 @@ public class SchoolUI extends AppCompatActivity {
             b_school = new Button(this);
             final int schoolID = i; //schoolIndex is the index of a school within getSchools()
             b_school.setText(school.get(i).getName());
+            b_school.setTextColor(Color.parseColor("#FFFFFF"));
             b_school.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Intent intent = new Intent(getApplicationContext(),CourseUI.class);
