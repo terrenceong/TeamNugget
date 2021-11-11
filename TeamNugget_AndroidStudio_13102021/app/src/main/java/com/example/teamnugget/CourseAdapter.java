@@ -14,7 +14,6 @@ import java.util.List;
 
 public class CourseAdapter extends ArrayAdapter<Course> {
 
-    private static final String TAG = "CourseListAdapter";
     private Context context;
     int resource;
 
