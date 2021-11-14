@@ -229,5 +229,4 @@ public abstract class Institute implements Comparable<Object> {
 		return ccaFound;
 	}
 
-
 }

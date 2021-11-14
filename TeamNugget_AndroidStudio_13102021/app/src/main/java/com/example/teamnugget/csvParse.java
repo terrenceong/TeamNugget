@@ -28,7 +28,7 @@ public class csvParse extends Application {
 
 	//IMPORTANT NOTE: Any new attributes added in the classes should also be added into the enum for convenience when retrieving information
 	//All possible variables
-	static enum DesiredAttributes
+	enum DesiredAttributes
 	{
 		INSTITUTENAME ("i_Name"),
 		INSTITUTEDESCRIPTION ("i_Description"),
