@@ -1,0 +1,20 @@
+Index file for final submission
+# Document: Document Name in Folder
+0. Index File: index.txt
+1. SRS: SSP4_TeamNugget_SRS.pdf
+2. Data Dictionary: AppendixA_DataDictionary.pdf
+3. Use Case Diagram: AppendixB1_UseCaseDiagram.pdf
+4. Use Case Description: AppendixB2_UseCaseDescription.pdf
+5. Class Diagram: AppendixB3_ClassDiagram.pdf
+6. Sequence Diagrams: AppendixB4_SequenceDiagram\
+	a. sd Check CCA.pdf
+	b. sd Check Faculties & Courses.pdf
+	c. sd Filter Search.pdf
+	d. sd Intake Requirement.pdf
+	e. sd Search.pdf
+7. Dialog Map/State Diagram: AppendixB5_StateDialogMap.pdf
+8. System Architecture: AppendixB6_SystemArchitecture.pdf
+9. UI Mock Up: AppendixB7_UIMockUp.pdf
+10. Test Cases: Test Cases.pptx
+11. Presentation Slides: CZ2006 Team Nugget.pptx
+12. Video: CZ2006_Presentation_Video.mp4
