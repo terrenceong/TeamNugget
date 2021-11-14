@@ -5,8 +5,8 @@ Index file for final submission
 2. Data Dictionary: AppendixA_DataDictionary.pdf
 3. Use Case Diagram: AppendixB1_UseCaseDiagram.pdf
 4. Use Case Description: AppendixB2_UseCaseDescription.pdf
-5. Class Diagram: AppendixB3_ClassDiagram.pdf
-6. Sequence Diagrams: AppendixB4_SequenceDiagram\
+5. Class Diagram: AppendixB3_ClassDiagram.jpg
+6. Sequence Diagrams: AppendixB4_SequenceDiagram/
 	a. sd Check CCA.pdf
 	b. sd Check Faculties & Courses.pdf
 	c. sd Filter Search.pdf
